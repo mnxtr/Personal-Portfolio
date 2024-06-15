@@ -1,3 +1,55 @@
-.portfolio-block.block-intro {
-}
-
+/* Dark Theme Styles */
+body {
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text */
+  }
+  
+  a, h3 {
+    color: #bb86fc; /* Light purple for links and h3, adjust as needed */
+  }
+  
+  .btn-primary {
+    background-color: #3700B3; /* Darker shade for primary buttons */
+    border: none;
+  }
+  
+  .btn-primary.custom-hire-me {
+    background-color: #6200EE; /* Custom Hire Me button color */
+  }
+  
+  .portfolio-block {
+    background-color: #1F1B24; /* Slightly lighter dark shade for sections */
+    border-color: #292929; /* Dark border for differentiation, if needed */
+  }
+  
+  .img-fluid {
+    border: 2px solid #292929; /* Optional: Adds a border to images for visibility */
+  }
+  
+  /* Adjusting hover effects */
+  .btn-primary:hover, .btn-primary.custom-hire-me:hover {
+    background-color: #03DAC5; /* Cyan color for hover, adjust as needed */
+    color: #000; /* Dark text on hover */
+  }
+  
+  .navbar.dark-mode {
+    background-color: #1c1c1c;
+  }
+  .custom-hire-me {
+    background-color: #4e4caf; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 24px; /* Some padding */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s; /* Smooth transition for hover effect */
+    cursor: pointer;
+  }
+  
+  .custom-hire-me:hover {
+    background-color: white; /* White background on hover */
+    color: black; /* Black text on hover */
+  }
