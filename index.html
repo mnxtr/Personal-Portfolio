@@ -40,6 +40,74 @@
     <!-- Custom Styles -->
     <link rel="stylesheet" href="assets/css/untitled.css" />
     <style>
+      /* Navigation Styles */
+      .nav-dark-switch {
+        padding: 0 15px;
+      }
+      .nav-dark-switch-mobile {
+        padding: 10px 20px;
+      }
+      
+      /* Skills Section */
+      .skills-heading {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 40px;
+      }
+      .skill-card {
+        min-height: 300px;
+      }
+      .skill-card-blue {
+        background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
+      }
+      .skill-card-green {
+        background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+      }
+      .skill-card-orange {
+        background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+      }
+      .skill-icon {
+        font-size: 4rem;
+        margin: 20px 0;
+      }
+      .skill-icon-blue {
+        color: #0288d1;
+      }
+      .skill-icon-green {
+        color: #388e3c;
+      }
+      .skill-icon-orange {
+        color: #f57c00;
+      }
+      .skill-title {
+        font-weight: bold;
+      }
+      .skill-title-blue {
+        color: #01579b;
+      }
+      .skill-title-green {
+        color: #2e7d32;
+      }
+      .skill-title-orange {
+        color: #e65100;
+      }
+      .skill-description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+      .skill-description-emphasis {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: #101557;
+        font-weight: 500;
+        margin: 20px 0;
+      }
+      
+      /* Project Showcase */
+      .project-showcase {
+        background: linear-gradient(135deg, #e0f7fa, #80deea);
+        padding: 50px 0;
+      }
       /* Example Customizations */
       .avatar {
         width: 150px;
@@ -79,7 +147,7 @@
       }
       /* Dark mode styles */
       body.dark-mode {
-        background-color: #121212;
+              <div class="dark-switch nav-dark-switch">
         color: #e0e0e0;
       }
       body.dark-mode a {
@@ -98,7 +166,7 @@
       body.dark-mode .sidenav,
       body.dark-mode .sidenav li a {
         background-color: #1e1e1e;
-        color: #e0e0e0;
+          <div class="dark-switch nav-dark-switch-mobile">
       }
       
       /* Enhanced Footer Styling */
@@ -160,13 +228,13 @@
             <li><a class="black-text" href="contact.html">Contact</a></li>
             <li><a class="black-text" href="hire-me.html">Hire Me</a></li>
           </ul>
-        </div>
+          <h4 class="center-align skills-heading">Special Skills</h4>
       </nav>
 
-      <!-- Mobile Menu -->
-      <ul class="sidenav" id="mobile-nav">
-        <li>
-          <div class="dark-switch" style="padding: 10px 20px;">
+          <div class="card-panel center hoverable animate__animated animate__fadeIn skill-card skill-card-blue">
+            <i class="material-icons material-icons-outlined skill-icon skill-icon-blue">star_border</i>
+            <h5 class="skill-title skill-title-blue">Web Design</h5>
+            <p class="skill-description">
             <label>
               <input type="checkbox" id="darkModeSwitchMobile" />
               <span>Dark Mode</span>
@@ -187,7 +255,7 @@
       <section class="block-intro">
         <div
           class="avatar"
-          style="background-image: url('https://avatars.githubusercontent.com/u/68597019?s=400&amp;u=6f375ce46f879594b8963ed350561b26cf6093d1&amp;v=4');"
+          style="background-image: url('https://scontent.fdac138-1.fna.fbcdn.net/v/t1.6435-9/67235983_2348022885440893_6197039197061120000_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeEUMF8_8W98bvMPXOb5kUpYjMkwn694GKuMyTCfr3gYq9LF8TQ0IwG5ovnWFW4Qn4LAZUMCQvTKI7nIYAC8SIkD&_nc_ohc=HcE5JpNH3ysQ7kNvgHCt2OD&_nc_zt=23&_nc_ht=scontent.fdac138-1.fna&_nc_gid=A19omzP047X2j0I2BXGH-Ks&oh=00_AYCKLhYT1pY3e00JFRbrtGQi0ztw_EbUdlhkdIfiDeaBEw&oe=67B359B5');"
         ></div>
         <div class="center-align">
           <p>
@@ -195,10 +263,9 @@
           </p>
           <a href="#contact" class="waves-effect waves-light btn">Hire Me</a>
         </div>
-      </section>
-
-      <!-- Portfolio/Photography Section -->
-      <section class="portfolio-block">
+    <section
+      class="portfolio-block project-showcase"
+    >
         <div class="row">
           <div class="col s12 m6 l4">
             <div class="card hoverable">
@@ -224,50 +291,44 @@
         </div>
       </section>
 
-      <!-- Call-to-Action Section -->
-      <section class="portfolio-block" style="background: #fafafa;">
-        <div class="center-align">
-          <h4>Like what you see?</h4>
-          <a class="waves-effect waves-light btn-large" href="#!">Hire me</a>
-        </div>
-      </section>
 
       <!-- Skills Section -->
       <section class="portfolio-block">
         <div class="section">
-          <h4 class="center-align">Special Skills</h4>
+          <h4 class="center-align" style="font-size: 2.5rem; font-weight: bold; margin-bottom: 40px;">Special Skills</h4>
           <div class="row">
-            <div class="col s12 m4">
-              <div class="card-panel center">
-                <i class="material-icons large">star_border</i>
-                <h5>Web Design</h5>
-                <p>
-                  Innovative Web Design Project showcasing modern techniques in responsive design, user experience, and visual storytelling.
-                </p>
-              </div>
-            </div>
-            <div class="col s12 m4">
-              <div class="card-panel center">
-                <i class="material-icons large">lightbulb_outline</i>
-                <h5>Functional Testing</h5>
-                <p>
-                  Proficient in software testing to ensure applications function according to specified requirements, focusing on quality assurance.
-                </p>
-              </div>
-            </div>
-            <div class="col s12 m4">
-              <div class="card-panel center">
-                <i class="material-icons large">build</i>
-                <h5>Additional Skills</h5>
-                <p>
-                  Experienced in various technologies and methodologies to deliver robust and efficient solutions.
-                </p>
-              </div>
-            </div>
+        <div class="col s12 m4"></div>
+          <div class="card-panel center hoverable animate__animated animate__fadeIn" style="background: linear-gradient(135deg, #e1f5fe, #b3e5fc); min-height: 300px;">
+            <i class="material-icons material-icons-outlined" style="font-size: 4rem; color: #0288d1; margin: 20px 0;">star_border</i>
+            <h5 style="font-weight: bold; color: #01579b;">Web Design</h5>
+            <p style="font-size: 1.1rem; line-height: 1.6;">
+            <a
+              href="https://github.com/mansib.newaz"
+              target="_blank"
+              rel="noopener"
+              title="Visit GitHub Profile"
+            >
+          <div class="card-panel center hoverable animate__animated animate__fadeIn" style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9); min-height: 300px;"></div>
+            <i class="material-icons" style="font-size: 4rem; color: #388e3c; margin: 20px 0;">lightbulb_outline</i>
+            <h5 style="font-weight: bold; color: #2e7d32;">Functional Testing</h5>
+            <p style="font-size: 1.2rem; line-height: 1.8; color: #101557; font-weight: 500; margin: 20px 0;">
+              Proficient in software testing to ensure applications function according to specified requirements, focusing on quality assurance.
+            </p>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card-panel center hoverable animate__animated animate__fadeIn" style="background: linear-gradient(135deg, #fff3e0, #ffe0b2); min-height: 300px;"></div>
+            <i class="material-icons" style="font-size: 4rem; color: #f57c00; margin: 20px 0;">build</i>
+            <h5 style="font-weight: bold; color: #e65100;">Additional Skills</h5>
+            <p style="font-size: 1.1rem; line-height: 1.6;">
+          Experienced in various technologies and methodologies to deliver robust and efficient solutions.
+            </p>
+          </div>
+        </div>
           </div>
         </div>
       </section>
-    </main>
+        </main>
 
     <!-- Website Project Showcase -->
     <section
