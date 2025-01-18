@@ -2,152 +2,266 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Mansib</title>
+    <!-- Materialize CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    <title>Home - Brand</title>
-    <!-- Bootstrap and Custom CSS -->
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <!-- Google Fonts (Lato) -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
     />
-    <link rel="stylesheet" href="assets/fonts/ionicons.min.css" />
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for GitHub Icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-p+Uu6C/CXTF+pRZ5Pcn8dP2i1TANXk5UZD2gkRPrHzyJj+im24XARcv1eMXobQbUz3KD4bY8Lz/3f59d5xv7zg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Animate.css -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
     />
+    <!-- Pikaday Datepicker CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css"
     />
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="assets/css/untitled.css" />
+    <style>
+      /* Example Customizations */
+      .avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+        margin: 20px auto;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .block-intro {
+        text-align: center;
+        padding: 50px 0;
+      }
+      .portfolio-block {
+        padding: 50px 0;
+      }
+      .portfolio-laptop-mockup {
+        position: relative;
+        margin: auto;
+        max-width: 400px;
+      }
+      .portfolio-laptop-mockup .screen {
+        background: #f5f5f5;
+        padding: 20px;
+      }
+      .portfolio-laptop-mockup .keyboard {
+        height: 20px;
+        background: #ddd;
+      }
+      .dark-switch {
+        display: flex;
+        align-items: center;
+      }
+      .dark-switch input[type="checkbox"] {
+        margin-right: 10px;
+      }
+      /* Dark mode styles */
+      body.dark-mode {
+        background-color: #121212;
+        color: #e0e0e0;
+      }
+      body.dark-mode a {
+        color: #90caf9;
+      }
+      body.dark-mode nav,
+      body.dark-mode .card,
+      body.dark-mode .card-panel,
+      body.dark-mode footer {
+        background-color: #1e1e1e;
+      }
+      body.dark-mode .card .card-image img,
+      body.dark-mode .card-panel {
+        opacity: 0.9;
+      }
+      body.dark-mode .sidenav,
+      body.dark-mode .sidenav li a {
+        background-color: #1e1e1e;
+        color: #e0e0e0;
+      }
+      
+      /* Enhanced Footer Styling */
+      footer.page-footer {
+        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        color: #fff;
+        padding-top: 30px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+      }
+      footer.page-footer a {
+        color: #fff;
+        transition: color 0.3s ease;
+      }
+      footer.page-footer a:hover {
+        color: #ffeb3b;
+      }
+      footer.page-footer .social-icons a {
+        margin: 0 10px;
+        font-size: 1.75rem;
+        display: inline-block;
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+      footer.page-footer .social-icons a:hover {
+        transform: scale(1.1);
+        color: #ffeb3b;
+      }
+      footer .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 20px 0;
+        margin-top: 20px;
+        font-size: 0.9rem;
+      }
+    </style>
   </head>
+
   <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
-      <div class="container">
-        <a class="navbar-brand logo" href="#">Mansib</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="visually-hidden">Toggle navigation</span>
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto align-items-center">
-            <li class="nav-item me-3">
-              <!-- Dark Mode Switch -->
-              <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="darkModeSwitch" />
-                <label class="form-check-label" for="darkModeSwitch">Dark Mode</label>
+    <header>
+      <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+          <a id="logo-container" href="#" class="brand-logo black-text">Mansib</a>
+          <a href="#" data-target="mobile-nav" class="sidenav-trigger black-text">
+            <i class="material-icons">menu</i>
+          </a>
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <div class="dark-switch" style="padding: 0 15px;">
+                <label>
+                  <input type="checkbox" id="darkModeSwitch" />
+                  <span>Dark Mode</span>
+                </label>
               </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="projects-compact-grid.html">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="projecttable.html">Project List</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="hire-me.html">Hire Me</a>
-            </li>
+            <li><a class="black-text" href="index.html">Home</a></li>
+            <li><a class="black-text" href="projects-compact-grid.html">Projects</a></li>
+            <li><a class="black-text" href="projecttable.html">Project List</a></li>
+            <li><a class="black-text" href="contact.html">Contact</a></li>
+            <li><a class="black-text" href="hire-me.html">Hire Me</a></li>
           </ul>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <ul class="sidenav" id="mobile-nav">
+        <li>
+          <div class="dark-switch" style="padding: 10px 20px;">
+            <label>
+              <input type="checkbox" id="darkModeSwitchMobile" />
+              <span>Dark Mode</span>
+            </label>
+          </div>
+        </li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects-compact-grid.html">Projects</a></li>
+        <li><a href="projecttable.html">Project List</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="hire-me.html">Hire Me</a></li>
+      </ul>
+    </header>
 
     <!-- Main Content -->
-    <main class="page landing-page">
+    <main class="container">
       <!-- Intro Section -->
-      <section class="portfolio-block block-intro">
-        <div class="avatar" style="background-image: url('https://avatars.githubusercontent.com/u/68597019?s=400&amp;u=6f375ce46f879594b8963ed350561b26cf6093d1&amp;v=4');"></div>
-        <div class="container">
-          <div class="about-me">
-            <p>
-              Hello! I am <strong>Mohammad Mansib Newaz</strong>. With 4 years of experience in backend engineering and network security and analysis, I provide services related to FastAPI and secure API development.
-            </p>
-            <a href="#contact" class="btn btn-primary custom-hire-me">Hire Me</a>
-          </div>
+      <section class="block-intro">
+        <div
+          class="avatar"
+          style="background-image: url('https://avatars.githubusercontent.com/u/68597019?s=400&amp;u=6f375ce46f879594b8963ed350561b26cf6093d1&amp;v=4');"
+        ></div>
+        <div class="center-align">
+          <p>
+            Hello! I am <strong>Mohammad Mansib Newaz</strong>. With 4 years of experience in backend engineering and network security and analysis, I provide services related to FastAPI and secure API development.
+          </p>
+          <a href="#contact" class="waves-effect waves-light btn">Hire Me</a>
         </div>
       </section>
 
       <!-- Portfolio/Photography Section -->
-      <section class="portfolio-block photography">
-        <div class="container">
-          <div class="row g-0">
-            <div class="col-md-6 col-lg-4 item zoom-on-hover">
-              <a href="#"><img class="img-fluid image" src="assets/img/nature/manufacturing1.jpg" alt="Portfolio Image 1" /></a>
+      <section class="portfolio-block">
+        <div class="row">
+          <div class="col s12 m6 l4">
+            <div class="card hoverable">
+              <div class="card-image">
+                <img src="assets/img/nature/manufacturing1.jpg" alt="Manufacturing" />
+              </div>
             </div>
-            <div class="col-md-6 col-lg-4 item zoom-on-hover">
-              <a href="#"><img class="img-fluid image" src="assets/img/nature/web.webp" alt="Portfolio Image 2" /></a>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card hoverable">
+              <div class="card-image">
+                <img src="assets/img/nature/web.webp" alt="Web" />
+              </div>
             </div>
-            <div class="col-md-6 col-lg-4 item zoom-on-hover">
-              <a href="#"><img class="img-fluid image" src="assets/img/tech/linux.png" alt="Portfolio Image 3" /></a>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card hoverable">
+              <div class="card-image">
+                <img src="assets/img/tech/linux.png" alt="Linux" />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Call-to-Action Section -->
-      <section class="portfolio-block call-to-action border-bottom">
-        <div class="container">
-          <div class="d-flex justify-content-center align-items-center content">
-            <h3>Like what you see?</h3>
-            <button class="btn btn-outline-primary btn-lg" type="button">Hire me</button>
-          </div>
+      <section class="portfolio-block" style="background: #fafafa;">
+        <div class="center-align">
+          <h4>Like what you see?</h4>
+          <a class="waves-effect waves-light btn-large" href="#!">Hire me</a>
         </div>
       </section>
 
       <!-- Skills Section -->
-      <section class="portfolio-block skills">
-        <div class="container">
-          <div class="heading">
-            <h2>Special Skills</h2>
-          </div>
+      <section class="portfolio-block">
+        <div class="section">
+          <h4 class="center-align">Special Skills</h4>
           <div class="row">
-            <div class="col-md-4">
-              <div class="card special-skill-item border-0">
-                <div class="card-header bg-transparent border-0">
-                  <i class="icon ion-ios-star-outline"></i>
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title">Web Design</h3>
-                  <p class="card-text">
-                    Innovative Web Design Project showcasing modern techniques in responsive design, user experience, and visual storytelling.
-                  </p>
-                </div>
+            <div class="col s12 m4">
+              <div class="card-panel center">
+                <i class="material-icons large">star_border</i>
+                <h5>Web Design</h5>
+                <p>
+                  Innovative Web Design Project showcasing modern techniques in responsive design, user experience, and visual storytelling.
+                </p>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="card special-skill-item border-0">
-                <div class="card-header bg-transparent border-0">
-                  <i class="icon ion-ios-lightbulb-outline"></i>
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title">Functional Testing</h3>
-                  <p class="card-text">
-                    Proficient in software testing to ensure applications function according to specified requirements, with a focus on thorough quality assurance methodologies.
-                  </p>
-                </div>
+            <div class="col s12 m4">
+              <div class="card-panel center">
+                <i class="material-icons large">lightbulb_outline</i>
+                <h5>Functional Testing</h5>
+                <p>
+                  Proficient in software testing to ensure applications function according to specified requirements, focusing on quality assurance.
+                </p>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="card special-skill-item border-0">
-                <div class="card-header bg-transparent border-0">
-                  <i class="icon ion-ios-gear-outline"></i>
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title">Additional Skills</h3>
-                  <p class="card-text">
-                    Experienced in various technologies and methodologies to deliver robust and efficient solutions.
-                  </p>
-                </div>
+            <div class="col s12 m4">
+              <div class="card-panel center">
+                <i class="material-icons large">build</i>
+                <h5>Additional Skills</h5>
+                <p>
+                  Experienced in various technologies and methodologies to deliver robust and efficient solutions.
+                </p>
               </div>
             </div>
           </div>
@@ -156,47 +270,116 @@
     </main>
 
     <!-- Website Project Showcase -->
-    <section class="portfolio-block website gradient">
+    <section
+      class="portfolio-block"
+      style="background: linear-gradient(135deg, #e0f7fa, #80deea); padding: 50px 0;"
+    >
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-5 offset-lg-1 text">
-            <h3>Website Project</h3>
+        <div class="row valign-wrapper">
+          <div class="col s12 m6">
+            <h4>Website Project</h4>
             <p>
-              My first hosted website portfolio, built utilizing Bootstrap, JavaScript, basic HTML, and CSS.
+              My first hosted website portfolio, built utilizing Materialize, JavaScript, HTML, and CSS.
             </p>
           </div>
-          <div class="col-lg-5">
+          <div class="col s12 m6">
             <div class="portfolio-laptop-mockup">
-              <div class="screen">
-                <div class="screen-content" style="background-image: url('assets/img/tech/image6.png');"></div>
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/img/tech/image6.png" alt="Website Project" />
+                </div>
               </div>
-              <div class="keyboard"></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="page-footer">
-      <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-        <div class="links mb-3 mb-md-0">
-          <a href="#">About me</a>
-          <a href="#">Contact me</a>
-          <a href="#">Projects</a>
-        </div>
-        <div class="social-icons">
-          <a href="#"><i class="icon ion-social-facebook"></i></a>
-          <a href="#"><i class="icon ion-social-instagram-outline"></i></a>
-          <a href="#"><i class="icon ion-social-twitter"></i></a>
+    <!-- Isolated Footer Component -->
+    <!-- ============================= -->
+    <footer class="page-footer animate__animated animate__fadeInUp">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m6">
+            <a href="#!" class="black-text">About me</a> |
+            <a href="#!" class="black-text">Contact me</a> |
+            <a href="#!" class="black-text">Projects</a>
+          </div>
+          <div class="col s12 m6 right-align social-icons">
+            <a href="https://www.facebook.com/mansib.newaz/" target="_blank" rel="noopener">
+              <i class="material-icons black-text">facebook</i>
+            </a>
+            <a
+              href="https://github.com/mansib.newaz"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fab fa-github black-text"></i>
+            </a>
+            <a href="#!">
+              <i class="material-icons black-text">instagram</i>
+            </a>
+            <a href="#!">
+              <i class="material-icons black-text">twitter</i>
+            </a>
+          </div>
         </div>
       </div>
+      <div class="container center footer-bottom">
+        © 2025 Mansib
+      </div>
     </footer>
+    <!-- ============================= -->
 
     <!-- Scripts -->
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
+    <!-- jQuery (required by Materialize) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Pikaday JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <!-- Custom Theme JS -->
     <script src="assets/js/theme.js"></script>
+    <script>
+      // Initialize Sidenav for Mobile Navigation and Dark Mode toggle
+      document.addEventListener('DOMContentLoaded', function () {
+        var sidenavElems = document.querySelectorAll('.sidenav');
+        M.Sidenav.init(sidenavElems);
+
+        // Function to set dark mode based on a boolean value
+        function setDarkMode(isDark) {
+          if (isDark) {
+            document.body.classList.add('dark-mode');
+          } else {
+            document.body.classList.remove('dark-mode');
+          }
+        }
+
+        // Retrieve the dark mode preference from localStorage
+        const darkModeEnabled = localStorage.getItem('darkMode') === 'true';
+        setDarkMode(darkModeEnabled);
+
+        // Set the switch positions based on the saved preference
+        const desktopSwitch = document.getElementById('darkModeSwitch');
+        const mobileSwitch = document.getElementById('darkModeSwitchMobile');
+        if (desktopSwitch) desktopSwitch.checked = darkModeEnabled;
+        if (mobileSwitch) mobileSwitch.checked = darkModeEnabled;
+
+        // Add event listeners to both dark mode switches
+        [desktopSwitch, mobileSwitch].forEach(switchElem => {
+          if (switchElem) {
+            switchElem.addEventListener('change', function () {
+              const isChecked = this.checked;
+              setDarkMode(isChecked);
+              // Sync both switches
+              if (desktopSwitch) desktopSwitch.checked = isChecked;
+              if (mobileSwitch) mobileSwitch.checked = isChecked;
+              // Store the preference
+              localStorage.setItem('darkMode', isChecked);
+            });
+          }
+        });
+      });
+    </script>
   </body>
 </html>
