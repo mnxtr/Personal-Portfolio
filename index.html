@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home - Mansib</title>
-    <!-- Materialize CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    <!-- Google Fonts (Lato) -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
     />
-    <!-- Material Icons -->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <!-- Font Awesome for GitHub Icon -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -27,88 +23,16 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- Animate.css -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
     />
-    <!-- Pikaday Datepicker CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css"
     />
-    <!-- Custom Styles -->
     <link rel="stylesheet" href="assets/css/untitled.css" />
     <style>
-      /* Navigation Styles */
-      .nav-dark-switch {
-        padding: 0 15px;
-      }
-      .nav-dark-switch-mobile {
-        padding: 10px 20px;
-      }
-      
-      /* Skills Section */
-      .skills-heading {
-        font-size: 2.5rem;
-        font-weight: bold;
-        margin-bottom: 40px;
-      }
-      .skill-card {
-        min-height: 300px;
-      }
-      .skill-card-blue {
-        background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
-      }
-      .skill-card-green {
-        background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
-      }
-      .skill-card-orange {
-        background: linear-gradient(135deg, #fff3e0, #ffe0b2);
-      }
-      .skill-icon {
-        font-size: 4rem;
-        margin: 20px 0;
-      }
-      .skill-icon-blue {
-        color: #0288d1;
-      }
-      .skill-icon-green {
-        color: #388e3c;
-      }
-      .skill-icon-orange {
-        color: #f57c00;
-      }
-      .skill-title {
-        font-weight: bold;
-      }
-      .skill-title-blue {
-        color: #01579b;
-      }
-      .skill-title-green {
-        color: #2e7d32;
-      }
-      .skill-title-orange {
-        color: #e65100;
-      }
-      .skill-description {
-        font-size: 1.1rem;
-        line-height: 1.6;
-      }
-      .skill-description-emphasis {
-        font-size: 1.2rem;
-        line-height: 1.8;
-        color: #101557;
-        font-weight: 500;
-        margin: 20px 0;
-      }
-      
-      /* Project Showcase */
-      .project-showcase {
-        background: linear-gradient(135deg, #e0f7fa, #80deea);
-        padding: 50px 0;
-      }
-      /* Example Customizations */
       .avatar {
         width: 150px;
         height: 150px;
@@ -145,9 +69,8 @@
       .dark-switch input[type="checkbox"] {
         margin-right: 10px;
       }
-      /* Dark mode styles */
       body.dark-mode {
-              <div class="dark-switch nav-dark-switch">
+        background-color: #121212;
         color: #e0e0e0;
       }
       body.dark-mode a {
@@ -166,10 +89,8 @@
       body.dark-mode .sidenav,
       body.dark-mode .sidenav li a {
         background-color: #1e1e1e;
-          <div class="dark-switch nav-dark-switch-mobile">
+        color: #e0e0e0;
       }
-      
-      /* Enhanced Footer Styling */
       footer.page-footer {
         background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
         color: #fff;
@@ -205,7 +126,6 @@
   </head>
 
   <body>
-    <!-- Navigation -->
     <header>
       <nav class="white" role="navigation">
         <div class="nav-wrapper container">
@@ -228,13 +148,11 @@
             <li><a class="black-text" href="contact.html">Contact</a></li>
             <li><a class="black-text" href="hire-me.html">Hire Me</a></li>
           </ul>
-          <h4 class="center-align skills-heading">Special Skills</h4>
+        </div>
       </nav>
-
-          <div class="card-panel center hoverable animate__animated animate__fadeIn skill-card skill-card-blue">
-            <i class="material-icons material-icons-outlined skill-icon skill-icon-blue">star_border</i>
-            <h5 class="skill-title skill-title-blue">Web Design</h5>
-            <p class="skill-description">
+      <ul class="sidenav" id="mobile-nav">
+        <li>
+          <div class="dark-switch" style="padding: 10px 20px;">
             <label>
               <input type="checkbox" id="darkModeSwitchMobile" />
               <span>Dark Mode</span>
@@ -249,9 +167,7 @@
       </ul>
     </header>
 
-    <!-- Main Content -->
     <main class="container">
-      <!-- Intro Section -->
       <section class="block-intro">
         <div
           class="avatar"
@@ -263,9 +179,9 @@
           </p>
           <a href="#contact" class="waves-effect waves-light btn">Hire Me</a>
         </div>
-    <section
-      class="portfolio-block project-showcase"
-    >
+      </section>
+
+      <section class="portfolio-block">
         <div class="row">
           <div class="col s12 m6 l4">
             <div class="card hoverable">
@@ -291,46 +207,44 @@
         </div>
       </section>
 
+      <!-- Call-to-Action -->
 
-      <!-- Skills Section -->
       <section class="portfolio-block">
         <div class="section">
-          <h4 class="center-align" style="font-size: 2.5rem; font-weight: bold; margin-bottom: 40px;">Special Skills</h4>
+          <h4 class="center-align">Special Skills</h4>
           <div class="row">
-        <div class="col s12 m4"></div>
-          <div class="card-panel center hoverable animate__animated animate__fadeIn" style="background: linear-gradient(135deg, #e1f5fe, #b3e5fc); min-height: 300px;">
-            <i class="material-icons material-icons-outlined" style="font-size: 4rem; color: #0288d1; margin: 20px 0;">star_border</i>
-            <h5 style="font-weight: bold; color: #01579b;">Web Design</h5>
-            <p style="font-size: 1.1rem; line-height: 1.6;">
-            <a
-              href="https://github.com/mansib.newaz"
-              target="_blank"
-              rel="noopener"
-              title="Visit GitHub Profile"
-            >
-          <div class="card-panel center hoverable animate__animated animate__fadeIn" style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9); min-height: 300px;"></div>
-            <i class="material-icons" style="font-size: 4rem; color: #388e3c; margin: 20px 0;">lightbulb_outline</i>
-            <h5 style="font-weight: bold; color: #2e7d32;">Functional Testing</h5>
-            <p style="font-size: 1.2rem; line-height: 1.8; color: #101557; font-weight: 500; margin: 20px 0;">
-              Proficient in software testing to ensure applications function according to specified requirements, focusing on quality assurance.
-            </p>
-          </div>
-        </div>
-        <div class="col s12 m4">
-          <div class="card-panel center hoverable animate__animated animate__fadeIn" style="background: linear-gradient(135deg, #fff3e0, #ffe0b2); min-height: 300px;"></div>
-            <i class="material-icons" style="font-size: 4rem; color: #f57c00; margin: 20px 0;">build</i>
-            <h5 style="font-weight: bold; color: #e65100;">Additional Skills</h5>
-            <p style="font-size: 1.1rem; line-height: 1.6;">
-          Experienced in various technologies and methodologies to deliver robust and efficient solutions.
-            </p>
-          </div>
-        </div>
+            <div class="col s12 m4">
+              <div class="card-panel center">
+                <i class="material-icons large">star_border</i>
+                <h5>Web Design</h5>
+                <p>
+                  Innovative Web Design Project showcasing modern techniques in responsive design, user experience, and visual storytelling.
+                </p>
+              </div>
+            </div>
+            <div class="col s12 m4">
+              <div class="card-panel center">
+                <i class="material-icons large">lightbulb_outline</i>
+                <h5>Functional Testing</h5>
+                <p>
+                  Proficient in software testing to ensure applications function according to specified requirements, focusing on quality assurance.
+                </p>
+              </div>
+            </div>
+            <div class="col s12 m4">
+              <div class="card-panel center">
+                <i class="material-icons large">build</i>
+                <h5>Additional Skills</h5>
+                <p>
+                  Experienced in various technologies and methodologies to deliver robust and efficient solutions.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-        </main>
+    </main>
 
-    <!-- Website Project Showcase -->
     <section
       class="portfolio-block"
       style="background: linear-gradient(135deg, #e0f7fa, #80deea); padding: 50px 0;"
@@ -356,8 +270,6 @@
       </div>
     </section>
 
-    <!-- Isolated Footer Component -->
-    <!-- ============================= -->
     <footer class="page-footer animate__animated animate__fadeInUp">
       <div class="container">
         <div class="row">
@@ -390,24 +302,15 @@
         © 2025 Mansib
       </div>
     </footer>
-    <!-- ============================= -->
 
-    <!-- Scripts -->
-    <!-- jQuery (required by Materialize) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- Pikaday JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
-    <!-- Custom Theme JS -->
     <script src="assets/js/theme.js"></script>
     <script>
-      // Initialize Sidenav for Mobile Navigation and Dark Mode toggle
       document.addEventListener('DOMContentLoaded', function () {
         var sidenavElems = document.querySelectorAll('.sidenav');
         M.Sidenav.init(sidenavElems);
-
-        // Function to set dark mode based on a boolean value
         function setDarkMode(isDark) {
           if (isDark) {
             document.body.classList.add('dark-mode');
@@ -415,27 +318,19 @@
             document.body.classList.remove('dark-mode');
           }
         }
-
-        // Retrieve the dark mode preference from localStorage
         const darkModeEnabled = localStorage.getItem('darkMode') === 'true';
         setDarkMode(darkModeEnabled);
-
-        // Set the switch positions based on the saved preference
         const desktopSwitch = document.getElementById('darkModeSwitch');
         const mobileSwitch = document.getElementById('darkModeSwitchMobile');
         if (desktopSwitch) desktopSwitch.checked = darkModeEnabled;
         if (mobileSwitch) mobileSwitch.checked = darkModeEnabled;
-
-        // Add event listeners to both dark mode switches
         [desktopSwitch, mobileSwitch].forEach(switchElem => {
           if (switchElem) {
             switchElem.addEventListener('change', function () {
               const isChecked = this.checked;
               setDarkMode(isChecked);
-              // Sync both switches
               if (desktopSwitch) desktopSwitch.checked = isChecked;
               if (mobileSwitch) mobileSwitch.checked = isChecked;
-              // Store the preference
               localStorage.setItem('darkMode', isChecked);
             });
           }
