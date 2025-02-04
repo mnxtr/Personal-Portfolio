@@ -3,74 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contact</title>
-    <style>
-      <style>
-        .construction-banner {
-            color: #000;    
-            text-align: center;
-            padding: 10px;
-            z-index: 1000;
-            animation: bounce 2s infinite;
-            background-color: #f7d7d7;
-            color: #000;
-            font-weight: bold;
-        
+    <title>Contact - Mohammad Mansib Nawaz</title>
+    
+    <!-- Tailwind CSS Integration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6', // Define primary color
+                        darkBg: '#1E293B',   // Define background color
+                        darkText: '#CBD5E1'  // Define text color
+                    }
+                }
+            }
         }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-
-        }
-
-        body {
-            background-color: #1E293B !important; /* Change the background color */
-            margin-top: 40px; /* Add space for the banner */
-            
-        }
-
-        .icon {
-            width: 30px;
-            height: 40px;
-            position: center;
-            fill: #fff;
-            transition: transform 0.3s ease;
-
-            
-
-        }
-
-        footer {
-            text-align: center;
-        }
-    </style>
+    </script>
 </head>
-<body>
-    <div class="construction-banner">
-        🚧 Website Under Construction 🚧
-    </div>
-    <!-- Rest of your existing code remains the same -->
+<body class="bg-darkBg text-darkText min-h-screen flex flex-col">
+
+    <!-- Navigation Bar -->
+    <header class="p-4 sm:p-6">
+        <nav class="flex justify-end space-x-6 text-white">
+            <a href="index.html" class="hover:text-primary">Home</a>
+            <a href="project.html" class="hover:text-primary">Project</a>
+            <a href="#" class="hover:text-primary">About me</a>
+            <a href="contact.html" class="hover:text-primary">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Contact Form Section -->
+    <main class="flex-grow flex flex-col items-center justify-center text-center p-6">
+        <h1 class="text-3xl font-bold text-primary mb-6">Get in Touch</h1>
+        <p class="max-w-2xl text-lg leading-relaxed mb-6">
+            Feel free to reach out for collaborations or inquiries. I will get back to you as soon as possible.
+        </p>
+        
+        <form action="#" method="POST" class="w-full max-w-lg bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div class="mb-4">
+                <label class="block text-sm font-semibold mb-2" for="name">Name</label>
+                <input type="text" id="name" name="name" class="w-full p-2 rounded bg-gray-700 text-white" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-sm font-semibold mb-2" for="email">Email</label>
+                <input type="email" id="email" name="email" class="w-full p-2 rounded bg-gray-700 text-white" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-sm font-semibold mb-2" for="message">Message</label>
+                <textarea id="message" name="message" rows="4" class="w-full p-2 rounded bg-gray-700 text-white" required></textarea>
+            </div>
+            <button type="submit" class="bg-primary text-white px-6 py-2 rounded hover:bg-blue-600 transition duration-300">
+                Send Message
+            </button>
+        </form>
+    </main>
+
+    <!-- Social Media Links -->
     <div class="flex justify-center space-x-6 my-8">
         <a href="https://github.com/mnxtr" target="_blank" rel="noopener noreferrer" class="text-white hover:text-primary" title="Visit my GitHub profile">
-            <svg class="icon transition-transform duration-300 transform hover:scale-110" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 .297c-6.63 0-12 5.37-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.19.035.26-.08.26-.17 0-.08-.003-.34-.005-.66-3.338.73-4.042-1.416-4.042-1.416-.445-1.13-1.09-1.43-1.09-1.43-.89-.61.067-.6.067-.6.984.07 1.504 1.01 1.504 1.01.875 1.5 2.29 1.07 2.845.82.09-.64.34-1.07.615-1.32-2.667-.3-5.466-1.34-5.466-5.97 0-1.32.47-2.39 1.24-3.23-.13-.3-.54-1.52.12-3.16 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.29-1.55 3.3-1.23 3.3-1.23.66 1.64.25 2.86.12 3.16.77.84 1.24 1.91 1.24 3.23 0 4.64-2.8 5.67-5.47 5.97.35.3.66.91.66 1.84 0 1.33-.005 2.4-.005 2.72 0 .09.07.2.26.17C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/>
             </svg>
         </a>
-        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="text-white hover:text-primary" title="Visit my LinkedIn profile">
-            <svg class="icon transition-transform duration-300 transform hover:scale-110" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <a href="https://linkedin.com/in/mansibnewaz" target="_blank" rel="noopener noreferrer" class="text-white hover:text-primary" title="Visit my LinkedIn profile">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
             </svg>
         </a>
         <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" class="text-white hover:text-primary" title="Visit my Twitter profile">
-            <svg class="icon transition-transform duration-300 transform hover:scale-110" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
             </svg>
         </a>
     </div>
 
-    <footer class="p-4 sm:p-6 text-center text-white">
+    <!-- Footer Section -->
+    <footer class="p-6 text-center text-gray-400">
         <p>&copy; 2025 Mohammad Mansib Nawaz. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
