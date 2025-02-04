@@ -1,341 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home - Mansib</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-p+Uu6C/CXTF+pRZ5Pcn8dP2i1TANXk5UZD2gkRPrHzyJj+im24XARcv1eMXobQbUz3KD4bY8Lz/3f59d5xv7zg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css"
-    />
-    <link rel="stylesheet" href="assets/css/untitled.css" />
-    <style>
-      .avatar {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        background-size: cover;
-        background-position: center;
-        margin: 20px auto;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-      .block-intro {
-        text-align: center;
-        padding: 50px 0;
-      }
-      .portfolio-block {
-        padding: 50px 0;
-      }
-      .portfolio-laptop-mockup {
-        position: relative;
-        margin: auto;
-        max-width: 400px;
-      }
-      .portfolio-laptop-mockup .screen {
-        background: #f5f5f5;
-        padding: 20px;
-      }
-      .portfolio-laptop-mockup .keyboard {
-        height: 20px;
-        background: #ddd;
-      }
-      .dark-switch {
-        display: flex;
-        align-items: center;
-      }
-      .dark-switch input[type="checkbox"] {
-        margin-right: 10px;
-      }
-      body.dark-mode {
-        background-color: #121212;
-        color: #e0e0e0;
-      }
-      body.dark-mode a {
-        color: #90caf9;
-      }
-      body.dark-mode nav,
-      body.dark-mode .card,
-      body.dark-mode .card-panel,
-      body.dark-mode footer {
-        background-color: #1e1e1e;
-      }
-      body.dark-mode .card .card-image img,
-      body.dark-mode .card-panel {
-        opacity: 0.9;
-      }
-      body.dark-mode .sidenav,
-      body.dark-mode .sidenav li a {
-        background-color: #1e1e1e;
-        color: #e0e0e0;
-      }
-      footer.page-footer {
-        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-        color: #fff;
-        padding-top: 30px;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-      }
-      footer.page-footer a {
-        color: #fff;
-        transition: color 0.3s ease;
-      }
-      footer.page-footer a:hover {
-        color: #ffeb3b;
-      }
-      footer.page-footer .social-icons a {
-        margin: 0 10px;
-        font-size: 1.75rem;
-        display: inline-block;
-        transition: transform 0.3s ease, color 0.3s ease;
-      }
-      footer.page-footer .social-icons a:hover {
-        transform: scale(1.1);
-        color: #ffeb3b;
-      }
-      footer .footer-bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.3);
-        padding: 20px 0;
-        margin-top: 20px;
-        font-size: 0.9rem;
-      }
-    </style>
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Mansib Nawaz - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        darkBg: '#1E293B',
+                        darkText: '#CBD5E1'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-darkBg text-darkText min-h-screen flex flex-col">
 
-  <body>
-    <header>
-      <nav class="white" role="navigation">
-        <div class="nav-wrapper container">
-          <a id="logo-container" href="#" class="brand-logo black-text">Mansib</a>
-          <a href="#" data-target="mobile-nav" class="sidenav-trigger black-text">
-            <i class="material-icons">menu</i>
-          </a>
-          <ul class="right hide-on-med-and-down">
-            <li>
-              <div class="dark-switch" style="padding: 0 15px;">
-                <label>
-                  <input type="checkbox" id="darkModeSwitch" />
-                  <span>Dark Mode</span>
-                </label>
-              </div>
-            </li>
-            <li><a class="black-text" href="index.html">Home</a></li>
-            <li><a class="black-text" href="projects-compact-grid.html">Projects</a></li>
-            <li><a class="black-text" href="projecttable.html">Project List</a></li>
-            <li><a class="black-text" href="contact.html">Contact</a></li>
-            <li><a class="black-text" href="hire-me.html">Hire Me</a></li>
-          </ul>
-        </div>
-      </nav>
-      <ul class="sidenav" id="mobile-nav">
-        <li>
-          <div class="dark-switch" style="padding: 10px 20px;">
-            <label>
-              <input type="checkbox" id="darkModeSwitchMobile" />
-              <span>Dark Mode</span>
-            </label>
-          </div>
-        </li>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects-compact-grid.html">Projects</a></li>
-        <li><a href="projecttable.html">Project List</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="hire-me.html">Hire Me</a></li>
-      </ul>
+    <!-- Navigation -->
+    <header class="p-4 sm:p-6">
+        <nav class="flex justify-end space-x-6 text-white">
+            <a href="#" class="hover:text-primary">Home</a>
+            <a href="project.html" class="hover:text-primary">Project</a>
+            <a href="#" class="hover:text-primary">About me</a>
+            <a href="#" class="hover:text-primary">Contact</a>
+        </nav>
     </header>
 
-    <main class="container">
-      <section class="block-intro">
-        <div
-          class="avatar"
-          style="background-image: url('https://scontent.fdac138-1.fna.fbcdn.net/v/t1.6435-9/67235983_2348022885440893_6197039197061120000_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeEUMF8_8W98bvMPXOb5kUpYjMkwn694GKuMyTCfr3gYq9LF8TQ0IwG5ovnWFW4Qn4LAZUMCQvTKI7nIYAC8SIkD&_nc_ohc=HcE5JpNH3ysQ7kNvgHCt2OD&_nc_zt=23&_nc_ht=scontent.fdac138-1.fna&_nc_gid=A19omzP047X2j0I2BXGH-Ks&oh=00_AYCKLhYT1pY3e00JFRbrtGQi0ztw_EbUdlhkdIfiDeaBEw&oe=67B359B5');"
-        ></div>
-        <div class="center-align">
-          <p>
-            Hello! I am <strong>Mohammad Mansib Newaz</strong>. With 4 years of experience in backend engineering and network security and analysis, I provide services related to FastAPI and secure API development.
-          </p>
-          <a href="#contact" class="waves-effect waves-light btn">Hire Me</a>
-        </div>
-      </section>
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col items-center justify-center text-center p-6">
+        
+      
+        <div class="w-28 h-28 mb-8 relative">
+            <img src="img/avatar.jpg" alt="Mohammad Mansib Nawaz" class="w-full h-full object-cover rounded-full">
+        </div>        
+        <!-- Description -->
+        <p class="max-w-2xl text-lg leading-relaxed">
+            Hello! I am <strong>Mohammad Mansib Nawaz</strong>. With 4 years of experience in backend engineering and network security and analysis, 
+            I provide services related to <strong>FastAPI</strong> and secure API development.
+        </p>
 
-      <section class="portfolio-block">
-        <div class="row">
-          <div class="col s12 m6 l4">
-            <div class="card hoverable">
-              <div class="card-image">
-                <img src="assets/img/nature/manufacturing1.jpg" alt="Manufacturing" />
-              </div>
-            </div>
-          </div>
-          <div class="col s12 m6 l4">
-            <div class="card hoverable">
-              <div class="card-image">
-                <img src="assets/img/nature/web.webp" alt="Web" />
-              </div>
-            </div>
-          </div>
-          <div class="col s12 m6 l4">
-            <div class="card hoverable">
-              <div class="card-image">
-                <img src="assets/img/tech/linux.png" alt="Linux" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Call-to-Action -->
-
-      <section class="portfolio-block">
-        <div class="section">
-          <h4 class="center-align">Special Skills</h4>
-          <div class="row">
-            <div class="col s12 m4">
-              <div class="card-panel center">
-                <i class="material-icons large">star_border</i>
-                <h5>Web Design</h5>
-                <p>
-                  Innovative Web Design Project showcasing modern techniques in responsive design, user experience, and visual storytelling.
-                </p>
-              </div>
-            </div>
-            <div class="col s12 m4">
-              <div class="card-panel center">
-                <i class="material-icons large">lightbulb_outline</i>
-                <h5>Functional Testing</h5>
-                <p>
-                  Proficient in software testing to ensure applications function according to specified requirements, focusing on quality assurance.
-                </p>
-              </div>
-            </div>
-            <div class="col s12 m4">
-              <div class="card-panel center">
-                <i class="material-icons large">build</i>
-                <h5>Additional Skills</h5>
-                <p>
-                  Experienced in various technologies and methodologies to deliver robust and efficient solutions.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        <!-- Button -->
+        <button class="bg-primary text-white px-6 py-2 rounded mt-6 hover:bg-blue-600 transition duration-300">
+            Hire
+        </button>
     </main>
 
-    <section
-      class="portfolio-block"
-      style="background: linear-gradient(135deg, #e0f7fa, #80deea); padding: 50px 0;"
-    >
-      <div class="container">
-        <div class="row valign-wrapper">
-          <div class="col s12 m6">
-            <h4>Website Project</h4>
-            <p>
-              My first hosted website portfolio, built utilizing Materialize, JavaScript, HTML, and CSS.
-            </p>
-          </div>
-          <div class="col s12 m6">
-            <div class="portfolio-laptop-mockup">
-              <div class="card">
-                <div class="card-image">
-                  <img src="assets/img/tech/image6.png" alt="Website Project" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="page-footer animate__animated animate__fadeInUp">
-      <div class="container">
-        <div class="row">
-          <div class="col s12 m6">
-            <a href="#!" class="black-text">About me</a> |
-            <a href="#!" class="black-text">Contact me</a> |
-            <a href="#!" class="black-text">Projects</a>
-          </div>
-          <div class="col s12 m6 right-align social-icons">
-            <a href="https://www.facebook.com/mansib.newaz/" target="_blank" rel="noopener">
-              <i class="material-icons black-text">facebook</i>
-            </a>
-            <a
-              href="https://github.com/mansib.newaz"
-              target="_blank"
-              rel="noopener"
-            >
-              <i class="fab fa-github black-text"></i>
-            </a>
-            <a href="#!">
-              <i class="material-icons black-text">instagram</i>
-            </a>
-            <a href="#!">
-              <i class="material-icons black-text">twitter</i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="container center footer-bottom">
-        © 2025 Mansib
-      </div>
+    <!-- Footer -->
+    <footer class="p-6 text-center text-gray-400">
+        <p>&copy; 2023 Mohammad Mansib Nawaz. All rights reserved.</p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
-    <script src="assets/js/theme.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        var sidenavElems = document.querySelectorAll('.sidenav');
-        M.Sidenav.init(sidenavElems);
-        function setDarkMode(isDark) {
-          if (isDark) {
-            document.body.classList.add('dark-mode');
-          } else {
-            document.body.classList.remove('dark-mode');
-          }
-        }
-        const darkModeEnabled = localStorage.getItem('darkMode') === 'true';
-        setDarkMode(darkModeEnabled);
-        const desktopSwitch = document.getElementById('darkModeSwitch');
-        const mobileSwitch = document.getElementById('darkModeSwitchMobile');
-        if (desktopSwitch) desktopSwitch.checked = darkModeEnabled;
-        if (mobileSwitch) mobileSwitch.checked = darkModeEnabled;
-        [desktopSwitch, mobileSwitch].forEach(switchElem => {
-          if (switchElem) {
-            switchElem.addEventListener('change', function () {
-              const isChecked = this.checked;
-              setDarkMode(isChecked);
-              if (desktopSwitch) desktopSwitch.checked = isChecked;
-              if (mobileSwitch) mobileSwitch.checked = isChecked;
-              localStorage.setItem('darkMode', isChecked);
-            });
-          }
-        });
-      });
-    </script>
-  </body>
+</body>
 </html>
