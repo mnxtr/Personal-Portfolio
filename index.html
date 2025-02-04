@@ -43,6 +43,23 @@
             Hello! I am <strong>Mohammad Mansib Nawaz</strong>. With 4 years of experience in backend engineering and network security and analysis, 
             I provide services related to <strong>FastAPI</strong> and secure API development.
         </p>
+        <div class="mt-4 h-8">
+            <span id="typewriter" class="text-primary"></span>
+        </div>
+        <script>
+            const text = "Specializing in secure API development and backend solutions";
+            let index = 0;
+            
+            function typeWriter() {
+                if (index < text.length) {
+                    document.getElementById("typewriter").textContent += text.charAt(index);
+                    index++;
+                    setTimeout(typeWriter, 50);
+                }
+            }
+            
+            window.onload = typeWriter;
+        </script>
 
         <!-- Button -->
         <button class="bg-primary text-white px-6 py-2 rounded mt-6 hover:bg-blue-600 transition duration-300">

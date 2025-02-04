@@ -5,6 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        darkBg: '#1E293B',
+                        darkText: '#CBD5E1'
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,21 +57,31 @@
             margin-bottom: 15px;
         }
     </style>
+    <header class="p-4 sm:p-6">
+        <nav class="flex justify-end space-x-6 text-white">
+            <a href="#" class="hover:text-primary">Home</a>
+            <a href="project.html" class="hover:text-primary">Project</a>
+            <a href="#" class="hover:text-primary">About me</a>
+            <a href="#" class="hover:text-primary">Contact</a>
+        </nav>
+    </header>
 </head>
+
+
 <body>
-    <h1>My Projects</h1>
+    <h3>Projects</h3>
     <div class="grid-container">
         <div class="project-card">
-            <img src="https://via.placeholder.com/300x200" alt="Project 1">
-            <h3>Project 1</h3>
-            <p>Description of project 1. Add your project details here.</p>
-            <a href="#" target="_blank">View Project</a>
+            <img src="img/EKG.jpg" alt="An Ensemble ML approach to predict the Cardiovascular Disease">
+            <h3> Ensemble ML approach to predict the Cardiovascular Disease </h3>
+            <p>Using Multiple model to train ML model to Classify Cardiovascular Disorders by analyzing EKG Wave .</p>
+            <a href="" target="_blank">View Project</a>
         </div>
         <div class="project-card">
-            <img src="https://via.placeholder.com/300x200" alt="Project 2">
-            <h3>Project 2</h3>
-            <p>Description of project 2. Add your project details here.</p>
-            <a href="#" target="_blank">View Project</a>
+            <img src="img/manufactureDBMS.jpg" alt="MDBMS-HTML">
+            <h3>A full fledged Large Manufacture Database System.</h3>
+            <p>MDBMS-HTML is a front-end project for a Manufacturing Database Management System (DBMS) designed to provide an interactive and responsive user interface for managing manufacturing operations. The repository includes HTML, CSS, and JavaScript files that create pages such as dashboards, contact forms, and navigation menus. It aims to facilitate real-time tracking, inventory management, and operational monitoring. The project’s focus is on delivering a user-friendly and efficient UI that supports different screen sizes, ensuring compatibility across devices.</p>
+            <a href="https://github.com/mnxtr/mdbms-html" target="_blank">View Project</a>
         </div>
         <div class="project-card">
             <img src="https://via.placeholder.com/300x200" alt="Project 3">
