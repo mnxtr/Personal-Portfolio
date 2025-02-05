@@ -1,50 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Mohammad Mansib Nawaz</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me - Mohammad Mansib Nawaz</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    /* Custom gradient background */
+    body {
+      background: linear-gradient(135deg, #2C2C54, #24243E);
+      min-height: 100vh;
+    }
+
+    /* Gradient text utility */
+    .text-gradient {
+      background: linear-gradient(45deg, #3B82F6, #0EA5E9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Card styling */
+    .card-custom {
+      background-color: rgba(0, 0, 0, 0.6);
+      border: none;
+      border-radius: 1rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .card-custom .card-body {
+      color: #f1f1f1;
+    }
+
+    /* Heading styling */
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    /* Animated fade-in effect */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      animation-delay: 0.2s;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
-<body class="bg-dark text-light d-flex flex-column min-vh-100">
+<body class="text-light d-flex flex-column">
+  <!-- Navigation Bar -->
+  <header class="p-4">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="project.html">Project</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-    <!-- Navigation Bar -->
-    <header class="p-4">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">Home</a>
-                <div class="collapse navbar-collapse justify-content-end">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="project.html">Project</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
+  <!-- About Section -->
+  <main class="container flex-grow-1 d-flex align-items-center justify-content-center py-4">
+    <div class="row w-100 justify-content-center">
+      <div class="col-lg-8 col-md-10">
+        <div class="card card-custom shadow-lg fade-in">
+          <div class="card-body p-5">
+            <h1 class="hero-title mb-4 text-gradient text-center">About Me</h1>
+            <p class="lead">
+              Hello! I'm <strong class="text-gradient">Mohammad Mansib Nawaz</strong>, a backend engineer with expertise in <strong>FastAPI</strong>, secure API development, and network security analysis.
+            </p>
+            <p class="lead">
+              With over four years of experience, I have built and optimized scalable backend systems, integrating advanced security measures to protect data and ensure system integrity. My expertise lies in designing RESTful and GraphQL APIs, implementing authentication protocols, and enhancing system efficiency.
+            </p>
+            <p class="lead">
+              I am passionate about problem-solving and innovation, constantly exploring new technologies and methodologies to stay ahead in the field. My work involves collaboration with cross-functional teams, leveraging my skills in cloud computing, DevOps practices, and database management to deliver robust and secure applications.
+            </p>
+            <p class="lead mb-4">
+              In addition to backend development, I have hands-on experience in cybersecurity, including vulnerability assessments, penetration testing, and network security analysis. I thrive in challenging environments, where I can apply my technical expertise to build solutions that drive efficiency and security.
+            </p>
+            <!-- Social Media Links -->
+            <div class="d-flex justify-content-center mb-4">
+              <a
+                href="https://github.com/mnxtr"
+                target="_blank"
+                class="btn btn-outline-light mx-2"
+                title="GitHub"
+              >GitHub</a>
+              <a
+                href="https://linkedin.com/in/mansibnewaz"
+                target="_blank"
+                class="btn btn-outline-primary mx-2"
+                title="LinkedIn"
+              >LinkedIn</a>
+              <a
+                href="https://twitter.com/yourusername"
+                target="_blank"
+                class="btn btn-outline-info mx-2"
+                title="Twitter"
+              >Twitter</a>
             </div>
-        </nav>
-    </header>
-
-    <!-- About Section -->
-    <main class="container text-center flex-grow-1 d-flex flex-column align-items-center justify-content-center">
-        <h1 class="text-primary mb-4">About Me</h1>
-        <p class="lead">Hello! I'm <strong>Mohammad Mansib Nawaz</strong>, a backend engineer with expertise in FastAPI, secure API development, and network security analysis.</p>
-        <p class="lead">With over four years of experience, I have built and optimized scalable backend systems, integrating advanced security measures to protect data and ensure system integrity. My expertise lies in designing RESTful and GraphQL APIs, implementing authentication protocols, and enhancing system efficiency.</p>
-        <p class="lead">I am passionate about problem-solving and innovation, constantly exploring new technologies and methodologies to stay ahead in the field. My work involves collaboration with cross-functional teams, leveraging my skills in cloud computing, DevOps practices, and database management to deliver robust and secure applications.</p>
-        <p class="lead">In addition to backend development, I have hands-on experience in cybersecurity, including vulnerability assessments, penetration testing, and network security analysis. I thrive in challenging environments, where I can apply my technical expertise to build solutions that drive efficiency and security.</p>
-    </main>
-
-    <!-- Social Media Links -->
-    <div class="d-flex justify-content-center my-4">
-        <a href="https://github.com/mnxtr" target="_blank" class="btn btn-outline-light mx-2" title="GitHub">GitHub</a>
-        <a href="https://linkedin.com/in/mansibnewaz" target="_blank" class="btn btn-outline-primary mx-2" title="LinkedIn">LinkedIn</a>
-        <a href="https://twitter.com/yourusername" target="_blank" class="btn btn-outline-info mx-2" title="Twitter">Twitter</a>
+          </div>
+        </div>
+      </div>
     </div>
+  </main>
 
-    <!-- Footer Section -->
-    <footer class="text-center p-4 mt-auto">
-        <p class="text-muted">&copy; 2025 Mohammad Mansib Nawaz. All rights reserved.</p>
-    </footer>
+  <!-- Footer Section -->
+  <footer class="text-center p-4 mt-auto">
+    <p class="text-muted">&copy; 2025 <span class="text-gradient">Mohammad Mansib Nawaz</span>. All rights reserved.</p>
+  </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  ></script>
 </body>
 </html>
