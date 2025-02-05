@@ -12,46 +12,46 @@
                     colors: {
                         primary: '#3B82F6',
                         darkBg: '#1E293B',
-                        darkText: '#CBD5E1'
+                        darkText: '#CBD5E1',
+                        accent: '#0EA5E9'
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="min-h-screen bg-gradient-to-b from-darkBg to-[#111827] text-darkText flex flex-col">
+<body class="bg-gradient-to-b from-darkBg via-gray-900 to-blue-900 text-darkText min-h-screen flex flex-col">
 
     <!-- Navigation -->
-    <header class="sticky top-0 z-10 bg-darkBg/80 backdrop-blur-sm shadow-md">
-        <nav class="max-w-7xl mx-auto flex items-center justify-between py-4 px-6 text-white">
-            <div class="text-xl font-semibold">M M N</div>
-            <div class="space-x-6">
-                <a href="index.html" class="hover:text-primary transition-colors duration-300">Home</a>
-                <a href="project.html" class="hover:text-primary transition-colors duration-300">Project</a>
-                <a href="about.html" class="hover:text-primary transition-colors duration-300">About me</a>
-                <a href="contact.html" class="hover:text-primary transition-colors duration-300">Contact</a>
-            </div>
+    <header class="p-4 sm:p-6 shadow-md bg-darkBg bg-opacity-90 backdrop-blur-sm sticky top-0 z-10">
+        <nav class="flex justify-end space-x-6 text-white transition-colors">
+            <a href="index.html" class="hover:text-primary transition-colors duration-300">Home</a>
+            <a href="project.html" class="hover:text-primary transition-colors duration-300">Project</a>
+            <a href="about.html" class="hover:text-primary transition-colors duration-300">About me</a>
+            <a href="contact.html" class="hover:text-primary transition-colors duration-300">Contact</a>
         </nav>
     </header>
 
     <!-- Main Content -->
-    <main class="flex-grow flex flex-col items-center justify-center text-center px-6 py-10">
-        <div class="backdrop-blur-sm bg-white/5 p-10 rounded-xl shadow-lg max-w-2xl w-full">
-            <div class="w-32 h-32 mx-auto mb-6 relative">
-                <img src="img/avatar.jpg" alt="Mohammad Mansib Nawaz" class="w-full h-full object-cover rounded-full border-4 border-white/10 shadow-md">
-            </div>
-
-            <h1 class="text-3xl font-bold mb-3">Hello! I am <strong>Mohammad Mansib Nawaz</strong></h1>
-            <p class="text-lg leading-relaxed mb-4">
-                With 4 years of experience in backend engineering and network security and analysis, I provide services related to <strong>FastAPI</strong> and secure API development.
+    <main class="flex-grow flex flex-col items-center justify-center text-center p-6">
+        <!-- Avatar with subtle animation -->
+        <div class="w-32 h-32 mb-8 relative overflow-hidden rounded-full ring-4 ring-primary ring-offset-2 ring-offset-transparent hover:scale-105 transition-transform duration-300">
+            <img src="img/avatar.jpg" alt="Mohammad Mansib Nawaz" class="w-full h-full object-cover">
+        </div>
+        
+        <!-- Description container -->
+        <div class="bg-darkBg bg-opacity-70 p-6 rounded-2xl shadow-lg max-w-2xl">
+            <h1 class="text-2xl font-bold mb-4">Hello, I’m <span class="text-primary">Mohammad Mansib Nawaz</span></h1>
+            <p class="text-lg leading-relaxed">
+                With <strong>4 years of experience</strong> in backend engineering and network security and analysis,
+                I provide services related to <strong>FastAPI</strong> and secure API development.
             </p>
-            <div class="mb-4 h-8">
+            <div class="mt-4 h-8">
                 <span id="typewriter" class="text-primary font-semibold"></span>
             </div>
             <script>
                 const text = "Specializing in secure API development and backend solutions";
                 let index = 0;
-
                 function typeWriter() {
                     if (index < text.length) {
                         document.getElementById("typewriter").textContent += text.charAt(index);
@@ -59,19 +59,19 @@
                         setTimeout(typeWriter, 50);
                     }
                 }
-
                 window.onload = typeWriter;
             </script>
-
             <!-- Button -->
-            <a href="contact.html" class="inline-block bg-primary text-white px-8 py-3 text-lg font-semibold rounded-full mt-4 hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-darkBg transition transform hover:-translate-y-1">
-                Hire
-            </a>
+            <div class="mt-8">
+                <a href="contact.html" class="bg-primary text-white px-6 py-2 rounded-full shadow-xl hover:bg-accent transition-colors duration-300">
+                    Hire
+                </a>
+            </div>
         </div>
     </main>
 
-    <!-- Social Links -->
-    <div class="flex justify-center space-x-6 my-8">
+    <!-- Social Media -->
+    <div class="flex justify-center space-x-6 mb-8">
         <a href="https://github.com/mnxtr" target="_blank" rel="noopener noreferrer" class="text-white hover:text-primary transition-colors duration-300" title="Visit my GitHub profile">
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/>
@@ -88,9 +88,11 @@
             </svg>
         </a>
     </div>
+
     <!-- Footer -->
-    <footer class="border-t border-white/20 py-6 text-center text-gray-400 text-sm">
-        <p>&copy; 2025 Mohammad Mansib Nawaz. All rights reserved.</p>
+    <footer class="p-6 text-center text-gray-400 bg-darkBg bg-opacity-80">
+        <p class="mb-2">&copy; 2025 <span class="text-primary">Mohammad Mansib Nawaz</span>. All rights reserved.</p>
+        <p class="text-xs">Enhancing secure API development and backend solutions.</p>
     </footer>
 
 </body>
