@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohammad Mansib Nawaz - Portfolio</title>
+    
+    <!-- TailwindCSS via CDN for rapid styling -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Configuration: Define color theme -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#3B82F6',
-                        darkBg: '#1E293B',
-                        darkText: '#CBD5E1',
-                        accent: '#0EA5E9'
+                        primary: '#3B82F6',      // Blue for primary actions
+                        darkBg: '#1E293B',       // Dark slate background
+                        darkText: '#CBD5E1',     // Light gray text
+                        accent: '#0EA5E9'        // Cyan for accents
                     }
                 }
             }
@@ -49,6 +53,8 @@
             <div class="mt-4 h-8">
                 <span id="typewriter" class="text-primary font-semibold"></span>
             </div>
+            
+            <!-- Typewriter Effect: Displays specialty text character by character -->
             <script>
                 const text = "Specializing in secure API development and backend solutions";
                 let index = 0;
@@ -56,7 +62,7 @@
                     if (index < text.length) {
                         document.getElementById("typewriter").textContent += text.charAt(index);
                         index++;
-                        setTimeout(typeWriter, 50);
+                        setTimeout(typeWriter, 50); // 50ms delay between characters
                     }
                 }
                 window.onload = typeWriter;
