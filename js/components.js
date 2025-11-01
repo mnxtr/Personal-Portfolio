@@ -3,7 +3,7 @@
 // Navigation Component
 function renderNavigation() {
     return `
-    <header class="p-4 sm:p-6 shadow-md bg-darkBg bg-opacity-90 backdrop-blur-sm sticky top-0 z-10">
+    <header class="p-4 sm:p-6 bg-darkBg bg-opacity-90 backdrop-blur-sm sticky top-0 z-10">
         <nav class="flex justify-end space-x-6 text-white transition-colors">
             <a href="index.html" class="hover:text-primary transition-colors duration-300">Home</a>
             <a href="project.html" class="hover:text-primary transition-colors duration-300">Project</a>
@@ -41,8 +41,7 @@ function renderSocialMedia() {
 function renderFooter() {
     return `
     <footer class="p-6 text-center text-gray-400 bg-darkBg bg-opacity-80">
-        <p class="mb-2">&copy; 2025 <span class="text-primary">Mohammad Mansib Nawaz</span>. All rights reserved.</p>
-        <p class="text-xs">Enhancing secure API development and backend solutions.</p>
+        <p>&copy; 2025 <span class="text-primary">Mohammad Mansib Nawaz</span>. All rights reserved.</p>
     </footer>
     `;
 }
