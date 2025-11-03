@@ -8,7 +8,20 @@
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
     <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="js/config.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        darkBg: '#1E293B',
+                        darkText: '#CBD5E1',
+                        accent: '#0EA5E9'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body class="bg-gradient-to-b from-darkBg via-gray-900 to-blue-900 text-darkText min-h-screen flex flex-col">
     
