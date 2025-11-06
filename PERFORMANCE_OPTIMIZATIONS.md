@@ -1,29 +1,28 @@
 # Performance Optimization Documentation
 
 ## Overview
-This document outlines the performance improvements made to the mnxtr.github.io portfolio website to enhance loading speed, reduce code duplication, and improve overall efficiency.
+This document outlines the performance improvements made to the mnxtr.github.io portfolio website to enhance loading speed, reduce code complexity, and improve overall efficiency.
 
 ## Optimizations Implemented
 
-### 1. Centralized Tailwind Configuration
-**File:** `tailwind-config.js`
-**Impact:** High
+### 1. Optimized Tailwind Configuration
+**Impact:** Medium
 
 **Problem:** 
 - Tailwind configuration was duplicated across all 4 HTML files
-- Each page had 20-30 lines of identical config code
-- Changes required updating multiple files
+- Each page had similar but slightly different config code
+- Inconsistent color schemes between pages
 
 **Solution:**
-- Extracted configuration to a single external JavaScript file
-- Reduced total codebase by ~100 lines
-- Single source of truth for styling configuration
-- Easier maintenance and updates
+- Kept configuration inline (required for CDN usage) but standardized it
+- Simplified configs to only include necessary colors per page
+- Added performance-related comments for future maintenance
+- Ensured consistent theming across all pages
 
 **Performance Benefit:**
-- Browser can cache the configuration file
-- Faster subsequent page loads
-- Reduced HTML file sizes
+- Reduced unnecessary color definitions
+- Cleaner, more maintainable code
+- Consistent styling across pages
 
 ### 2. External Utility Functions
 **File:** `utils.js`
@@ -143,14 +142,14 @@ This document outlines the performance improvements made to the mnxtr.github.io 
 
 ### Before Optimizations:
 - HTML file sizes: ~6-7KB each
-- Total code duplication: ~100 lines
+- Inline scripts not optimized
 - No image optimization
 - No resource hints
 - Manual form handling
 
 ### After Optimizations:
-- HTML file sizes: ~5-6KB each (15% reduction)
-- Shared configuration: 2 files (tailwind-config.js, utils.js)
+- HTML file sizes: ~5-6KB each (minor reduction due to script extraction)
+- Shared utilities: utils.js for common functionality
 - Images: Lazy loaded where appropriate
 - Resource hints: DNS prefetch + preconnect
 - Validated form with user feedback
@@ -164,14 +163,14 @@ This document outlines the performance improvements made to the mnxtr.github.io 
 
 ## Best Practices Implemented
 
-1. ✅ DRY Principle - Don't Repeat Yourself
+1. ✅ Script Optimization - Extracted reusable functions
 2. ✅ Lazy Loading for images
 3. ✅ Resource Hints (dns-prefetch, preconnect)
 4. ✅ Progressive Enhancement
 5. ✅ Defensive Programming (checking for element existence)
 6. ✅ User Experience (form validation with feedback)
 7. ✅ Code Documentation
-8. ✅ Browser Caching Strategy
+8. ✅ Browser Caching Strategy for utilities
 
 ## Recommendations for Future Optimization
 
@@ -213,7 +212,7 @@ This document outlines the performance improvements made to the mnxtr.github.io 
 
 ## Maintenance Notes
 
-- **tailwind-config.js**: Update when adding new colors or animations
+- **Tailwind configs**: Keep inline for CDN compatibility (required for proper loading)
 - **utils.js**: Extend when adding new interactive features
 - **HTML files**: Keep script references at bottom of body tag
 - **Images**: Always add lazy loading and dimensions for new images
