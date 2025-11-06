@@ -4,7 +4,7 @@
 /**
  * Typewriter effect for text animation
  * Only runs if the target element exists on the page
- * Performance: Uses requestAnimationFrame for smoother animations
+ * Performance: Uses setTimeout for character-by-character animation
  */
 function initTypewriter(elementId, text, speed = 50) {
     const element = document.getElementById(elementId);
@@ -70,8 +70,8 @@ function initFormValidation(form) {
         }
         
         if (isValid) {
-            // Form is valid, can be submitted
-            alert('Thank you for your message! (Note: This is a demo form)');
+            // Form is valid - show success message
+            showSuccessMessage(form, 'Thank you for your message! We will get back to you soon.');
             form.reset();
         }
     });
@@ -82,6 +82,28 @@ function initFormValidation(form) {
             clearError(this);
         });
     });
+}
+
+/**
+ * Show success message for form submission
+ */
+function showSuccessMessage(form, message) {
+    // Remove any existing success message
+    const existingMsg = form.querySelector('.success-message');
+    if (existingMsg) {
+        existingMsg.remove();
+    }
+    
+    const successDiv = document.createElement('div');
+    successDiv.className = 'success-message bg-success text-white p-4 rounded-lg mt-4 animate-fade-in';
+    successDiv.textContent = message;
+    form.appendChild(successDiv);
+    
+    // Auto-remove after 5 seconds
+    setTimeout(() => {
+        successDiv.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+        setTimeout(() => successDiv.remove(), 500);
+    }, 5000);
 }
 
 /**
