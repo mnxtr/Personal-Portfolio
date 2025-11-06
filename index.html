@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohammad Mansib Nawaz - Portfolio</title>
+    <!-- Preconnect to CDN for faster loading -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="common.js" defer></script>
     <script>
-        tailwind.config = {
+        tailwind.config = window.tailwindConfig || {
             theme: {
                 extend: {
                     colors: {
@@ -17,7 +20,7 @@
                     }
                 }
             }
-        }
+        };
     </script>
 </head>
 <body class="bg-gradient-to-b from-darkBg via-gray-900 to-blue-900 text-darkText min-h-screen flex flex-col">
@@ -36,7 +39,7 @@
     <main class="flex-grow flex flex-col items-center justify-center text-center p-6">
         <!-- Avatar with subtle animation -->
         <div class="w-32 h-32 mb-8 relative overflow-hidden rounded-full ring-4 ring-primary ring-offset-2 ring-offset-transparent hover:scale-105 transition-transform duration-300">
-            <img src="img\avatar.jpg" alt="Mohammad Mansib Nawaz" class="w-full h-full object-cover">
+            <img src="img/avatar.jpg" alt="Mohammad Mansib Nawaz" class="w-full h-full object-cover" loading="lazy">
         </div>
         
         <!-- Description container -->
@@ -49,18 +52,6 @@
             <div class="mt-4 h-8">
                 <span id="typewriter" class="text-primary font-semibold"></span>
             </div>
-            <script>
-                const text = "Specializing in secure API development and backend solutions";
-                let index = 0;
-                function typeWriter() {
-                    if (index < text.length) {
-                        document.getElementById("typewriter").textContent += text.charAt(index);
-                        index++;
-                        setTimeout(typeWriter, 50);
-                    }
-                }
-                window.onload = typeWriter;
-            </script>
             <!-- Button -->
             <div class="mt-8">
                 <a href="contact.html" class="bg-primary text-white px-6 py-2 rounded-full shadow-xl hover:bg-accent transition-colors duration-300">
