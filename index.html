@@ -24,11 +24,19 @@
 
     <!-- Navigation -->
     <header class="p-4 sm:p-6 shadow-md bg-darkBg bg-opacity-90 backdrop-blur-sm sticky top-0 z-10">
-        <nav class="flex justify-end space-x-6 text-white transition-colors">
-            <a href="index.html" class="hover:text-primary transition-colors duration-300">Home</a>
-            <a href="project.html" class="hover:text-primary transition-colors duration-300">Project</a>
-            <a href="about.html" class="hover:text-primary transition-colors duration-300">About me</a>
-            <a href="contact.html" class="hover:text-primary transition-colors duration-300">Contact</a>
+        <nav class="flex justify-between items-center text-white transition-colors">
+            <a href="index.html" class="flex items-center space-x-2 hover:text-primary transition-colors duration-300">
+                <div class="w-10 h-10 rounded-full overflow-hidden ring-2 ring-primary">
+                    <img src="img/avatar.jpg" alt="MN Logo" class="w-full h-full object-cover">
+                </div>
+                <span class="font-bold text-lg">MN</span>
+            </a>
+            <div class="flex space-x-6">
+                <a href="index.html" class="hover:text-primary transition-colors duration-300">Home</a>
+                <a href="project.html" class="hover:text-primary transition-colors duration-300">Project</a>
+                <a href="about.html" class="hover:text-primary transition-colors duration-300">About me</a>
+                <a href="contact.html" class="hover:text-primary transition-colors duration-300">Contact</a>
+            </div>
         </nav>
     </header>
 
