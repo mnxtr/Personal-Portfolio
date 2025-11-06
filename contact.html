@@ -4,21 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Mohammad Mansib Nawaz</title>
+    <!-- Performance: DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <!-- Performance: Preconnect to CDN for faster loading -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#3B82F6',
-                        darkBg: '#1E293B',
-                        darkText: '#CBD5E1',
-                        accent: '#0EA5E9'
-                    }
-                }
-            }
-        };
-    </script>
+    <!-- Performance: Centralized Tailwind config to reduce duplication -->
+    <script src="tailwind-config.js"></script>
 </head>
 <body class="bg-gradient-to-b from-darkBg via-gray-900 to-blue-900 text-darkText min-h-screen flex flex-col">
     
@@ -38,7 +30,8 @@
             <h1 class="text-3xl font-bold text-primary mb-4">Get in Touch</h1>
             <p class="text-lg leading-relaxed mb-6">Feel free to reach out for collaborations or inquiries. I'll get back to you as soon as possible.</p>
             
-            <form action="#" method="POST" class="space-y-4">
+            <!-- Performance: Form validation handled by utils.js -->
+            <form action="#" method="POST" class="space-y-4" novalidate>
                 <div>
                     <label class="block text-sm font-semibold mb-2" for="name">Name</label>
                     <input type="text" id="name" name="name" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-500 focus:border-primary focus:ring-1 focus:ring-primary" required>
@@ -80,5 +73,8 @@
         
     </footer>
     
+    <!-- Performance: Moved scripts to bottom for faster page load -->
+    <!-- Utils loaded for form validation functionality -->
+    <script src="utils.js"></script>
 </body>
 </html>
