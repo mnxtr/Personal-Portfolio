@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohammad Mansib Nawaz - Portfolio</title>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -36,7 +37,7 @@
     <main class="flex-grow flex flex-col items-center justify-center text-center p-6">
         <!-- Avatar with subtle animation -->
         <div class="w-32 h-32 mb-8 relative overflow-hidden rounded-full ring-4 ring-primary ring-offset-2 ring-offset-transparent hover:scale-105 transition-transform duration-300">
-            <img src="img\avatar.jpg" alt="Mohammad Mansib Nawaz" class="w-full h-full object-cover">
+            <img src="img/avatar.jpg" alt="Mohammad Mansib Nawaz" class="w-full h-full object-cover" width="128" height="128" fetchpriority="high">
         </div>
         
         <!-- Description container -->
@@ -50,16 +51,19 @@
                 <span id="typewriter" class="text-primary font-semibold"></span>
             </div>
             <script>
-                const text = "Specializing in secure API development and backend solutions";
-                let index = 0;
-                function typeWriter() {
-                    if (index < text.length) {
-                        document.getElementById("typewriter").textContent += text.charAt(index);
-                        index++;
-                        setTimeout(typeWriter, 50);
+                document.addEventListener('DOMContentLoaded', function() {
+                    const text = "Specializing in secure API development and backend solutions";
+                    const typewriterEl = document.getElementById("typewriter");
+                    let index = 0;
+                    function typeWriter() {
+                        if (index < text.length) {
+                            typewriterEl.textContent += text.charAt(index);
+                            index++;
+                            setTimeout(typeWriter, 50);
+                        }
                     }
-                }
-                window.onload = typeWriter;
+                    typeWriter();
+                });
             </script>
             <!-- Button -->
             <div class="mt-8">
