@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohammad Mansib Nawaz - Portfolio</title>
+    <!-- Performance: DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <!-- Performance: Preconnect to CDN for faster loading -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <!-- Performance: Load Tailwind first, then config -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+        // Centralized Tailwind CSS configuration - inline for proper loading order
+        // This must execute after Tailwind loads but before page renders
         tailwind.config = {
             theme: {
                 extend: {
@@ -13,11 +20,28 @@
                         primary: '#3B82F6',
                         darkBg: '#1E293B',
                         darkText: '#CBD5E1',
-                        accent: '#0EA5E9'
+                        accent: '#0EA5E9',
+                        success: '#10B981',
+                        warning: '#F59E0B',
+                        error: '#EF4444'
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in',
+                        'slide-up': 'slideUp 0.5s ease-out'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        }
                     }
                 }
             }
-        }
+        };
     </script>
 </head>
 <body class="bg-gradient-to-b from-darkBg via-gray-900 to-blue-900 text-darkText min-h-screen flex flex-col">
@@ -35,8 +59,9 @@
     <!-- Main Content -->
     <main class="flex-grow flex flex-col items-center justify-center text-center p-6">
         <!-- Avatar with subtle animation -->
+        <!-- Performance: Added loading="eager" for above-the-fold image -->
         <div class="w-32 h-32 mb-8 relative overflow-hidden rounded-full ring-4 ring-primary ring-offset-2 ring-offset-transparent hover:scale-105 transition-transform duration-300">
-            <img src="img\avatar.jpg" alt="Mohammad Mansib Nawaz" class="w-full h-full object-cover">
+            <img src="img\avatar.jpg" alt="Mohammad Mansib Nawaz" class="w-full h-full object-cover" loading="eager" width="128" height="128">
         </div>
         
         <!-- Description container -->
@@ -49,18 +74,6 @@
             <div class="mt-4 h-8">
                 <span id="typewriter" class="text-primary font-semibold"></span>
             </div>
-            <script>
-                const text = "Specializing in secure API development and backend solutions";
-                let index = 0;
-                function typeWriter() {
-                    if (index < text.length) {
-                        document.getElementById("typewriter").textContent += text.charAt(index);
-                        index++;
-                        setTimeout(typeWriter, 50);
-                    }
-                }
-                window.onload = typeWriter;
-            </script>
             <!-- Button -->
             <div class="mt-8">
                 <a href="contact.html" class="bg-primary text-white px-6 py-2 rounded-full shadow-xl hover:bg-accent transition-colors duration-300">
@@ -95,5 +108,8 @@
         <p class="text-xs">Enhancing secure API development and backend solutions.</p>
     </footer>
 
+    <!-- Performance: Moved scripts to bottom for faster page load -->
+    <!-- Utils loaded before DOMContentLoaded for proper initialization -->
+    <script src="utils.js"></script>
 </body>
 </html>
