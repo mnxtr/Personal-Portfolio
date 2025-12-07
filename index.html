@@ -50,12 +50,12 @@
                 <span id="typewriter" class="text-primary font-semibold"></span>
             </div>
             <script>
-                const text = "Specializing in secure API development and backend solutions";
-                let index = 0;
+                const typewriterMessage = "Specializing in secure API development and backend solutions";
+                let currentCharacterIndex = 0;
                 function typeWriter() {
-                    if (index < text.length) {
-                        document.getElementById("typewriter").textContent += text.charAt(index);
-                        index++;
+                    if (currentCharacterIndex < typewriterMessage.length) {
+                        document.getElementById("typewriter").textContent += typewriterMessage.charAt(currentCharacterIndex);
+                        currentCharacterIndex++;
                         setTimeout(typeWriter, 50);
                     }
                 }
