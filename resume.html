@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resume of Mohammad Mansib Nawaz - Backend Engineer & Security Specialist with expertise in FastAPI, secure API development, and network security.">
+    <meta name="keywords" content="resume, CV, backend engineer, FastAPI, cybersecurity, Mohammad Mansib Nawaz">
+    <meta name="author" content="Mohammad Mansib Nawaz">
+    <title>Resume - Mohammad Mansib Nawaz</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        darkBg: '#1E293B',
+                        darkText: '#CBD5E1',
+                        accent: '#0EA5E9'
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; }
+        .light { --tw-gradient-from: #F8FAFC; --tw-gradient-via: #E2E8F0; --tw-gradient-to: #DBEAFE; }
+        .light .bg-darkBg { background-color: #FFFFFF; }
+        .light .text-darkText { color: #334155; }
+        .light .text-white { color: #1E293B; }
+        .light .text-gray-400 { color: #64748B; }
+        .light .text-gray-300 { color: #475569; }
+        .light .border-gray-700 { border-color: #CBD5E1; }
+        /* Timeline styles */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: #3B82F6;
+            border-radius: 50%;
+            border: 2px solid #1E293B;
+        }
+        .light .timeline-item::before { border-color: #FFFFFF; }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-darkBg via-gray-900 to-blue-900 text-darkText min-h-screen flex flex-col animate-fade-in">
+
+    <!-- Navigation -->
+    <header class="p-4 sm:p-6 shadow-md bg-darkBg bg-opacity-90 backdrop-blur-sm sticky top-0 z-10">
+        <nav class="flex justify-between items-center max-w-6xl mx-auto">
+            <a href="index.html" class="text-primary font-bold text-xl">MN</a>
+            <div class="flex items-center space-x-6">
+                <a href="index.html" class="text-white hover:text-primary transition-colors duration-300">Home</a>
+                <a href="project.html" class="text-white hover:text-primary transition-colors duration-300">Project</a>
+                <a href="resume.html" class="text-primary font-semibold border-b-2 border-primary pb-1 transition-colors duration-300">Resume</a>
+                <a href="about.html" class="text-white hover:text-primary transition-colors duration-300">About me</a>
+                <a href="contact.html" class="text-white hover:text-primary transition-colors duration-300">Contact</a>
+                <button id="themeToggle" class="p-2 rounded-full hover:bg-gray-700 transition-colors duration-300" title="Toggle theme">
+                    <svg id="sunIcon" class="w-5 h-5 text-yellow-400 hidden" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/>
+                    </svg>
+                    <svg id="moonIcon" class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Resume Content -->
+    <main class="flex-grow container mx-auto py-12 px-4 max-w-4xl">
+        <!-- Header Section -->
+        <div class="text-center mb-12 animate-slide-up">
+            <h1 class="text-4xl font-bold text-white mb-2">Mohammad Mansib Nawaz</h1>
+            <p class="text-xl text-primary mb-4">Backend Engineer & Security Specialist</p>
+            <p class="text-gray-400 mb-6">Dhaka, Bangladesh • mohammad.newaz1@northsouth.edu</p>
+            <a href="#" class="inline-flex items-center bg-primary text-white px-6 py-3 rounded-full shadow-lg hover:bg-accent hover:scale-105 transition-all duration-300">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                Download PDF
+            </a>
+        </div>
+
+        <!-- Summary -->
+        <section class="mb-12 bg-darkBg bg-opacity-70 p-6 rounded-2xl shadow-lg animate-slide-up">
+            <h2 class="text-2xl font-bold text-primary mb-4 flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                </svg>
+                Professional Summary
+            </h2>
+            <p class="text-gray-300 leading-relaxed">
+                Results-driven Backend Engineer with 4+ years of experience specializing in secure API development, 
+                network security analysis, and scalable backend systems. Proficient in FastAPI, Python, and modern 
+                security practices. Passionate about building robust, secure, and efficient solutions that protect 
+                data integrity and enhance system performance.
+            </p>
+        </section>
+
+        <!-- Experience -->
+        <section class="mb-12 animate-slide-up">
+            <h2 class="text-2xl font-bold text-primary mb-6 flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                    <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"/>
+                </svg>
+                Experience
+            </h2>
+            <div class="border-l-2 border-gray-700 ml-4 pl-8 space-y-8">
+                <div class="relative timeline-item bg-darkBg bg-opacity-70 p-5 rounded-xl">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold text-white">Backend Developer</h3>
+                        <span class="text-sm text-primary bg-primary bg-opacity-20 px-3 py-1 rounded-full">2022 - Present</span>
+                    </div>
+                    <p class="text-gray-400 mb-3">Freelance / Contract Work</p>
+                    <ul class="text-gray-300 space-y-2 list-disc list-inside">
+                        <li>Developed secure RESTful APIs using FastAPI for multiple clients</li>
+                        <li>Implemented authentication systems with OAuth2 and JWT</li>
+                        <li>Conducted vulnerability assessments and security audits</li>
+                        <li>Optimized database queries resulting in 40% performance improvement</li>
+                    </ul>
+                </div>
+                <div class="relative timeline-item bg-darkBg bg-opacity-70 p-5 rounded-xl">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold text-white">Network Security Analyst</h3>
+                        <span class="text-sm text-primary bg-primary bg-opacity-20 px-3 py-1 rounded-full">2020 - 2022</span>
+                    </div>
+                    <p class="text-gray-400 mb-3">Security Operations</p>
+                    <ul class="text-gray-300 space-y-2 list-disc list-inside">
+                        <li>Monitored network traffic for security threats and anomalies</li>
+                        <li>Performed penetration testing on web applications</li>
+                        <li>Developed security policies and incident response procedures</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="mb-12 animate-slide-up">
+            <h2 class="text-2xl font-bold text-primary mb-6 flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0z"/>
+                </svg>
+                Education
+            </h2>
+            <div class="bg-darkBg bg-opacity-70 p-6 rounded-xl">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-xl font-semibold text-white">Bachelor of Science in Computer Science</h3>
+                        <p class="text-gray-400">North South University, Dhaka</p>
+                    </div>
+                    <span class="text-sm text-primary bg-primary bg-opacity-20 px-3 py-1 rounded-full">2020 - 2024</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section class="mb-12 animate-slide-up">
+            <h2 class="text-2xl font-bold text-primary mb-6 flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                Certifications
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-darkBg bg-opacity-70 p-4 rounded-xl flex items-center">
+                    <div class="w-12 h-12 bg-green-500 bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold">CompTIA Security+</h4>
+                        <p class="text-gray-400 text-sm">Security Fundamentals</p>
+                    </div>
+                </div>
+                <div class="bg-darkBg bg-opacity-70 p-4 rounded-xl flex items-center">
+                    <div class="w-12 h-12 bg-blue-500 bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold">AWS Cloud Practitioner</h4>
+                        <p class="text-gray-400 text-sm">Cloud Fundamentals</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Preview -->
+        <section class="animate-slide-up">
+            <h2 class="text-2xl font-bold text-primary mb-4 flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                </svg>
+                Technical Skills
+            </h2>
+            <div class="flex flex-wrap gap-3">
+                <span class="px-4 py-2 bg-primary bg-opacity-20 text-primary rounded-full">Python</span>
+                <span class="px-4 py-2 bg-primary bg-opacity-20 text-primary rounded-full">FastAPI</span>
+                <span class="px-4 py-2 bg-primary bg-opacity-20 text-primary rounded-full">Node.js</span>
+                <span class="px-4 py-2 bg-primary bg-opacity-20 text-primary rounded-full">PostgreSQL</span>
+                <span class="px-4 py-2 bg-primary bg-opacity-20 text-primary rounded-full">MongoDB</span>
+                <span class="px-4 py-2 bg-primary bg-opacity-20 text-primary rounded-full">Docker</span>
+                <span class="px-4 py-2 bg-green-500 bg-opacity-20 text-green-400 rounded-full">Penetration Testing</span>
+                <span class="px-4 py-2 bg-green-500 bg-opacity-20 text-green-400 rounded-full">Network Security</span>
+                <span class="px-4 py-2 bg-green-500 bg-opacity-20 text-green-400 rounded-full">API Security</span>
+                <span class="px-4 py-2 bg-purple-500 bg-opacity-20 text-purple-400 rounded-full">Git</span>
+                <span class="px-4 py-2 bg-purple-500 bg-opacity-20 text-purple-400 rounded-full">Linux</span>
+                <span class="px-4 py-2 bg-purple-500 bg-opacity-20 text-purple-400 rounded-full">CI/CD</span>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="p-6 text-center text-gray-400 bg-darkBg bg-opacity-80">
+        <p>&copy; 2025 <span class="text-primary">Mohammad Mansib Nawaz</span>. All rights reserved.</p>
+    </footer>
+
+    <!-- Theme Toggle Script -->
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIcon = document.getElementById('moonIcon');
+        const body = document.body;
+
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'light') {
+            body.classList.add('light');
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light');
+            const isLight = body.classList.contains('light');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            
+            if (isLight) {
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            } else {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+        });
+    </script>
+
+</body>
+</html>
