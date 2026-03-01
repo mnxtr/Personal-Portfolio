@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-/
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,6 +13,14 @@
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Three.js Import Map for ES Modules -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.162.0/build/three.module.js"
+      }
+    }
+  </script>
   <script>
     tailwind.config = {
       darkMode: "class",
@@ -108,8 +116,11 @@
 </head>
 
 <body
-  class="bg-gradient-to-br from-darkBg via-slate-900 to-indigo-950 text-darkText min-h-screen flex flex-col animate-fade-in">
-  <!-- Ambient Background -->
+  class="has-3d bg-gradient-to-br from-darkBg via-slate-900 to-indigo-950 text-darkText min-h-screen flex flex-col animate-fade-in">
+  <!-- 3D Hero Canvas (Three.js) -->
+  <div id="hero-canvas" aria-hidden="true"></div>
+  
+  <!-- Ambient Background (CSS fallback for mobile/no WebGL) -->
   <div class="ambient-bg" aria-hidden="true">
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
@@ -255,7 +266,9 @@
 
         <!-- Right: Avatar -->
         <div class="flex-shrink-0 reveal animate-float">
-          <div class="relative w-52 h-52 md:w-72 md:h-72 mx-auto">
+          <div class="avatar-container relative w-52 h-52 md:w-72 md:h-72 mx-auto">
+            <!-- 3D Avatar Ring (Three.js) -->
+            <div id="avatar-3d" aria-hidden="true"></div>
             <!-- Outer decorative ring -->
             <div
               class="absolute inset-0 rounded-full bg-gradient-to-br from-primary via-accent to-secondary p-1 avatar-glow">
@@ -266,7 +279,7 @@
             </div>
             <!-- Floating status badge -->
             <div
-              class="absolute -bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-darkSurface/90 backdrop-blur-xl border border-white/10 px-4 py-2 rounded-full text-sm whitespace-nowrap shadow-xl">
+              class="absolute -bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-darkSurface/90 backdrop-blur-xl border border-white/10 px-4 py-2 rounded-full text-sm whitespace-nowrap shadow-xl z-20">
               <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
               <span class="text-white font-medium">Open to work</span>
             </div>
@@ -389,6 +402,9 @@
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
   </script>
+  
+  <!-- Three.js 3D Scene Module -->
+  <script type="module" src="js/three-scene.js"></script>
 </body>
 
 </html>

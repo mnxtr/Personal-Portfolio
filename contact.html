@@ -11,6 +11,14 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Three.js Import Map for ES Modules -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.162.0/build/three.module.js"
+            }
+        }
+    </script>
     <script>
         tailwind.config = { 
             darkMode: 'class', 
@@ -73,7 +81,11 @@
     </style>
 </head>
 
-<body class="bg-gradient-to-br from-darkBg via-slate-900 to-indigo-950 text-darkText min-h-screen flex flex-col">
+<body class="has-3d bg-gradient-to-br from-darkBg via-slate-900 to-indigo-950 text-darkText min-h-screen flex flex-col">
+    <!-- 3D Hero Canvas (Three.js) -->
+    <div id="hero-canvas" aria-hidden="true"></div>
+    
+    <!-- Ambient Background (CSS fallback) -->
     <div class="ambient-bg" aria-hidden="true">
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
@@ -267,6 +279,9 @@
         document.getElementById("themeToggle").addEventListener("click", () => { document.body.classList.toggle("light"); const isLight = document.body.classList.contains("light"); localStorage.setItem("theme", isLight ? "light" : "dark"); document.getElementById("sunIcon").classList.toggle("hidden", !isLight); document.getElementById("moonIcon").classList.toggle("hidden", isLight); });
         document.getElementById("menuToggle").addEventListener("click", () => { document.getElementById("menuToggle").classList.toggle("open"); document.getElementById("mobileMenu").classList.toggle("open"); });
     </script>
+    
+    <!-- Three.js 3D Scene Module -->
+    <script type="module" src="js/three-scene.js"></script>
 </body>
 
 </html>
