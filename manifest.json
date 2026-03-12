@@ -1,0 +1,30 @@
+{
+  "name": "Mohammad Mansib Newaz - Full Stack Developer & AI/ML Engineer",
+  "short_name": "Mansib Portfolio",
+  "description": "Professional portfolio of Mohammad Mansib Newaz - Full Stack Developer, AI/ML Engineer with expertise in FastAPI, Python, and machine learning",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F172A",
+  "theme_color": "#6366F1",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/img/avatar.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/avatar.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "technology", "education"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "scope": "/",
+  "related_applications": [],
+  "prefer_related_applications": false
+}
