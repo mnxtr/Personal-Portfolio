@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Essential security practices for FastAPI applications including authentication, authorization, input validation, and protection against common vulnerabilities." />
+  <meta name="keywords" content="FastAPI, security, authentication, authorization, OWASP, API security" />
+  <meta name="author" content="Mohammad Mansib Newaz" />
+  <meta name="theme-color" content="#6366F1" />
+  
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mnxtr.github.io/blog/posts/secure-fastapi.html" />
+  <meta property="og:title" content="Building Secure FastAPI Applications: Best Practices" />
+  <meta property="og:description"
+    content="Essential security practices for FastAPI applications including authentication, authorization, and protection against common vulnerabilities." />
+  <meta property="og:site_name" content="Mohammad Mansib Newaz" />
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@Mnxtrr" />
+  <meta name="twitter:creator" content="@Mnxtrr" />
+  <meta name="twitter:title" content="Building Secure FastAPI Applications: Best Practices" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://mnxtr.github.io/blog/posts/secure-fastapi.html" />
+  
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Building Secure FastAPI Applications: Best Practices",
+      "datePublished": "2026-03-10",
+      "dateModified": "2026-03-10",
+      "author": {
+        "@type": "Person",
+        "name": "Mohammad Mansib Newaz",
+        "url": "https://mnxtr.github.io"
+      },
+      "wordCount": 2200
+    }
+  </script>
+
+  <title>Building Secure FastAPI Applications: Best Practices | Blog</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#6366F1",
+            "primary-light": "#818CF8",
+            "primary-dark": "#4F46E5",
+            accent: "#8B5CF6",
+            secondary: "#EC4899",
+            darkBg: "#0F172A",
+            darkSurface: "#1E293B",
+            darkText: "#E2E8F0",
+            darkMuted: "#94A3B8",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .prose h2 { @apply text-2xl font-bold mt-8 mb-4 text-white; }
+    .prose h3 { @apply text-xl font-bold mt-6 mb-3 text-white; }
+    .prose p { @apply text-darkMuted leading-relaxed mb-4; }
+    .prose ul, .prose ol { @apply mb-4 pl-6; }
+    .prose li { @apply text-darkMuted mb-2; }
+    .prose code { @apply bg-darkSurface px-2 py-1 rounded text-pink-400 font-mono text-sm; }
+    .light .prose h2, .light .prose h3 { @apply text-gray-900; }
+    .light .prose p, .light .prose li { @apply text-gray-700; }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-darkBg via-slate-900 to-indigo-950 text-darkText min-h-screen flex flex-col">
+  <header class="bg-darkBg bg-opacity-70 backdrop-blur-xl sticky top-0 z-50 border-b border-white border-opacity-5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <nav class="flex justify-between items-center h-16">
+        <a href="/" class="text-primary font-bold text-xl tracking-tight font-['Space_Grotesk'] group">
+          MN<span class="text-accent group-hover:text-secondary transition-colors">.</span>
+        </a>
+        <div class="flex items-center gap-6">
+          <a href="/blog/" class="text-darkMuted hover:text-white text-sm transition-colors">Back to Blog</a>
+          <button id="themeToggle" class="p-2.5 rounded-xl hover:bg-white hover:bg-opacity-10">
+            <svg id="sunIcon" class="w-5 h-5 text-amber-400 hidden" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+            </svg>
+            <svg id="moonIcon" class="w-5 h-5 text-darkMuted" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="relative z-10 flex-grow">
+    <div class="max-w-4xl mx-auto w-full px-4 sm:px-6 py-12 md:py-16">
+      <article class="prose">
+        <div class="mb-8">
+          <span class="inline-block px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs font-medium mb-4">Backend</span>
+          <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">Building Secure FastAPI Applications: Best Practices</h1>
+          <div class="flex flex-wrap items-center gap-4 text-darkMuted text-sm">
+            <span>Published Mar 10, 2026</span>
+            <span>•</span>
+            <span>12 min read</span>
+            <span>•</span>
+            <span>By Mohammad Mansib Newaz</span>
+          </div>
+        </div>
+
+        <p>Security should be a primary concern from day one of API development. FastAPI makes it easy to implement security best practices, but it's your responsibility to use these tools correctly. This guide covers essential security practices for production FastAPI applications.</p>
+
+        <h2>Authentication with JWT Tokens</h2>
+        <p>JWT tokens provide a stateless way to authenticate users. Here's how to implement them securely in FastAPI:</p>
+        
+        <pre><code>from fastapi import Depends, HTTPException, status
+from fastapi.security import HTTPBearer, HTTPAuthCredentials
+from datetime import datetime, timedelta
+import jwt
+
+security = HTTPBearer()
+
+async def verify_token(credentials: HTTPAuthCredentials = Depends(security)):
+    token = credentials.credentials
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
+        return payload
+    except jwt.InvalidTokenError:
+        raise HTTPException(status_code=401, detail="Invalid token")</code></pre>
+
+        <h2>Password Hashing and Storage</h2>
+        <p>Never store plain text passwords. Use bcrypt for secure hashing:</p>
+        <ul>
+          <li>Use strong hashing algorithms (bcrypt, scrypt, argon2)</li>
+          <li>Add salt to prevent rainbow table attacks</li>
+          <li>Use appropriate work factors for your use case</li>
+          <li>Never log passwords or sensitive data</li>
+        </ul>
+
+        <h2>Input Validation</h2>
+        <p>FastAPI's Pydantic provides automatic validation. Use it extensively to prevent injection attacks and malformed data:</p>
+        
+        <pre><code>from pydantic import BaseModel, EmailStr, validator
+
+class UserCreate(BaseModel):
+    email: EmailStr
+    password: str
+    
+    @validator('password')
+    def password_strong(cls, v):
+        if len(v) < 12:
+            raise ValueError('Password must be 12+ chars')
+        return v</code></pre>
+
+        <h2>SQL Injection Prevention</h2>
+        <p>Always use parameterized queries or ORM frameworks:</p>
+        <ul>
+          <li>Use SQLAlchemy ORM instead of raw SQL</li>
+          <li>Never concatenate user input into SQL strings</li>
+          <li>Use environment variables for database credentials</li>
+          <li>Implement principle of least privilege for database users</li>
+        </ul>
+
+        <h2>CORS Configuration</h2>
+        <p>Configure CORS carefully to prevent unauthorized access:</p>
+        
+        <pre><code>from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://yourdomain.com"],  # Never use ["*"]
+    allow_credentials=True,
+    allow_methods=["GET", "POST"],
+    allow_headers=["Authorization"],
+)</code></pre>
+
+        <h2>HTTPS and TLS</h2>
+        <ul>
+          <li>Always use HTTPS in production</li>
+          <li>Implement HSTS (HTTP Strict Transport Security)</li>
+          <li>Use strong TLS configurations</li>
+          <li>Keep certificates updated</li>
+        </ul>
+
+        <h2>Rate Limiting</h2>
+        <p>Protect against brute force attacks and abuse with rate limiting. Use slowapi or similar middleware:</p>
+        
+        <pre><code>from slowapi import Limiter
+from slowapi.util import get_remote_address
+
+limiter = Limiter(key_func=get_remote_address)
+app.state.limiter = limiter
+
+@app.post("/login")
+@limiter.limit("5/minute")
+async def login(credentials: LoginRequest):</code></pre>
+
+        <h2>Error Handling</h2>
+        <p>Don't expose sensitive information in error messages:</p>
+        <ul>
+          <li>Use generic error messages for authentication failures</li>
+          <li>Log detailed errors internally for debugging</li>
+          <li>Never expose database schemas or internal details</li>
+          <li>Implement proper error tracking with services like Sentry</li>
+        </ul>
+
+        <h2>Dependency Injection Security</h2>
+        <p>Leverage FastAPI's dependency system for security:</p>
+        
+        <pre><code>async def get_current_user(token: str = Depends(oauth2_scheme)):
+    user = await verify_token(token)
+    if not user:
+        raise HTTPException(status_code=401)
+    return user
+
+@app.get("/protected")
+async def protected_route(current_user = Depends(get_current_user)):
+    return {"user": current_user}</code></pre>
+
+        <h2>Environment Variables</h2>
+        <ul>
+          <li>Never commit secrets to version control</li>
+          <li>Use .env files locally (excluded from git)</li>
+          <li>Use proper secret management in production (AWS Secrets Manager, Vault, etc.)</li>
+          <li>Rotate secrets regularly</li>
+        </ul>
+
+        <h2>Security Headers</h2>
+        <p>Add important security headers to all responses:</p>
+        
+        <pre><code>from fastapi.middleware import Middleware
+
+app.add_middleware(
+    TrustedHostMiddleware,
+    allowed_hosts=["yourdomain.com"]
+)
+
+@app.get("/")
+async def root():
+    # Headers automatically included by middleware</code></pre>
+
+        <h2>Logging and Monitoring</h2>
+        <ul>
+          <li>Log security events (failed auth, suspicious patterns)</li>
+          <li>Monitor for unusual activity patterns</li>
+          <li>Set up alerts for security events</li>
+          <li>Implement proper audit trails</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>Security in FastAPI applications requires consistent vigilance and following best practices throughout development. By implementing these safeguards, you'll build applications that protect user data and maintain system integrity.</p>
+
+        <div class="mt-12 pt-8 border-t border-white/10">
+          <h3 class="text-xl font-bold text-white mb-6">Related Articles</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <a href="/blog/posts/fastapi-ml-deployment.html" class="p-4 rounded-lg border border-white/10 hover:border-primary/30 transition-colors group">
+              <h4 class="font-semibold text-white group-hover:text-primary">Deploying Machine Learning Models with FastAPI</h4>
+            </a>
+            <a href="/blog/posts/full-stack-ai.html" class="p-4 rounded-lg border border-white/10 hover:border-primary/30 transition-colors group">
+              <h4 class="font-semibold text-white group-hover:text-primary">Full Stack AI Project: From Idea to Production</h4>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="relative z-10 bg-darkBg/80 backdrop-blur-xl border-t border-white/5 mt-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+      <div class="text-center">
+        <p class="text-sm text-darkMuted">&copy; 2026 <span class="text-primary font-medium">Mohammad Mansib Newaz</span>. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function setupTheme(toggleId, sunId, moonId) {
+      const btn = document.getElementById(toggleId);
+      if (!btn) return;
+      btn.addEventListener("click", () => {
+        document.body.classList.toggle("light");
+        const isLight = document.body.classList.contains("light");
+        localStorage.setItem("theme", isLight ? "light" : "dark");
+        document.getElementById(sunId)?.classList.toggle("hidden", !isLight);
+        document.getElementById(moonId)?.classList.toggle("hidden", isLight);
+      });
+    }
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    if (savedTheme === "light") {
+      document.body.classList.add("light");
+      document.getElementById("sunIcon")?.classList.remove("hidden");
+      document.getElementById("moonIcon")?.classList.add("hidden");
+    }
+    setupTheme("themeToggle", "sunIcon", "moonIcon");
+  </script>
+</body>
+</html>
