@@ -1,0 +1,16 @@
+{
+  "name": "Mohammad Mansib Newaz",
+  "short_name": "mnxtr",
+  "description": "Backend Engineer & Security Specialist",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0b12",
+  "theme_color": "#8b5cf6",
+  "icons": [
+    {
+      "src": "/img/avatar.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    }
+  ]
+}
