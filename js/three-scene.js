@@ -21,14 +21,14 @@ const CONFIG = {
   maxParticles: 800,
   mobileMaxParticles: 300,
   
-  // Colors matching the design system
+  // Colors — Midnight Aurora palette
   colors: {
-    primary: 0x6366F1,
-    primaryLight: 0x818CF8,
-    accent: 0x8B5CF6,
-    accentLight: 0xA78BFA,
-    secondary: 0xEC4899,
-    darkBg: 0x0F172A,
+    primary: 0x00F5D4,
+    primaryLight: 0x4AFDE8,
+    accent: 0x7C3AED,
+    accentLight: 0x9D6EF8,
+    secondary: 0x2563EB,
+    darkBg: 0x080B14,
   },
   
   // Animation settings
@@ -96,6 +96,7 @@ class HeroScene {
     
     // Create scene elements
     this.createParticles();
+    this.createConstellations();
     this.createGeometricShapes();
     
     // Events
@@ -111,42 +112,42 @@ class HeroScene {
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
     const sizes = new Float32Array(particleCount);
-    
+    const phases = new Float32Array(particleCount);
+
     const colorPalette = [
       new THREE.Color(CONFIG.colors.primary),
-      new THREE.Color(CONFIG.colors.accent),
-      new THREE.Color(CONFIG.colors.secondary),
       new THREE.Color(CONFIG.colors.primaryLight),
+      new THREE.Color(CONFIG.colors.accent),
       new THREE.Color(CONFIG.colors.accentLight),
+      new THREE.Color(CONFIG.colors.secondary),
     ];
-    
+
     for (let i = 0; i < particleCount; i++) {
       const i3 = i * 3;
-      
-      // Spread particles in a sphere
+
       const radius = randomRange(15, 50);
       const theta = Math.random() * Math.PI * 2;
       const phi = Math.acos(2 * Math.random() - 1);
-      
-      positions[i3] = radius * Math.sin(phi) * Math.cos(theta);
+
+      positions[i3]     = radius * Math.sin(phi) * Math.cos(theta);
       positions[i3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
       positions[i3 + 2] = radius * Math.cos(phi) - 20;
-      
-      // Random color from palette
+
       const color = colorPalette[Math.floor(Math.random() * colorPalette.length)];
-      colors[i3] = color.r;
+      colors[i3]     = color.r;
       colors[i3 + 1] = color.g;
       colors[i3 + 2] = color.b;
-      
-      // Random sizes
-      sizes[i] = randomRange(0.5, 2.5);
+
+      sizes[i]  = randomRange(0.4, 2.2);
+      phases[i] = Math.random() * Math.PI * 2;
     }
-    
+
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
     geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
-    
-    // Custom shader material for particles
+    geometry.setAttribute('aPhase', new THREE.BufferAttribute(phases, 1));
+
+    // Star-glow shader — bright core + soft halo, additive bloom
     const material = new THREE.ShaderMaterial({
       uniforms: {
         time: { value: 0 },
@@ -154,18 +155,24 @@ class HeroScene {
       },
       vertexShader: `
         attribute float size;
+        attribute float aPhase;
         varying vec3 vColor;
+        varying float vAlpha;
         uniform float time;
         uniform float pixelRatio;
-        
+
         void main() {
           vColor = color;
+
           vec3 pos = position;
-          
-          // Subtle floating animation
-          pos.y += sin(time * 0.5 + position.x * 0.1) * 0.5;
-          pos.x += cos(time * 0.3 + position.z * 0.1) * 0.3;
-          
+          // Two-wave organic drift using per-particle phase
+          pos.y += sin(time * 0.4 + position.x * 0.08 + aPhase) * 0.6;
+          pos.x += cos(time * 0.25 + position.z * 0.07 + aPhase * 1.3) * 0.4;
+          pos.z += sin(time * 0.3 + position.y * 0.06 + aPhase * 0.7) * 0.3;
+
+          // Flicker: subtle brightness variation per particle
+          vAlpha = 0.5 + 0.2 * sin(time * 1.5 + aPhase * 3.0);
+
           vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
           gl_PointSize = size * pixelRatio * (300.0 / -mvPosition.z);
           gl_Position = projectionMatrix * mvPosition;
@@ -173,15 +180,22 @@ class HeroScene {
       `,
       fragmentShader: `
         varying vec3 vColor;
-        
+        varying float vAlpha;
+
         void main() {
-          // Circular particle with soft edge
-          float dist = length(gl_PointCoord - vec2(0.5));
+          vec2 uv = gl_PointCoord - vec2(0.5);
+          float dist = length(uv);
           if (dist > 0.5) discard;
-          
-          float alpha = 1.0 - smoothstep(0.3, 0.5, dist);
-          alpha *= 0.6; // Overall opacity
-          
+
+          // Soft circular halo
+          float halo = 1.0 - smoothstep(0.15, 0.5, dist);
+
+          // Star cross-glow along axes
+          float crossX = exp(-abs(uv.x) * 18.0) * (1.0 - smoothstep(0.0, 0.45, dist));
+          float crossY = exp(-abs(uv.y) * 18.0) * (1.0 - smoothstep(0.0, 0.45, dist));
+          float cross = max(crossX, crossY) * 0.5;
+
+          float alpha = max(halo, cross) * vAlpha;
           gl_FragColor = vec4(vColor, alpha);
         }
       `,
@@ -190,9 +204,55 @@ class HeroScene {
       depthWrite: false,
       blending: THREE.AdditiveBlending,
     });
-    
+
     this.particles = new THREE.Points(geometry, material);
     this.scene.add(this.particles);
+  }
+
+  createConstellations() {
+    const posAttr = this.particles.geometry.attributes.position;
+    const count = posAttr.count;
+    const threshold = 12;
+    const linePositions = [];
+
+    for (let i = 0; i < count; i++) {
+      const ax = posAttr.getX(i), ay = posAttr.getY(i), az = posAttr.getZ(i);
+      for (let j = i + 1; j < count; j++) {
+        const bx = posAttr.getX(j), by = posAttr.getY(j), bz = posAttr.getZ(j);
+        const dx = ax - bx, dy = ay - by, dz = az - bz;
+        if (Math.sqrt(dx*dx + dy*dy + dz*dz) < threshold) {
+          linePositions.push(ax, ay, az, bx, by, bz);
+        }
+      }
+      // Limit to avoid memory explosion on large particle counts
+      if (linePositions.length > 30000) break;
+    }
+
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(linePositions), 3));
+
+    const mat = new THREE.ShaderMaterial({
+      uniforms: { time: { value: 0 } },
+      vertexShader: `
+        uniform float time;
+        void main() {
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+      `,
+      fragmentShader: `
+        uniform float time;
+        void main() {
+          float alpha = 0.04 + 0.02 * sin(time * 0.8);
+          gl_FragColor = vec4(0.0, 0.96, 0.83, alpha);
+        }
+      `,
+      transparent: true,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+    });
+
+    this.constellations = new THREE.LineSegments(geo, mat);
+    this.scene.add(this.constellations);
   }
   
   createGeometricShapes() {
@@ -207,16 +267,40 @@ class HeroScene {
       new THREE.TorusKnotGeometry(1, 0.3, 64, 8, 2, 3),
     ];
     
-    const colors = [CONFIG.colors.primary, CONFIG.colors.accent, CONFIG.colors.secondary];
+    const shapeColors = [
+      [0.0, 0.96, 0.83],  // teal
+      [0.49, 0.23, 0.93], // violet
+      [0.15, 0.39, 0.92], // electric blue
+    ];
     const shapeCount = CONFIG.isMobile ? 3 : 6;
-    
+
     for (let i = 0; i < shapeCount; i++) {
       const geometry = geometries[i % geometries.length];
-      const material = new THREE.MeshBasicMaterial({
-        color: colors[i % colors.length],
+      const [r, g, b] = shapeColors[i % shapeColors.length];
+      const material = new THREE.ShaderMaterial({
+        uniforms: {
+          time: { value: 0 },
+          uColor: { value: new THREE.Vector3(r, g, b) },
+          shapeIndex: { value: i },
+        },
+        vertexShader: `
+          void main() {
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+          }
+        `,
+        fragmentShader: `
+          uniform float time;
+          uniform vec3 uColor;
+          uniform float shapeIndex;
+          void main() {
+            float pulse = 0.18 + 0.07 * sin(time * 0.7 + shapeIndex * 1.2);
+            gl_FragColor = vec4(uColor, pulse);
+          }
+        `,
         wireframe: true,
         transparent: true,
-        opacity: 0.15,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
       });
       
       const mesh = new THREE.Mesh(geometry, material);
@@ -292,26 +376,34 @@ class HeroScene {
     // Update particle shader time
     if (this.particles) {
       this.particles.material.uniforms.time.value = elapsed;
-      
+
       // Rotate particles based on mouse
       this.particles.rotation.y = this.mouse.x * CONFIG.parallaxIntensity;
       this.particles.rotation.x = this.mouse.y * CONFIG.parallaxIntensity;
+    }
+
+    // Sync constellation rotation and time
+    if (this.constellations) {
+      this.constellations.material.uniforms.time.value = elapsed;
+      this.constellations.rotation.y = this.particles ? this.particles.rotation.y : 0;
+      this.constellations.rotation.x = this.particles ? this.particles.rotation.x : 0;
     }
     
     // Animate geometric shapes
     this.geometricShapes.forEach((shape) => {
       const { rotationSpeed, floatParams, initialY } = shape.userData;
-      
-      // Rotation
+
       shape.rotation.x += rotationSpeed.x;
       shape.rotation.y += rotationSpeed.y;
       shape.rotation.z += rotationSpeed.z;
-      
-      // Floating animation
+
       shape.position.y = initialY + Math.sin(elapsed * floatParams.speed + floatParams.offset) * floatParams.amplitude;
-      
-      // Mouse parallax on shapes
       shape.position.x += (this.mouse.x * 0.5 - shape.position.x * 0.01) * 0.02;
+
+      // Tick shader time uniform
+      if (shape.material.uniforms && shape.material.uniforms.time) {
+        shape.material.uniforms.time.value = elapsed;
+      }
     });
     
     // Camera subtle movement
@@ -382,7 +474,7 @@ class AvatarRing {
   }
   
   createRings() {
-    const colors = [CONFIG.colors.primary, CONFIG.colors.accent, CONFIG.colors.secondary];
+    const colors = [CONFIG.colors.primary, CONFIG.colors.accentLight, CONFIG.colors.secondary];
     
     // Create multiple orbital rings
     for (let i = 0; i < 3; i++) {
@@ -787,7 +879,7 @@ class AmbientOrbs {
   createOrbs() {
     const orbData = [
       { color: CONFIG.colors.primary, size: 25, pos: [-30, 20, -40], speed: 0.3 },
-      { color: CONFIG.colors.accent, size: 20, pos: [35, -15, -35], speed: 0.4 },
+      { color: CONFIG.colors.accent,  size: 20, pos: [35, -15, -35], speed: 0.4 },
       { color: CONFIG.colors.secondary, size: 15, pos: [10, 5, -30], speed: 0.35 },
     ];
     
