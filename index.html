@@ -11,16 +11,7 @@
   <meta name="theme-color" content="#6366F1" />
   <title>Mohammad Mansib Newaz - Portfolio</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="styles.css" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Three.js Import Map for ES Modules -->
-  <script type="importmap">
-    {
-      "imports": {
-        "three": "https://unpkg.com/three@0.162.0/build/three.module.js"
-      }
-    }
-  </script>
+  <link rel="stylesheet" href="/styles.css" />
   <script>
     tailwind.config = {
       darkMode: "class",
@@ -332,81 +323,10 @@
   </footer>
 
   <!-- Scripts -->
-  <script>
-    // Typewriter
-    const phrases = [
-      "Specializing in secure API development.",
-      "Building scalable backend systems.",
-      "Network security & threat analysis.",
-      "FastAPI . Python . PostgreSQL . Docker."
-    ];
-    let phraseIndex = 0, charIndex = 0, deleting = false;
-    const el = document.getElementById("typewriter");
-
-    function typeWriter() {
-      const current = phrases[phraseIndex];
-      if (!deleting) {
-        el.textContent = current.substring(0, charIndex + 1);
-        charIndex++;
-        if (charIndex === current.length) {
-          deleting = true;
-          setTimeout(typeWriter, 2000);
-          return;
-        }
-      } else {
-        el.textContent = current.substring(0, charIndex - 1);
-        charIndex--;
-        if (charIndex === 0) {
-          deleting = false;
-          phraseIndex = (phraseIndex + 1) % phrases.length;
-        }
-      }
-      setTimeout(typeWriter, deleting ? 35 : 50);
-    }
-    window.addEventListener("load", () => setTimeout(typeWriter, 500));
-
-    // Theme Toggle
-    function setupTheme(toggleId, sunId, moonId) {
-      const btn = document.getElementById(toggleId);
-      const sun = document.getElementById(sunId);
-      const moon = document.getElementById(moonId);
-      if (!btn) return;
-      btn.addEventListener("click", () => {
-        document.body.classList.toggle("light");
-        const isLight = document.body.classList.contains("light");
-        localStorage.setItem("theme", isLight ? "light" : "dark");
-        sun.classList.toggle("hidden", !isLight);
-        moon.classList.toggle("hidden", isLight);
-      });
-    }
-
-    const savedTheme = localStorage.getItem("theme") || "dark";
-    if (savedTheme === "light") {
-      document.body.classList.add("light");
-      ["sunIcon", "sunIconMobile"].forEach(id => document.getElementById(id)?.classList.remove("hidden"));
-      ["moonIcon", "moonIconMobile"].forEach(id => document.getElementById(id)?.classList.add("hidden"));
-    }
-    setupTheme("themeToggle", "sunIcon", "moonIcon");
-    setupTheme("themeToggleMobile", "sunIconMobile", "moonIconMobile");
-
-    // Mobile Menu
-    const menuToggle = document.getElementById("menuToggle");
-    const mobileMenu = document.getElementById("mobileMenu");
-    menuToggle.addEventListener("click", () => {
-      menuToggle.classList.toggle("open");
-      mobileMenu.classList.toggle("open");
-    });
-
-    // Scroll Reveal
-    const reveals = document.querySelectorAll(".reveal");
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); } });
-    }, { threshold: 0.1 });
-    reveals.forEach(el => observer.observe(el));
-  </script>
+  <script type="module" src="/js/main.js"></script>
   
   <!-- Three.js 3D Scene Module -->
-  <script type="module" src="js/three-scene.js"></script>
+  <script type="module" src="/js/three-scene.js"></script>
 </body>
 
 </html>
