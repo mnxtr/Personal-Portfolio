@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Strategies for creating clear, comprehensive technical documentation that developers actually enjoy reading and using in their projects." />
+  <meta name="keywords" content="technical documentation, writing, API docs, developer experience, documentation best practices" />
+  <meta name="author" content="Mohammad Mansib Newaz" />
+  <meta name="theme-color" content="#6366F1" />
+  
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mnxtr.github.io/blog/posts/technical-documentation.html" />
+  <meta property="og:title" content="Writing Technical Documentation That Developers Love" />
+  <meta property="og:description"
+    content="Strategies for creating clear, comprehensive technical documentation that developers enjoy reading." />
+  <meta property="og:site_name" content="Mohammad Mansib Newaz" />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@Mnxtrr" />
+  <meta name="twitter:title" content="Writing Technical Documentation That Developers Love" />
+  
+  <link rel="canonical" href="https://mnxtr.github.io/blog/posts/technical-documentation.html" />
+  
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Writing Technical Documentation That Developers Love",
+      "datePublished": "2026-03-01",
+      "dateModified": "2026-03-01",
+      "author": { "@type": "Person", "name": "Mohammad Mansib Newaz", "url": "https://mnxtr.github.io" },
+      "wordCount": 2300
+    }
+  </script>
+
+  <title>Writing Technical Documentation That Developers Love | Blog</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#6366F1", accent: "#8B5CF6", secondary: "#EC4899",
+            darkBg: "#0F172A", darkSurface: "#1E293B", darkText: "#E2E8F0", darkMuted: "#94A3B8",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .prose h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity, 1))
+}
+    .prose h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity, 1))
+}
+    .prose p {
+    margin-bottom: 1rem;
+    line-height: 1.625;
+    --tw-text-opacity: 1;
+    color: rgb(100 116 139 / var(--tw-text-opacity, 1))
+}
+    .prose ul, .prose ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem
+}
+    .prose li {
+    margin-bottom: 0.5rem;
+    --tw-text-opacity: 1;
+    color: rgb(100 116 139 / var(--tw-text-opacity, 1))
+}
+    .prose code {
+    border-radius: 0.25rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(15 20 25 / var(--tw-bg-opacity, 1));
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    --tw-text-opacity: 1;
+    color: rgb(244 114 182 / var(--tw-text-opacity, 1))
+}
+    .light .prose h2, .light .prose h3 {
+    --tw-text-opacity: 1;
+    color: rgb(17 24 39 / var(--tw-text-opacity, 1))
+}
+    .light .prose p, .light .prose li {
+    --tw-text-opacity: 1;
+    color: rgb(55 65 81 / var(--tw-text-opacity, 1))
+}
+  </style>
+  <link rel="stylesheet" crossorigin href="/assets/styles-CNjmCrfN.css">
+</head>
+
+<body class="bg-gradient-to-br from-darkBg via-slate-900 to-indigo-950 text-darkText min-h-screen flex flex-col">
+  <header class="bg-darkBg bg-opacity-70 backdrop-blur-xl sticky top-0 z-50 border-b border-white border-opacity-5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <nav class="flex justify-between items-center h-16">
+        <a href="/" class="text-primary font-bold text-xl tracking-tight font-['Space_Grotesk']">MN<span class="text-accent">.</span></a>
+        <div class="flex items-center gap-6">
+          <a href="/blog/" class="text-darkMuted hover:text-white text-sm">Back to Blog</a>
+          <button id="themeToggle" class="p-2.5 rounded-xl hover:bg-white hover:bg-opacity-10">
+            <svg id="sunIcon" class="w-5 h-5 text-amber-400 hidden" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1z" clip-rule="evenodd" /></svg>
+            <svg id="moonIcon" class="w-5 h-5 text-darkMuted" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" /></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="relative z-10 flex-grow">
+    <div class="max-w-4xl mx-auto w-full px-4 sm:px-6 py-12 md:py-16">
+      <article class="prose">
+        <div class="mb-8">
+          <span class="inline-block px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/30 text-violet-400 text-xs font-medium mb-4">Tutorial</span>
+          <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">Writing Technical Documentation That Developers Love</h1>
+          <div class="flex flex-wrap items-center gap-4 text-darkMuted text-sm">
+            <span>Published Mar 1, 2026</span> <span>•</span> <span>11 min read</span> <span>•</span> <span>By Mohammad Mansib Newaz</span>
+          </div>
+        </div>
+
+        <p>Great documentation is invisible—developers use it without thinking about it. Bad documentation is impossible to ignore. If you've ever struggled to understand an API or figured out a library through trial and error, you know the pain. This guide helps you write documentation developers actually want to read.</p>
+
+        <h2>Understand Your Audience</h2>
+        <p>Different developers need different information:</p>
+        <ul>
+          <li><strong>Beginners:</strong> Need installation, basic examples, and conceptual explanations</li>
+          <li><strong>Intermediate:</strong> Need advanced features, configuration options, best practices</li>
+          <li><strong>Advanced:</strong> Need internals, edge cases, performance characteristics</li>
+        </ul>
+
+        <h2>Structure Matters</h2>
+        <p>Follow a consistent structure for all documentation:</p>
+        <ul>
+          <li><strong>Overview:</strong> What is this? Why should I care?</li>
+          <li><strong>Installation:</strong> How do I get it?</li>
+          <li><strong>Quick Start:</strong> Show a working example immediately</li>
+          <li><strong>Detailed Guide:</strong> Deep dive into features</li>
+          <li><strong>API Reference:</strong> Comprehensive parameter documentation</li>
+          <li><strong>Examples:</strong> Real-world usage patterns</li>
+          <li><strong>Troubleshooting:</strong> Common problems and solutions</li>
+        </ul>
+
+        <h2>Write Clear Examples</h2>
+        <p>Good examples are worth a thousand words:</p>
+        
+        <pre><code># Bad: Too abstract
+# Configure the authentication module
+
+# Good: Complete working example
+from my_lib import Client, AuthConfig
+
+config = AuthConfig(api_key="your-key-here")
+client = Client(config=config)
+
+# Make authenticated requests
+response = client.get("/api/data")
+print(response.json())</code></pre>
+
+        <h2>Use Progressive Disclosure</h2>
+        <p>Start simple, then add complexity:</p>
+        <ul>
+          <li>Basic example first (5 lines of code)</li>
+          <li>Then intermediate examples (15-20 lines)</li>
+          <li>Finally advanced patterns (50+ lines)</li>
+          <li>Each step builds on knowledge from previous steps</li>
+        </ul>
+
+        <h2>Document Assumptions</h2>
+        <p>Be explicit about prerequisites:</p>
+        
+        <ul>
+          <li>Required Python version (3.9+)</li>
+          <li>System dependencies (PostgreSQL, Redis)</li>
+          <li>Prior knowledge needed</li>
+          <li>Environment setup requirements</li>
+        </ul>
+
+        <h2>Error Messages as Documentation</h2>
+        <p>Good error messages reduce documentation needs:</p>
+        
+        <pre><code># Bad error message
+ValueError: Invalid input
+
+# Good error message
+ValueError: Expected 'api_key' in AuthConfig, but got None.
+Configure with: AuthConfig(api_key="your-key")
+See: https://docs.example.com/auth</code></pre>
+
+        <h2>Include Troubleshooting Sections</h2>
+        <p>Anticipate common problems:</p>
+        
+        <ul>
+          <li><strong>Problem:</strong> "ImportError: No module named 'library'"</li>
+          <li><strong>Solution:</strong> "Run: pip install library"</li>
+          <li><strong>Problem:</strong> "Connection refused to database"</li>
+          <li><strong>Solution:</strong> "Ensure PostgreSQL is running and accessible"</li>
+        </ul>
+
+        <h2>Keep It Up to Date</h2>
+        <p>Outdated documentation is worse than no documentation:</p>
+        <ul>
+          <li>Test all code examples regularly</li>
+          <li>Update version numbers immediately</li>
+          <li>Remove deprecated features</li>
+          <li>Mark outdated sections clearly</li>
+        </ul>
+
+        <h2>Use Consistent Formatting</h2>
+        <p>Consistency helps developers scan quickly:</p>
+        <ul>
+          <li>Use the same code style throughout</li>
+          <li>Consistent heading levels</li>
+          <li>Consistent parameter formatting</li>
+          <li>Consistent example structure</li>
+        </ul>
+
+        <h2>Include Real Use Cases</h2>
+        <p>Show how people actually use your code:</p>
+        
+        <ul>
+          <li>Real-world scenarios, not abstract examples</li>
+          <li>Show integration with other libraries</li>
+          <li>Demonstrate best practices</li>
+          <li>Explain the "why" behind patterns</li>
+        </ul>
+
+        <h2>Documentation Generators</h2>
+        <p>Leverage tools to generate reference docs automatically:</p>
+        
+        <ul>
+          <li><strong>Python:</strong> Sphinx, pdoc, MkDocs</li>
+          <li><strong>JavaScript:</strong> TypeDoc, JSDoc, API Extractor</li>
+          <li><strong>Go:</strong> GoDoc, pkgsite</li>
+          <li>Combine auto-generated references with hand-written guides</li>
+        </ul>
+
+        <h2>Get Feedback</h2>
+        <p>Documentation improves with input:</p>
+        <ul>
+          <li>Ask new users to read and comment</li>
+          <li>Track which pages get the most help requests</li>
+          <li>Analyze search queries in your docs</li>
+          <li>Respond to documentation-related issues</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>Documentation is code too. It deserves the same care, testing, and attention as your codebase. Developers who find great documentation will love your project. Those who struggle with bad documentation will abandon it. The choice is clear.</p>
+
+        <div class="mt-12 pt-8 border-t border-white/10">
+          <h3 class="text-xl font-bold text-white mb-6">Related Articles</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <a href="/blog/posts/fastapi-ml-deployment.html" class="p-4 rounded-lg border border-white/10 hover:border-primary/30 group">
+              <h4 class="font-semibold text-white group-hover:text-primary">Deploying ML Models with FastAPI</h4>
+            </a>
+            <a href="/blog/posts/secure-fastapi.html" class="p-4 rounded-lg border border-white/10 hover:border-primary/30 group">
+              <h4 class="font-semibold text-white group-hover:text-primary">Building Secure FastAPI Applications</h4>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="relative z-10 bg-darkBg/80 backdrop-blur-xl border-t border-white/5 mt-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+      <p class="text-sm text-darkMuted text-center">&copy; 2026 <span class="text-primary font-medium">Mohammad Mansib Newaz</span>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function setupTheme(toggleId, sunId, moonId) {
+      const btn = document.getElementById(toggleId);
+      if (!btn) return;
+      btn.addEventListener("click", () => {
+        document.body.classList.toggle("light");
+        const isLight = document.body.classList.contains("light");
+        localStorage.setItem("theme", isLight ? "light" : "dark");
+        document.getElementById(sunId)?.classList.toggle("hidden", !isLight);
+        document.getElementById(moonId)?.classList.toggle("hidden", isLight);
+      });
+    }
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    if (savedTheme === "light") {
+      document.body.classList.add("light");
+      document.getElementById("sunIcon")?.classList.remove("hidden");
+      document.getElementById("moonIcon")?.classList.add("hidden");
+    }
+    setupTheme("themeToggle", "sunIcon", "moonIcon");
+  </script>
+</body>
+</html>

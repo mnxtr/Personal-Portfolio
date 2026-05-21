@@ -3,8 +3,8 @@
  * Handles theme toggle, typewriter effect, mobile menu, and scroll reveal
  */
 
-// Tailwind configuration (dynamically applied)
 import '../styles.css';
+import { initThreeScenes } from './three-scene.js';
 
 // Typewriter Effect
 const phrases = [
@@ -95,6 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initTheme();
   initMobileMenu();
   initScrollReveal();
+  initThreeScenes();
 });
 
 // Start typewriter after full load

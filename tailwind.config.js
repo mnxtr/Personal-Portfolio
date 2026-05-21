@@ -10,10 +10,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#3B82F6',
-        darkBg: '#1E293B',
-        darkText: '#CBD5E1',
-        accent: '#0EA5E9',
+        primary: '#00F5D4',
+        secondary: '#7C3AED',
+        accent: '#00D9FF',
+        darkBg: '#080B14',
+        darkSurface: '#0F1419',
+        darkText: '#E0E7FF',
+        darkMuted: '#64748B',
         lightBg: '#F8FAFC',
         lightText: '#1E293B',
       },

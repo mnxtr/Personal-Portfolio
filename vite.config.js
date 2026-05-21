@@ -22,22 +22,25 @@ function findHtmlFiles(dir, files = {}, base = '') {
 const htmlFiles = findHtmlFiles(__dirname);
 
 export default defineConfig({
-  // Base path for GitHub Pages (username.github.io)
   base: '/',
-  
+
   build: {
     outDir: 'dist',
     rollupOptions: {
       input: htmlFiles,
     },
   },
-  
+
   server: {
     port: 3000,
     open: true,
   },
-  
+
   preview: {
     port: 4173,
+  },
+
+  ssr: {
+    external: ['three'],
   },
 });
