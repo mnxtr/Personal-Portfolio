@@ -457,8 +457,8 @@
             </div>
 
             <!-- Description -->
-            <p class="text-darkMuted leading-relaxed max-w-xl mx-auto md:mx-0 mb-8 reveal reveal-delay-2"
-              style="color: var(--dark-text-muted);">
+            <p class="leading-relaxed max-w-xl mx-auto md:mx-0 mb-8 reveal reveal-delay-2"
+              style="color: var(--dark-text-muted); font-size: 1.0625rem;">
               With <strong class="text-white font-medium">4+ years</strong> building AI-powered systems —
               from <strong class="text-white font-medium">LLM integrations</strong> and
               <strong class="text-white font-medium">RAG pipelines</strong>
@@ -469,7 +469,7 @@
             <!-- CTA Buttons -->
             <div class="flex flex-wrap gap-4 justify-center md:justify-start reveal reveal-delay-3">
               <a href="contact.html"
-                class="btn-glow bg-gradient-to-r from-primary via-accent to-secondary text-darkBg px-8 py-3.5 rounded-full font-semibold shadow-lg hover:scale-105 transition-all duration-300 inline-flex items-center gap-2">
+                class="btn-glow bg-gradient-to-r from-primary via-accent to-secondary text-white px-8 py-3.5 rounded-full font-semibold shadow-lg hover:scale-105 transition-all duration-300 inline-flex items-center gap-2">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -487,7 +487,7 @@
             </div>
 
             <!-- Stats Strip -->
-            <div class="flex items-center gap-6 sm:gap-8 mt-14 justify-center md:justify-start reveal reveal-delay-4"
+            <div class="flex items-center gap-6 sm:gap-8 mt-10 justify-center md:justify-start reveal reveal-delay-4"
               role="list" aria-label="Career statistics">
               <div class="text-center" role="listitem">
                 <p class="stat-number text-3xl" data-counter="4" data-suffix="+">4+</p>
@@ -512,21 +512,21 @@
           </div>
 
           <!-- Right: Avatar -->
-          <div class="flex-shrink-0 reveal animate-float relative">
-            <!-- Floating tech badges (desktop only) -->
-            <div class="avatar-badge hidden md:flex -top-4 -right-2" style="color: var(--primary); animation-delay: 0s;">
-              <span class="w-2 h-2 rounded-full" style="background: var(--primary);"></span>
-              PyTorch
-            </div>
-            <div class="avatar-badge hidden md:flex top-1/2 -right-8" style="color: #a78bfa; animation-delay: 1.3s;">
-              <span class="w-2 h-2 rounded-full" style="background: #a78bfa;"></span>
-              LangChain
-            </div>
-            <div class="avatar-badge hidden md:flex -bottom-10 -left-4" style="color: #60a5fa; animation-delay: 0.7s;">
-              <span class="w-2 h-2 rounded-full" style="background: #60a5fa;"></span>
-              FastAPI
-            </div>
-            <div class="avatar-container relative w-52 h-52 md:w-72 md:h-72 mx-auto">
+          <div class="flex-shrink-0 reveal relative">
+            <div class="avatar-container animate-float relative w-52 h-52 md:w-72 md:h-72 mx-auto">
+              <!-- Floating tech badges — positioned relative to avatar-container -->
+              <div class="avatar-badge hidden md:flex" style="top: -16px; right: -8px; color: var(--primary); animation-delay: 0s;">
+                <span class="w-2 h-2 rounded-full" style="background: var(--primary);"></span>
+                PyTorch
+              </div>
+              <div class="avatar-badge hidden md:flex" style="top: 50%; right: -48px; color: #a78bfa; animation-delay: 1.3s;">
+                <span class="w-2 h-2 rounded-full" style="background: #a78bfa;"></span>
+                LangChain
+              </div>
+              <div class="avatar-badge hidden md:flex" style="bottom: -12px; left: -16px; color: #60a5fa; animation-delay: 0.7s;">
+                <span class="w-2 h-2 rounded-full" style="background: #60a5fa;"></span>
+                FastAPI
+              </div>
               <div id="avatar-3d" aria-hidden="true"></div>
               <div
                 class="absolute inset-0 rounded-full bg-gradient-to-br from-primary via-accent to-secondary p-1 avatar-glow">
@@ -572,18 +572,54 @@
         </div>
 
         <!-- Bento Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 lg:grid-rows-2 gap-4 reveal reveal-delay-1">
+        <!-- md: 3-col so [AI/ML full] + [FS|Sec|Cloud] perfectly fills two rows -->
+        <!-- lg: 5-col bento with AI/ML spanning 3×2 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 lg:grid-rows-2 gap-4 reveal reveal-delay-1">
 
-          <!-- AI/ML — Large card, 3 cols × 2 rows on desktop -->
-          <div class="bento-card md:col-span-2 lg:col-span-3 lg:row-span-2 min-h-[260px] lg:min-h-0">
+          <!-- AI/ML — Full row on md, 3 cols × 2 rows on desktop -->
+          <div class="bento-card md:col-span-3 lg:col-span-3 lg:row-span-2 min-h-[300px] lg:min-h-0">
             <div class="bento-inner p-7 sm:p-8 h-full flex flex-col">
-              <!-- Icon -->
-              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500/20 to-teal-500/5 border border-teal-500/20 flex items-center justify-center mb-5">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  style="color: var(--primary);" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              <!-- Decorative neural-net dots (top-right corner) -->
+              <div class="absolute top-4 right-4 opacity-[0.07] pointer-events-none" aria-hidden="true">
+                <svg width="120" height="100" viewBox="0 0 120 100" fill="none">
+                  <!-- Layer 1 nodes -->
+                  <circle cx="10" cy="20" r="4" fill="var(--primary)"/>
+                  <circle cx="10" cy="50" r="4" fill="var(--primary)"/>
+                  <circle cx="10" cy="80" r="4" fill="var(--primary)"/>
+                  <!-- Layer 2 nodes -->
+                  <circle cx="55" cy="10" r="4" fill="var(--primary)"/>
+                  <circle cx="55" cy="35" r="4" fill="var(--primary)"/>
+                  <circle cx="55" cy="60" r="4" fill="var(--primary)"/>
+                  <circle cx="55" cy="85" r="4" fill="var(--primary)"/>
+                  <!-- Layer 3 nodes -->
+                  <circle cx="110" cy="30" r="4" fill="var(--accent)"/>
+                  <circle cx="110" cy="70" r="4" fill="var(--accent)"/>
+                  <!-- Connections -->
+                  <line x1="14" y1="20" x2="51" y2="10" stroke="var(--primary)" stroke-width="1"/>
+                  <line x1="14" y1="20" x2="51" y2="35" stroke="var(--primary)" stroke-width="1"/>
+                  <line x1="14" y1="50" x2="51" y2="35" stroke="var(--primary)" stroke-width="1"/>
+                  <line x1="14" y1="50" x2="51" y2="60" stroke="var(--primary)" stroke-width="1"/>
+                  <line x1="14" y1="80" x2="51" y2="60" stroke="var(--primary)" stroke-width="1"/>
+                  <line x1="14" y1="80" x2="51" y2="85" stroke="var(--primary)" stroke-width="1"/>
+                  <line x1="59" y1="10" x2="106" y2="30" stroke="var(--accent)" stroke-width="1"/>
+                  <line x1="59" y1="35" x2="106" y2="30" stroke="var(--accent)" stroke-width="1"/>
+                  <line x1="59" y1="60" x2="106" y2="70" stroke="var(--accent)" stroke-width="1"/>
+                  <line x1="59" y1="85" x2="106" y2="70" stroke="var(--accent)" stroke-width="1"/>
                 </svg>
+              </div>
+              <!-- Icon + stat row -->
+              <div class="flex items-start justify-between mb-5">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500/20 to-teal-500/5 border border-teal-500/20 flex items-center justify-center">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    style="color: var(--primary);" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <div class="text-right">
+                  <p class="text-2xl font-bold" style="color: var(--primary); font-family: 'Clash Display', sans-serif;">10+</p>
+                  <p class="text-xs" style="color: var(--dark-text-subtle);">Models Deployed</p>
+                </div>
               </div>
               <h3 class="text-xl font-bold text-white mb-3">Artificial Intelligence &amp; Machine Learning</h3>
               <p class="text-sm leading-relaxed mb-5 flex-grow" style="color: var(--dark-text-muted);">
@@ -935,7 +971,7 @@
           <!-- CTA Buttons -->
           <div class="flex flex-wrap gap-4 justify-center">
             <a href="contact.html"
-              class="btn-glow bg-gradient-to-r from-primary via-accent to-secondary text-darkBg px-8 py-3.5 rounded-full font-semibold shadow-lg hover:scale-105 transition-all duration-300">
+              class="btn-glow bg-gradient-to-r from-primary via-accent to-secondary text-white px-8 py-3.5 rounded-full font-semibold shadow-lg hover:scale-105 transition-all duration-300">
               Get In Touch
             </a>
             <a href="resume.html"
