@@ -8,10 +8,10 @@ import { initThreeScenes } from './three-scene.js';
 
 // Typewriter Effect
 const phrases = window.typewriterPhrases || [
-  "Specializing in secure API development.",
-  "Building scalable backend systems.",
-  "Network security & threat analysis.",
-  "FastAPI . Python . PostgreSQL . Docker."
+  "Building Intelligent AI Systems.",
+  "LLMs · RAG · Neural Networks.",
+  "Full Stack Development.",
+  "Python · FastAPI · PyTorch · React."
 ];
 let phraseIndex = 0, charIndex = 0, deleting = false;
 

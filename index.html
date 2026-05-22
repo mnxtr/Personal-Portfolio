@@ -19,6 +19,10 @@
     content="Building intelligent systems with LLMs, RAG pipelines, neural networks, FastAPI, React, and modern cloud infrastructure." />
   <meta property="og:site_name" content="Mohammad Mansib Nawaz" />
   <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://mnxtr.github.io/img/og-image.png" />
+  <meta property="og:image:width" content="1920" />
+  <meta property="og:image:height" content="1080" />
+  <meta property="og:image:alt" content="Mohammad Mansib Nawaz — AI/ML Engineer & Full Stack Developer portfolio homepage preview" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -27,9 +31,14 @@
   <meta name="twitter:title" content="Mohammad Mansib Nawaz — AI/ML Engineer & Full Stack Developer" />
   <meta name="twitter:description"
     content="Building intelligent systems with LLMs, RAG pipelines, neural networks, FastAPI, React, and modern cloud infrastructure." />
+  <meta name="twitter:image" content="https://mnxtr.github.io/img/og-image.png" />
+  <meta name="twitter:image:alt" content="Mohammad Mansib Nawaz — AI/ML Engineer & Full Stack Developer portfolio homepage preview" />
 
   <!-- Canonical -->
   <link rel="canonical" href="https://mnxtr.github.io/" />
+
+  <!-- Preload LCP image (hero avatar) -->
+  <link rel="preload" as="image" href="img/optimized/avatar.webp" type="image/webp" fetchpriority="high" />
 
   <!-- Schema.org -->
   <script type="application/ld+json">
@@ -531,9 +540,12 @@
               <div
                 class="absolute inset-0 rounded-full bg-gradient-to-br from-primary via-accent to-secondary p-1 avatar-glow">
                 <div class="w-full h-full rounded-full overflow-hidden bg-darkBg">
-                  <img src="img/avatar.jpg" alt="Mohammad Mansib Nawaz — AI/ML Engineer"
-                    class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                    width="288" height="288" />
+                  <picture>
+                    <source srcset="img/optimized/avatar.webp" type="image/webp" />
+                    <img src="img/optimized/avatar.jpg" alt="Mohammad Mansib Nawaz — AI/ML Engineer"
+                      class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                      width="288" height="288" fetchpriority="high" decoding="async" />
+                  </picture>
                 </div>
               </div>
               <!-- Status badge -->
@@ -820,8 +832,11 @@
           <!-- Project 1: Traffic Symbol Recognition -->
           <article class="project-card-premium reveal reveal-delay-1" aria-label="Traffic Symbol Recognition project">
             <div class="card-img">
-              <img src="img/traffic-signs.jpg" alt="Traffic sign recognition system using deep learning"
-                loading="lazy" width="400" height="200" />
+              <picture>
+                <source srcset="img/optimized/traffic-signs.webp" type="image/webp" />
+                <img src="img/optimized/traffic-signs.jpg" alt="Traffic sign recognition system using deep learning"
+                  loading="lazy" width="400" height="200" decoding="async" />
+              </picture>
             </div>
             <div class="p-6">
               <!-- Category chip -->
@@ -859,8 +874,11 @@
           <article class="project-card-premium reveal reveal-delay-2"
             aria-label="Ensemble ML for Cardiovascular Disease project">
             <div class="card-img">
-              <img src="img/EKG.jpg" alt="EKG signal visualization for cardiovascular disease prediction"
-                loading="lazy" width="400" height="200" />
+              <picture>
+                <source srcset="img/optimized/EKG.webp" type="image/webp" />
+                <img src="img/optimized/EKG.jpg" alt="EKG signal visualization for cardiovascular disease prediction"
+                  loading="lazy" width="400" height="200" decoding="async" />
+              </picture>
             </div>
             <div class="p-6">
               <div class="flex items-center gap-2 mb-3">
@@ -895,8 +913,11 @@
           <article class="project-card-premium reveal reveal-delay-3"
             aria-label="Customer Relationship Management System project">
             <div class="card-img">
-              <img src="img/crm.jpg" alt="CRM dashboard showing analytics and customer data"
-                loading="lazy" width="400" height="200" />
+              <picture>
+                <source srcset="img/optimized/crm.webp" type="image/webp" />
+                <img src="img/optimized/crm.jpg" alt="CRM dashboard showing analytics and customer data"
+                  loading="lazy" width="400" height="200" decoding="async" />
+              </picture>
             </div>
             <div class="p-6">
               <div class="flex items-center gap-2 mb-3">

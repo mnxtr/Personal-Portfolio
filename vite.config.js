@@ -9,7 +9,7 @@ function findHtmlFiles(dir, files = {}, base = '') {
   for (const item of items) {
     const fullPath = join(dir, item);
     const relativePath = base ? `${base}/${item}` : item;
-    if (statSync(fullPath).isDirectory() && !item.startsWith('.') && item !== 'node_modules' && item !== 'dist' && item !== 'vite-project') {
+    if (statSync(fullPath).isDirectory() && !item.startsWith('.') && item !== 'node_modules' && item !== 'dist' && item !== 'vite-project' && item !== 'website' && item !== 'scripts') {
       findHtmlFiles(fullPath, files, relativePath);
     } else if (item.endsWith('.html')) {
       const name = relativePath.replace(/\//g, '-').replace('.html', '') || 'main';
