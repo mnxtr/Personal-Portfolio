@@ -7,7 +7,7 @@ import '../styles.css';
 import { initThreeScenes } from './three-scene.js';
 
 // Typewriter Effect
-const phrases = [
+const phrases = window.typewriterPhrases || [
   "Specializing in secure API development.",
   "Building scalable backend systems.",
   "Network security & threat analysis.",
@@ -73,6 +73,7 @@ function initMobileMenu() {
     menuToggle.addEventListener("click", () => {
       menuToggle.classList.toggle("open");
       mobileMenu.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", menuToggle.classList.contains("open").toString());
     });
   }
 }
