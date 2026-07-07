@@ -1,6 +1,32 @@
-node_modules
-dist
+# Dependencies
+node_modules/
+
+# Build output — owned by GitHub Actions, not committed
+dist/
+
+# Vite cache
+.vite/
+
+# Test / debug artifacts
+.playwright-mcp/
+
+# Screenshot files in root (captured during dev)
+desktop-1920x1080.png
+mobile-375x812.png
+projects-mobile.png
+tablet-768x1024.png
+
+# Environment
 .env
 .env.local
+.env.*.local
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
 .DS_Store
-*.local
+Thumbs.db
