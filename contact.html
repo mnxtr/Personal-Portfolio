@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,55 @@
     <script>
         tailwind.config = window.tailwindConfig;
     </script>
+    <style>
+        * {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .light .bg-darkBg {
+            background-color: #fff;
+        }
+
+        .light .text-darkText {
+            color: #334155;
+        }
+
+        .light .text-white {
+            color: #1e293b;
+        }
+
+        .light .text-gray-400 {
+            color: #64748b;
+        }
+
+        .light .text-gray-300 {
+            color: #475569;
+        }
+
+        .light .bg-gray-700 {
+            background-color: #e2e8f0;
+        }
+
+        .light .border-gray-500 {
+            border-color: #cbd5e1;
+        }
+
+        .light .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            border-color: rgba(99, 102, 241, 0.2);
+        }
+
+        .light input,
+        .light textarea {
+            background-color: #f1f5f9 !important;
+            color: #1e293b !important;
+        }
+    </style>
 </head>
-<body class="bg-gradient-to-b from-darkBg via-gray-900 to-blue-900 text-darkText min-h-screen flex flex-col">
+
+<body class="has-3d bg-gradient-to-br from-darkBg via-slate-900 to-indigo-950 text-darkText min-h-screen flex flex-col">
+    <!-- 3D Hero Canvas (Three.js) -->
+    <div id="hero-canvas" aria-hidden="true"></div>
     
     <!-- Navigation -->
     <div id="nav-placeholder"></div>
@@ -26,18 +74,129 @@
                     <label class="block text-sm font-semibold mb-2" for="name">Name</label>
                     <input type="text" id="name" name="name" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-500 focus:border-primary focus:ring-1 focus:ring-primary" required>
                 </div>
-                <div>
-                    <label class="block text-sm font-semibold mb-2" for="email">Email</label>
-                    <input type="email" id="email" name="email" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-500 focus:border-primary focus:ring-1 focus:ring-primary" required>
+                <button id="menuToggle" class="hamburger md:hidden text-gray-300"
+                    aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            </nav>
+            <div id="mobileMenu" class="mobile-menu">
+                <a href="index.html" class="text-gray-300 hover:text-white text-sm py-3 transition-colors">Home</a>
+                 <a href="project.html"
+                     class="text-gray-300 hover:text-white text-sm py-3 transition-colors">Projects</a>
+                 <a href="resume.html" class="text-gray-300 hover:text-white text-sm py-3 transition-colors">Resume</a>
+                 <a href="about.html" class="text-gray-300 hover:text-white text-sm py-3 transition-colors">About</a>
+                 <a href="blog/" class="text-gray-300 hover:text-white text-sm py-3 transition-colors">Blog</a>
+                 <a href="contact.html" class="nav-link active text-sm py-3">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 flex-grow flex flex-col items-center justify-center p-6">
+        <div class="max-w-4xl w-full">
+            <div class="text-center mb-10 reveal">
+                <h1 class="text-4xl font-bold gradient-text mb-2">Get in Touch</h1>
+                <p class="text-gray-400">Let's discuss your project, collaboration, or just say hello</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Contact Info -->
+                <div class="reveal reveal-delay-1">
+                    <p class="text-gray-300 mb-8 leading-relaxed text-sm">
+                        I'm always excited to discuss new opportunities and challenges. Feel free to reach out for
+                        collaborations, project inquiries, or consulting.
+                    </p>
+
+                    <div class="space-y-5">
+                        <div class="glass-card p-4 flex items-center gap-4">
+                            <div
+                                class="w-11 h-11 bg-primary bg-opacity-20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase tracking-widest mb-0.5">Email</p>
+                                <a href="mailto:mohammad.newaz1@northsouth.edu"
+                                    class="text-white hover:text-primary transition-colors text-sm">mohammad.newaz1@northsouth.edu</a>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-4 flex items-center gap-4">
+                            <div
+                                class="w-11 h-11 bg-green-500 bg-opacity-20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase tracking-widest mb-0.5">Location</p>
+                                <p class="text-white text-sm">Dhaka, Bangladesh</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-4 flex items-center gap-4">
+                            <div
+                                class="w-11 h-11 bg-purple-500 bg-opacity-20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase tracking-widest mb-0.5">Availability</p>
+                                <p class="text-green-400 text-sm font-medium flex items-center gap-1.5"><span
+                                        class="w-2 h-2 bg-green-400 rounded-full animate-pulse inline-block"></span>Open
+                                    for opportunities</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <label class="block text-sm font-semibold mb-2" for="message">Message</label>
-                    <textarea id="message" name="message" rows="4" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-500 focus:border-primary focus:ring-1 focus:ring-primary" required></textarea>
+
+                <!-- Contact Form -->
+                <div class="glass-card p-8 reveal reveal-delay-2">
+                    <h2 class="text-lg font-semibold text-white mb-6">Send a Message</h2>
+                    <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold mb-2 text-gray-400 uppercase tracking-widest"
+                                for="name">Name</label>
+                            <input type="text" id="name" name="name"
+                                class="w-full p-3 rounded-xl bg-gray-800 bg-opacity-60 text-white border border-white border-opacity-10 focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-30 outline-none transition-all duration-300 text-sm"
+                                required placeholder="Your name">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold mb-2 text-gray-400 uppercase tracking-widest"
+                                for="email">Email</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full p-3 rounded-xl bg-gray-800 bg-opacity-60 text-white border border-white border-opacity-10 focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-30 outline-none transition-all duration-300 text-sm"
+                                required placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold mb-2 text-gray-400 uppercase tracking-widest"
+                                for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject"
+                                class="w-full p-3 rounded-xl bg-gray-800 bg-opacity-60 text-white border border-white border-opacity-10 focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-30 outline-none transition-all duration-300 text-sm"
+                                placeholder="Project inquiry">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold mb-2 text-gray-400 uppercase tracking-widest"
+                                for="message">Message</label>
+                            <textarea id="message" name="message" rows="4"
+                                class="w-full p-3 rounded-xl bg-gray-800 bg-opacity-60 text-white border border-white border-opacity-10 focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-30 outline-none transition-all duration-300 resize-none text-sm"
+                                required placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full btn-glow bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-accent hover:scale-[1.02] transition-all duration-300"
+                            style="box-shadow:0 0 20px rgba(99,102,241,0.35);">
+                            Send Message
+                        </button>
+                        <p class="text-xs text-gray-500 text-center">I'll get back to you within 24–48 hours.</p>
+                    </form>
                 </div>
-                <button type="submit" class="bg-primary text-white px-6 py-2 rounded-full shadow-lg hover:bg-accent transition duration-300 w-full">
-                    Send Message
-                </button>
-            </form>
+            </div>
         </div>
     </main>
     <div id="social-placeholder"></div>
@@ -47,4 +206,5 @@
     
     <script src="js/components.js"></script>
 </body>
+
 </html>

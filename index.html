@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,37 +22,520 @@
         <div class="w-32 h-32 mb-8 relative overflow-hidden rounded-full ring-4 ring-primary ring-offset-2 ring-offset-transparent hover:scale-105 transition-transform duration-300">
             <img src="img\avatar.jpg" alt="Mohammad Mansib Nawaz" class="w-full h-full object-cover">
         </div>
-        
-        <!-- Description container -->
-        <div class="bg-darkBg bg-opacity-70 p-6 rounded-2xl shadow-lg max-w-2xl">
-            <h1 class="text-2xl font-bold mb-4">Hello, I’m <span class="text-primary">Mohammad Mansib Nawaz</span></h1>
-            <p class="text-lg leading-relaxed">
-                With <strong>4 years of experience</strong> in backend engineering and network security and analysis,
-                I provide services related to <strong>FastAPI</strong> and secure API development.
-            </p>
-            <div class="mt-4 h-8">
-                <span id="typewriter" class="text-primary font-semibold"></span>
-            </div>
-            <script>
-                const text = "Specializing in secure API development and backend solutions";
-                let index = 0;
-                function typeWriter() {
-                    if (index < text.length) {
-                        document.getElementById("typewriter").textContent += text.charAt(index);
-                        index++;
-                        setTimeout(typeWriter, 50);
-                    }
-                }
-                window.onload = typeWriter;
-            </script>
-            <!-- Button -->
-            <div class="mt-8">
-                <a href="contact.html" class="bg-primary text-white px-6 py-2 rounded-full shadow-xl hover:bg-accent transition-colors duration-300">
-                    Hire
-                </a>
-            </div>
+
+        <!-- Mobile controls -->
+        <div class="flex items-center gap-3">
+          <button id="themeToggleMobile"
+            class="md:hidden p-2 rounded-xl hover:bg-white hover:bg-opacity-10 transition-colors"
+            aria-label="Toggle theme">
+            <svg id="sunIconMobile" class="w-5 h-5 text-amber-400 hidden" fill="currentColor" viewBox="0 0 20 20"
+              aria-hidden="true">
+              <path fill-rule="evenodd"
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                clip-rule="evenodd" />
+            </svg>
+            <svg id="moonIconMobile" class="w-5 h-5 text-darkMuted" fill="currentColor" viewBox="0 0 20 20"
+              aria-hidden="true">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+            </svg>
+          </button>
+          <button id="menuToggle" class="hamburger md:hidden text-darkMuted" aria-label="Toggle mobile menu"
+            aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
         </div>
-    </main>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="mobile-menu" role="navigation" aria-label="Mobile navigation">
+        <a href="index.html" class="nav-link active text-sm py-3">Home</a>
+        <a href="project.html" class="text-darkMuted hover:text-white text-sm py-3 transition-colors">Projects</a>
+        <a href="resume.html" class="text-darkMuted hover:text-white text-sm py-3 transition-colors">Resume</a>
+        <a href="about.html" class="text-darkMuted hover:text-white text-sm py-3 transition-colors">About</a>
+        <a href="blog/" class="text-darkMuted hover:text-white text-sm py-3 transition-colors">Blog</a>
+        <a href="contact.html" class="text-darkMuted hover:text-white text-sm py-3 transition-colors">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       MAIN CONTENT
+       ═══════════════════════════════════════ -->
+  <main id="main-content" class="relative z-10 flex-grow">
+
+    <!-- ─────────────────────────────────────
+         HERO SECTION
+         ───────────────────────────────────── -->
+    <section class="relative flex items-center min-h-[calc(100dvh-64px)]" aria-label="Introduction">
+      <div class="max-w-6xl mx-auto w-full px-4 sm:px-6 py-16 md:py-24">
+
+        <!-- Two-column layout -->
+        <div class="flex flex-col-reverse md:flex-row items-center gap-12 md:gap-20">
+
+          <!-- Left: Text -->
+          <div class="flex-1 text-center md:text-left">
+
+            <!-- Eyebrow -->
+            <p class="section-label mb-4 reveal" style="justify-content: center;" data-md-justify="flex-start">AI
+              Engineer</p>
+
+            <!-- Badge row -->
+            <div class="flex flex-wrap gap-2 justify-center md:justify-start mb-6 reveal reveal-delay-1">
+              <span class="badge text-teal-400 border-teal-500/30 bg-teal-500/10">Computer Vision</span>
+              <span class="badge text-violet-400 border-violet-500/30 bg-violet-500/10">LLM Systems</span>
+              <span class="badge text-orange-400 border-orange-500/30 bg-orange-500/10">Embedded AI</span>
+              <span class="badge text-sky-400 border-sky-500/30 bg-sky-500/10">Full-Stack</span>
+            </div>
+
+            <!-- Heading -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-2 reveal reveal-delay-2">
+              <span class="text-white">I'm </span>
+              <span class="gradient-text">Mohammad<br class="hidden sm:block"> Mansib Nawaz</span>
+            </h1>
+            <p class="text-lg font-medium mb-4 reveal reveal-delay-2" style="color: var(--dark-text-muted);">AI Engineer
+              specializing in Computer Vision, LLM Systems &amp; Full-Stack Applications</p>
+
+            <!-- Typewriter -->
+            <div class="h-7 mb-6 reveal reveal-delay-2">
+              <span id="typewriter" class="text-primary-light font-medium text-lg typewriter-cursor"
+                aria-live="polite"></span>
+            </div>
+
+            <!-- Achievement bullets -->
+            <ul class="max-w-xl mx-auto md:mx-0 mb-8 reveal reveal-delay-3 space-y-2" style="list-style:none;">
+              <li class="flex items-start gap-2.5 text-sm" style="color: var(--dark-text-muted);">
+                <span class="mt-0.5 flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center"
+                  style="background:rgba(0,245,212,0.15);">
+                  <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                Built <strong class="text-white font-medium">real-time YOLOv8 traffic sign detection</strong> — 99%+
+                accuracy across 43 classes
+              </li>
+              <li class="flex items-start gap-2.5 text-sm" style="color: var(--dark-text-muted);">
+                <span class="mt-0.5 flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center"
+                  style="background:rgba(0,245,212,0.15);">
+                  <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                Shipped <strong class="text-white font-medium">FastAPI production APIs</strong> with JWT auth, Docker
+                &amp; CI/CD
+              </li>
+              <li class="flex items-start gap-2.5 text-sm" style="color: var(--dark-text-muted);">
+                <span class="mt-0.5 flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center"
+                  style="background:rgba(0,245,212,0.15);">
+                  <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                10+ AI models deployed · LLM/RAG pipelines · <strong class="text-white font-medium">Research
+                  publication</strong>
+              </li>
+              <li class="flex items-start gap-2.5 text-sm" style="color: var(--dark-text-muted);">
+                <span class="mt-0.5 flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center"
+                  style="background:rgba(0,245,212,0.15);">
+                  <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                Stack: Python · PyTorch · TensorFlow Lite · React · Linux · Docker
+              </li>
+            </ul>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap gap-4 justify-center md:justify-start reveal reveal-delay-3">
+              <a href="contact.html"
+                class="btn-glow bg-gradient-to-r from-primary via-accent to-secondary text-white px-8 py-3.5 rounded-full font-semibold shadow-lg hover:scale-105 transition-all duration-300 inline-flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+                Hire Me
+              </a>
+              <a href="project.html"
+                class="btn-outline text-primary border border-primary/60 px-8 py-3.5 rounded-full font-semibold hover:bg-primary/10 hover:scale-105 transition-all duration-300 inline-flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+                View Projects
+              </a>
+            </div>
+
+            <!-- Stats Strip -->
+            <div class="flex items-center gap-6 sm:gap-8 mt-10 justify-center md:justify-start reveal reveal-delay-4"
+              role="list" aria-label="Career statistics">
+              <div class="text-center" role="listitem">
+                <p class="stat-number text-3xl" data-counter="4" data-suffix="+">4+</p>
+                <p class="text-xs mt-1 uppercase tracking-widest" style="color: var(--dark-text-subtle);">Years Exp</p>
+              </div>
+              <div class="stat-divider" aria-hidden="true"></div>
+              <div class="text-center" role="listitem">
+                <p class="stat-number text-3xl" data-counter="15" data-suffix="+">15+</p>
+                <p class="text-xs mt-1 uppercase tracking-widest" style="color: var(--dark-text-subtle);">Projects</p>
+              </div>
+              <div class="stat-divider" aria-hidden="true"></div>
+              <div class="text-center" role="listitem">
+                <p class="stat-number text-3xl" data-counter="10" data-suffix="+">10+</p>
+                <p class="text-xs mt-1 uppercase tracking-widest" style="color: var(--dark-text-subtle);">AI Models</p>
+              </div>
+              <div class="stat-divider" aria-hidden="true"></div>
+              <div class="text-center" role="listitem">
+                <p class="stat-number text-3xl" data-counter="4">4</p>
+                <p class="text-xs mt-1 uppercase tracking-widest" style="color: var(--dark-text-subtle);">Certs</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Avatar -->
+          <div class="flex-shrink-0 reveal relative">
+            <div class="avatar-container animate-float relative w-52 h-52 md:w-72 md:h-72 mx-auto">
+              <!-- Floating tech badges — positioned relative to avatar-container -->
+              <div class="avatar-badge hidden md:flex"
+                style="top: -16px; right: -8px; color: var(--primary); animation-delay: 0s;">
+                <span class="w-2 h-2 rounded-full" style="background: var(--primary);"></span>
+                PyTorch
+              </div>
+              <div class="avatar-badge hidden md:flex"
+                style="top: 50%; right: -48px; color: #a78bfa; animation-delay: 1.3s;">
+                <span class="w-2 h-2 rounded-full" style="background: #a78bfa;"></span>
+                LangChain
+              </div>
+              <div class="avatar-badge hidden md:flex"
+                style="bottom: -12px; left: -16px; color: #60a5fa; animation-delay: 0.7s;">
+                <span class="w-2 h-2 rounded-full" style="background: #60a5fa;"></span>
+                FastAPI
+              </div>
+              <div id="avatar-3d" aria-hidden="true"></div>
+              <div
+                class="absolute inset-0 rounded-full bg-gradient-to-br from-primary via-accent to-secondary p-1 avatar-glow">
+                <div class="w-full h-full rounded-full overflow-hidden bg-darkBg">
+                  <picture>
+                    <source srcset="img/optimized/avatar.webp" type="image/webp" />
+                    <img src="img/optimized/avatar.jpg" alt="Mohammad Mansib Nawaz — AI/ML Engineer"
+                      class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" width="288"
+                      height="288" fetchpriority="high" decoding="async" />
+                  </picture>
+                </div>
+              </div>
+              <!-- Status badge -->
+              <div
+                class="absolute -bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-darkSurface/90 backdrop-blur-xl border border-white/10 px-4 py-2 rounded-full text-sm whitespace-nowrap shadow-xl z-20">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="text-white font-medium">Open to work</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div
+        class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40 hover:opacity-80 transition-opacity cursor-default"
+        aria-hidden="true">
+        <span class="text-xs font-medium tracking-[0.18em] uppercase"
+          style="color: var(--dark-text-subtle);">Scroll</span>
+        <div class="scroll-mouse">
+          <div class="scroll-dot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────
+         EXPERTISE BENTO GRID
+         ───────────────────────────────────── -->
+    <section class="py-16 md:py-24 dot-grid-bg" aria-labelledby="expertise-heading">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+        <!-- Section header -->
+        <div class="mb-10 reveal">
+          <p class="section-label mb-3">What I Build</p>
+          <h2 id="expertise-heading" class="text-3xl sm:text-4xl font-bold text-white">
+            End-to-End <span class="gradient-text">Expertise</span>
+          </h2>
+        </div>
+
+        <!-- Bento Grid -->
+        <!-- md: 3-col so [AI/ML full] + [FS|Sec|Cloud] perfectly fills two rows -->
+        <!-- lg: 5-col bento with AI/ML spanning 3×2 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 lg:grid-rows-2 gap-4 reveal reveal-delay-1">
+
+          <!-- AI/ML — Full row on md, 3 cols × 2 rows on desktop -->
+          <div class="bento-card md:col-span-3 lg:col-span-3 lg:row-span-2 min-h-[300px] lg:min-h-0">
+            <div class="bento-inner p-7 sm:p-8 h-full flex flex-col">
+              <!-- Decorative neural-net dots (top-right corner) -->
+              <div class="absolute top-4 right-4 opacity-[0.07] pointer-events-none" aria-hidden="true">
+                <svg width="120" height="100" viewBox="0 0 120 100" fill="none">
+                  <!-- Layer 1 nodes -->
+                  <circle cx="10" cy="20" r="4" fill="var(--primary)" />
+                  <circle cx="10" cy="50" r="4" fill="var(--primary)" />
+                  <circle cx="10" cy="80" r="4" fill="var(--primary)" />
+                  <!-- Layer 2 nodes -->
+                  <circle cx="55" cy="10" r="4" fill="var(--primary)" />
+                  <circle cx="55" cy="35" r="4" fill="var(--primary)" />
+                  <circle cx="55" cy="60" r="4" fill="var(--primary)" />
+                  <circle cx="55" cy="85" r="4" fill="var(--primary)" />
+                  <!-- Layer 3 nodes -->
+                  <circle cx="110" cy="30" r="4" fill="var(--accent)" />
+                  <circle cx="110" cy="70" r="4" fill="var(--accent)" />
+                  <!-- Connections -->
+                  <line x1="14" y1="20" x2="51" y2="10" stroke="var(--primary)" stroke-width="1" />
+                  <line x1="14" y1="20" x2="51" y2="35" stroke="var(--primary)" stroke-width="1" />
+                  <line x1="14" y1="50" x2="51" y2="35" stroke="var(--primary)" stroke-width="1" />
+                  <line x1="14" y1="50" x2="51" y2="60" stroke="var(--primary)" stroke-width="1" />
+                  <line x1="14" y1="80" x2="51" y2="60" stroke="var(--primary)" stroke-width="1" />
+                  <line x1="14" y1="80" x2="51" y2="85" stroke="var(--primary)" stroke-width="1" />
+                  <line x1="59" y1="10" x2="106" y2="30" stroke="var(--accent)" stroke-width="1" />
+                  <line x1="59" y1="35" x2="106" y2="30" stroke="var(--accent)" stroke-width="1" />
+                  <line x1="59" y1="60" x2="106" y2="70" stroke="var(--accent)" stroke-width="1" />
+                  <line x1="59" y1="85" x2="106" y2="70" stroke="var(--accent)" stroke-width="1" />
+                </svg>
+              </div>
+              <!-- Icon + stat row -->
+              <div class="flex items-start justify-between mb-5">
+                <div
+                  class="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500/20 to-teal-500/5 border border-teal-500/20 flex items-center justify-center">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    style="color: var(--primary);" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <div class="text-right">
+                  <p class="text-2xl font-bold"
+                    style="color: var(--primary); font-family: 'Clash Display', sans-serif;">10+</p>
+                  <p class="text-xs" style="color: var(--dark-text-subtle);">Models Deployed</p>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Artificial Intelligence &amp; Machine Learning</h3>
+              <p class="text-sm leading-relaxed mb-5 flex-grow" style="color: var(--dark-text-muted);">
+                Designing and deploying intelligent systems — from LLM-powered RAG pipelines and fine-tuned
+                transformers to custom neural networks for computer vision and NLP. I build AI applications
+                that drive measurable, real-world impact at production scale.
+              </p>
+              <!-- Tech tags -->
+              <div class="flex flex-wrap gap-2">
+                <span class="badge text-teal-400 border-teal-500/25 bg-teal-500/8"
+                  style="background: rgba(20,184,166,0.08);">PyTorch</span>
+                <span class="badge text-orange-400 border-orange-500/25"
+                  style="background: rgba(249,115,22,0.08);">TensorFlow</span>
+                <span class="badge text-violet-400 border-violet-500/25"
+                  style="background: rgba(139,92,246,0.08);">LangChain</span>
+                <span class="badge text-yellow-400 border-yellow-500/25"
+                  style="background: rgba(234,179,8,0.08);">Hugging Face</span>
+                <span class="badge text-green-400 border-green-500/25" style="background: rgba(34,197,94,0.08);">OpenAI
+                  API</span>
+                <span class="badge text-sky-400 border-sky-500/25" style="background: rgba(14,165,233,0.08);">RAG</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Full Stack — 2 cols × 1 row on desktop -->
+          <div class="bento-card lg:col-span-2 min-h-[200px]">
+            <div class="bento-inner p-6 h-full flex flex-col">
+              <div
+                class="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500/20 to-violet-500/5 border border-violet-500/20 flex items-center justify-center mb-4">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                  style="color: var(--accent-light, #9D6EF8);" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <h3 class="text-base font-bold text-white mb-2">Full Stack Development</h3>
+              <p class="text-xs leading-relaxed flex-grow" style="color: var(--dark-text-muted);">
+                End-to-end web applications — performant REST APIs and reactive frontends with modern tooling.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mt-4">
+                <span class="badge text-green-400 border-green-500/25"
+                  style="font-size:0.7rem; background: rgba(34,197,94,0.08);">FastAPI</span>
+                <span class="badge text-sky-400 border-sky-500/25"
+                  style="font-size:0.7rem; background: rgba(14,165,233,0.08);">React</span>
+                <span class="badge text-white/70 border-white/15"
+                  style="font-size:0.7rem; background: rgba(255,255,255,0.04);">Next.js</span>
+                <span class="badge text-blue-400 border-blue-500/25"
+                  style="font-size:0.7rem; background: rgba(59,130,246,0.08);">PostgreSQL</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Security — 1 col × 1 row on desktop -->
+          <div class="bento-card lg:col-span-1 min-h-[180px]">
+            <div class="bento-inner p-6 h-full flex flex-col">
+              <div
+                class="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-500/20 to-rose-500/5 border border-rose-500/20 flex items-center justify-center mb-4">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #fb7185;"
+                  aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <h3 class="text-base font-bold text-white mb-2">Security Engineering</h3>
+              <p class="text-xs leading-relaxed flex-grow" style="color: var(--dark-text-muted);">
+                API hardening, threat analysis &amp; secure-by-design system architecture.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mt-4">
+                <span class="badge text-rose-400 border-rose-500/25"
+                  style="font-size:0.7rem; background: rgba(251,113,133,0.08);">JWT/OAuth</span>
+                <span class="badge text-orange-400 border-orange-500/25"
+                  style="font-size:0.7rem; background: rgba(249,115,22,0.08);">PenTest</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cloud & DevOps — 1 col × 1 row on desktop -->
+          <div class="bento-card lg:col-span-1 min-h-[180px]">
+            <div class="bento-inner p-6 h-full flex flex-col">
+              <div
+                class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-500/5 border border-blue-500/20 flex items-center justify-center mb-4">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #60a5fa;"
+                  aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                </svg>
+              </div>
+              <h3 class="text-base font-bold text-white mb-2">Cloud &amp; DevOps</h3>
+              <p class="text-xs leading-relaxed flex-grow" style="color: var(--dark-text-muted);">
+                Scalable infra &amp; automated CI/CD pipelines for zero-downtime deployments.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mt-4">
+                <span class="badge text-blue-400 border-blue-500/25"
+                  style="font-size:0.7rem; background: rgba(59,130,246,0.08);">Docker</span>
+                <span class="badge text-sky-400 border-sky-500/25"
+                  style="font-size:0.7rem; background: rgba(14,165,233,0.08);">GitHub CI</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────
+         TECH STACK MARQUEE
+         ───────────────────────────────────── -->
+    <section class="py-12 overflow-hidden" aria-label="Technology stack">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 mb-8 reveal">
+        <p class="section-label">My Arsenal</p>
+      </div>
+
+      <!-- Row 1 — scrolls left -->
+      <div class="relative mb-3" role="list" aria-label="AI and backend technologies">
+        <!-- Fade edges -->
+        <div class="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+          style="background: linear-gradient(90deg, var(--dark-bg) 0%, transparent 100%);"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+          style="background: linear-gradient(270deg, var(--dark-bg) 0%, transparent 100%);"></div>
+        <div class="marquee-track flex gap-3" aria-hidden="true">
+          <!-- Set A -->
+          <span class="tech-pill" role="listitem"><span class="tech-dot"
+              style="background:#3776AB;"></span>Python</span>
+          <span class="tech-pill" role="listitem"><span class="tech-dot"
+              style="background:#EE4C2C;"></span>PyTorch</span>
+          <span class="tech-pill" role="listitem"><span class="tech-dot"
+              style="background:#FF6F00;"></span>TensorFlow</span>
+          <span class="tech-pill" role="listitem"><span class="tech-dot"
+              style="background:#1C7ED6;"></span>LangChain</span>
+          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#00A67E;"></span>OpenAI
+            API</span>
+          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#FFD21E;"></span>Hugging
+            Face</span>
+          <span class="tech-pill" role="listitem"><span class="tech-dot"
+              style="background:#009688;"></span>FastAPI</span>
+          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#61DAFB;"></span>React</span>
+          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#fff;"></span>Next.js</span>
+          <span class="tech-pill" role="listitem"><span class="tech-dot"
+              style="background:#3178C6;"></span>TypeScript</span>
+          <span class="tech-pill" role="listitem"><span class="tech-dot"
+              style="background:#4479A1;"></span>PostgreSQL</span>
+          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#DC382D;"></span>Redis</span>
+          <!-- Set B (duplicate for seamless loop) -->
+          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
+              style="background:#3776AB;"></span>Python</span>
+          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
+              style="background:#EE4C2C;"></span>PyTorch</span>
+          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
+              style="background:#FF6F00;"></span>TensorFlow</span>
+          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
+              style="background:#1C7ED6;"></span>LangChain</span>
+          <span class="tech-pill" aria-hidden="true"><span class="tech-dot" style="background:#00A67E;"></span>OpenAI
+            API</span>
+          <span class="tech-pill" aria-hidden="true"><span class="tech-dot" style="background:#FFD21E;"></span>Hugging
+            Face</span>
+          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
+              style="background:#009688;"></span>FastAPI</span>
+          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
+              style="background:#61DAFB;"></span>React</span>
+          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
+              style="background:#fff;"></span>Next.js</span>
+          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
+              style="background:#3178C6;"></span>TypeScript</span>
+          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
+              style="background:#4479A1;"></span>PostgreSQL</span>
+          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
+              style="background:#DC382D;"></span>Redis</span>
+        </div>
+      </div>
+
+      <!-- Row 2 — scrolls right -->
+      <div class="relative" role="list" aria-label="DevOps and infrastructure technologies">
+        <div class="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+          style="background: linear-gradient(90deg, var(--dark-bg) 0%, transparent 100%);"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+          style="background: linear-gradient(270deg, var(--dark-bg) 0%, transparent 100%);"></div>
+        <div class="marquee-track-reverse flex gap-3" aria-hidden="true">
+          <!-- Set A -->
+          <span class="tech-pill" role="listitem"><span class="tech-dot"
+              style="background:#2496ED;"></span>Docker</span>
+          <span class="tech-pill" role="listitem"><span class="tech-dot"
+              style="background:#326CE5;"></span>Kubernetes</span>
+          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#FF9900;"></span>AWS</span>
+          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#2088FF;"></span>GitHub
+            Actions</span>
+          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#F05032;"></span>Git</span>
+          <span class="tech-pill" role="listitem"><span class="tech-dot"
+              style="background:#00A2E0;"></span>LlamaIndex</span>
+          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#764ABC;"></span>RAG
+            Pipelines</span>
+          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#CC6699;"></span>Computer
+            Vision</span>
+          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#00897B;"></span>NLP</span>
+          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#EF6C00;"></span>REST
+            APIs</span>
+          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#00B4D8;"></span>JWT /
+            OAuth</span>
+          <span class="tech-pill" role="listitem"><span class="tech-dot"
+              style="background:#8B5CF6;"></span>Celery</span>
+          <!-- Set B (duplicate) -->
+          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
+              style="background:#2496ED;"></span>Docker</span>
+          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
+              style="background:#326CE5;"></span>Kubernetes</span>
+          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
+              style="background:#FF9900;"></span>AWS</span>
+          <span class="tech-pill" aria-hidden="true"><span class="tech-dot" style="background:#2088FF;"></span>GitHub
+            Actions</span>
+          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
+              style="background:#F05032;"></span>Git</span>
+          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
+              style="background:#00A2E0;"></span>LlamaIndex</span>
+          <span class="tech-pill" aria-hidden="true"><span class="tech-dot" style="background:#764ABC;"></span>RAG
+            Pipelines</span>
+          <span class="tech-pill" aria-hidden="true"><span class="tech-dot" style="background:#CC6699;"></span>Computer
+            Vision</span>
+          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
+              style="background:#00897B;"></span>NLP</span>
+          <span class="tech-pill" aria-hidden="true"><span class="tech-dot" style="background:#EF6C00;"></span>REST
+            APIs</span>
+          <span class="tech-pill" aria-hidden="true"><span class="tech-dot" style="background:#00B4D8;"></span>JWT /
+            OAuth</span>
+          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
+              style="background:#8B5CF6;"></span>Celery</span>
+        </div>
+      </div>
+    </section>
 
     <!-- Social Media -->
     <div id="social-placeholder"></div>
@@ -61,4 +545,5 @@
 
     <script src="js/components.js"></script>
 </body>
+
 </html>

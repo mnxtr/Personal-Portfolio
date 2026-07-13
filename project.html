@@ -1,44 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Projects</title>
     <script src="js/config.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Three.js Import Map for ES Modules -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.162.0/build/three.module.js"
+            }
+        }
+    </script>
     <script>
         tailwind.config = window.tailwindConfig;
     </script>
+    <style>
+        * {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .light .bg-darkBg {
+            background-color: #ffffff;
+        }
+
+        .light .text-darkText {
+            color: #1E293B;
+        }
+
+        .light .text-white {
+            color: #1e293b;
+        }
+
+        .light .text-gray-400,
+        .light .text-darkMuted {
+            color: #64748b;
+        }
+
+        .light .text-gray-300 {
+            color: #475569;
+        }
+
+        .light .glass-card,
+        .light .project-card {
+            background: rgba(255, 255, 255, 0.85);
+            border-color: rgba(99, 102, 241, 0.15);
+        }
+    </style>
 </head>
-<body class="bg-gradient-to-b from-darkBg via-gray-900 to-blue-900 text-darkText min-h-screen flex flex-col">
+
+<body
+    class="has-3d bg-gradient-to-br from-darkBg via-slate-900 to-indigo-950 text-darkText min-h-screen flex flex-col animate-fade-in">
+
+    <!-- 3D Hero Canvas (Three.js) -->
+    <div id="hero-canvas" aria-hidden="true"></div>
+
+    <!-- Ambient Background (CSS fallback) -->
+    <div class="ambient-bg" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
 
     <!-- Navigation -->
     <div id="nav-placeholder"></div>
 
     <!-- Projects Section -->
-    <main class="flex-grow container mx-auto py-8 px-4">
-        <h3 class="text-2xl font-bold text-center mb-8 text-primary">Projects</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Project 1 -->
-            <div class="bg-darkBg bg-opacity-80 text-darkText rounded-2xl shadow-md p-6 hover:shadow-lg transform hover:-translate-y-1 transition-all">
-                <img src="img/EKG.jpg" alt="An Ensemble ML approach to predict Cardiovascular Disease" class="w-full h-48 object-cover rounded mb-4" />
-                <h3 class="text-xl font-semibold mb-2 text-white">Ensemble ML approach to predict Cardiovascular Disease</h3>
-                <p class="mb-4 text-gray-300">Using multiple models to train ML models for classifying cardiovascular disorders by analyzing EKG waves.</p>
-                <a href="#" target="_blank" class="text-primary hover:text-blue-400 transition-colors duration-300">View Project</a>
+    <main class="relative z-10 flex-grow container mx-auto py-16 px-4">
+        <div class="text-center mb-12 reveal">
+            <h1 class="text-4xl md:text-5xl font-bold gradient-text mb-3">My Projects</h1>
+            <p class="text-darkMuted text-lg">Explore my work across machine learning, backend, and web development</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap justify-center gap-3 mb-12 reveal reveal-delay-1">
+            <button
+                class="filter-btn active px-6 py-2.5 rounded-full bg-gradient-to-r from-primary to-accent text-white border border-transparent font-medium transition-all"
+                data-filter="all">All</button>
+            <button
+                class="filter-btn px-6 py-2.5 rounded-full bg-darkSurface/50 text-darkMuted border border-white/10 hover:border-primary hover:text-white font-medium transition-all"
+                data-filter="ml">Machine Learning</button>
+            <button
+                class="filter-btn px-6 py-2.5 rounded-full bg-darkSurface/50 text-darkMuted border border-white/10 hover:border-primary hover:text-white font-medium transition-all"
+                data-filter="web">Web Development</button>
+            <button
+                class="filter-btn px-6 py-2.5 rounded-full bg-darkSurface/50 text-darkMuted border border-white/10 hover:border-primary hover:text-white font-medium transition-all"
+                data-filter="backend">Backend</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
+
+            <!-- Project 1: EKG ML -->
+            <div class="project-card bg-darkSurface/60 backdrop-blur-xl text-darkText rounded-2xl overflow-hidden reveal"
+                data-category="ml">
+                <div class="relative overflow-hidden group">
+                    <picture>
+                        <source srcset="img/optimized/EKG.webp" type="image/webp">
+                        <img src="img/optimized/EKG.jpg" alt="Ensemble ML approach to predict Cardiovascular Disease"
+                            class="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-700"
+                            loading="lazy" decoding="async" width="800" height="400">
+                    </picture>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/50 to-transparent opacity-80">
+                    </div>
+                    <div class="absolute top-4 right-4">
+                        <span
+                            class="px-3 py-1.5 bg-violet-500/90 text-white text-xs rounded-full font-medium backdrop-blur-sm">ML</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold mb-2 text-white">Ensemble ML for Cardiovascular Disease</h3>
+                    <p class="mb-4 text-darkMuted text-sm leading-relaxed">Using multiple models to classify
+                        cardiovascular disorders by analyzing EKG waves.</p>
+                    <div class="flex flex-wrap gap-2 mb-5">
+                        <span class="badge text-indigo-400 border-indigo-500/30 bg-indigo-500/10">Python</span>
+                        <span class="badge text-emerald-400 border-emerald-500/30 bg-emerald-500/10">Scikit-learn</span>
+                        <span class="badge text-orange-400 border-orange-500/30 bg-orange-500/10">TensorFlow</span>
+                    </div>
+                    <a href="#"
+                        class="inline-flex items-center text-primary hover:text-accent transition-colors text-sm font-medium group">
+                        View Project 
+                        <svg class="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
             </div>
-            <!-- Project 2 -->
-            <div class="bg-darkBg bg-opacity-80 text-darkText rounded-2xl shadow-md p-6 hover:shadow-lg transform hover:-translate-y-1 transition-all">
-                <img src="img/manufactureDBMS.jpg" alt="MDBMS-HTML" class="w-full h-48 object-cover rounded mb-4" />
-                <h3 class="text-xl font-semibold mb-2 text-white">A Full-Fledged Large Manufacturing Database System</h3>
-                <p class="mb-4 text-gray-300">MDBMS-HTML is a front-end project designed for a Manufacturing Database Management System (DBMS), ensuring an interactive and responsive user interface for manufacturing operations.</p>
-                <a href="https://github.com/mnxtr/mdbms-html" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-blue-400 transition-colors duration-300">View Project</a>
+
+            <!-- Project 2: Traffic Symbol Recognition -->
+            <div class="project-card bg-darkSurface/60 backdrop-blur-xl text-darkText rounded-2xl overflow-hidden reveal reveal-delay-1"
+                data-category="ml">
+                <div class="relative overflow-hidden group">
+                    <picture>
+                        <source srcset="img/optimized/traffic-signs.webp" type="image/webp">
+                        <img src="img/optimized/traffic-signs.jpg" alt="Traffic Symbol Recognition using YOLOv11n"
+                            class="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-700"
+                            loading="lazy" decoding="async" width="800" height="400">
+                    </picture>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/50 to-transparent opacity-80">
+                    </div>
+                    <div class="absolute top-4 right-4">
+                        <span
+                            class="px-3 py-1.5 bg-violet-500/90 text-white text-xs rounded-full font-medium backdrop-blur-sm">ML</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold mb-2 text-white">Traffic Symbol Recognition</h3>
+                    <p class="mb-4 text-darkMuted text-sm leading-relaxed">Real-time traffic sign detection using
+                        YOLOv11n for autonomous driving and road safety applications.</p>
+                    <div class="flex flex-wrap gap-2 mb-5">
+                        <span class="badge text-indigo-400 border-indigo-500/30 bg-indigo-500/10">Python</span>
+                        <span class="badge text-violet-400 border-violet-500/30 bg-violet-500/10">YOLOv11n</span>
+                        <span class="badge text-orange-400 border-orange-500/30 bg-orange-500/10">PyTorch</span>
+                        <span class="badge text-cyan-400 border-cyan-500/30 bg-cyan-500/10">OpenCV</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <a href="https://github.com/mnxtr/bd-traffic-signs" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center text-primary hover:text-accent transition-colors text-sm font-medium group">
+                            View Project 
+                            <svg class="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                        <a href="website/index.html" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors text-sm font-medium group">
+                            Live Demo 
+                            <svg class="w-4 h-4 ml-1.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="bg-darkBg bg-opacity-80 text-darkText rounded-2xl shadow-md p-6 hover:shadow-lg transform hover:-translate-y-1 transition-all">
-                <img src="img/crm.jpg" alt="MDBMS-HTML" class="w-full h-48 object-cover rounded mb-4" />
-                <h3 class="text-xl font-semibold mb-2 text-white">Customer Service Relationship Management System </h3>
-                <p class="mb-4 text-gray-300">A Customer Service Relationship Management (CSRM) system is a specialized software solution designed to streamline and optimize how organizations interact with their customers at every point of the service lifecycle. While traditional Customer Relationship Management (CRM) platforms focus on sales, marketing, and overall customer engagement, a CSRM solution hones in on post-purchase support and service-oriented activities</p>
-                <a href="https://github.com/mnxtr/Customer-Relationship-Management-System" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-blue-400 transition-colors duration-300">View Project</a>
+
+            <!-- Project 3: Manufacturing DBMS -->
+            <div class="project-card bg-darkSurface/60 backdrop-blur-xl text-darkText rounded-2xl overflow-hidden reveal reveal-delay-2"
+                data-category="web backend">
+                <div class="relative overflow-hidden group">
+                    <picture>
+                        <source srcset="img/optimized/manufactureDBMS.webp" type="image/webp">
+                        <img src="img/optimized/manufactureDBMS.jpg" alt="Manufacturing Database Management System"
+                            class="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-700"
+                            loading="lazy" decoding="async" width="800" height="400">
+                    </picture>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/50 to-transparent opacity-80">
+                    </div>
+                    <div class="absolute top-4 right-4 flex gap-2">
+                        <span
+                            class="px-3 py-1.5 bg-indigo-500/90 text-white text-xs rounded-full font-medium backdrop-blur-sm">Web</span>
+                        <span
+                            class="px-3 py-1.5 bg-emerald-500/90 text-white text-xs rounded-full font-medium backdrop-blur-sm">Backend</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold mb-2 text-white">Manufacturing Database System</h3>
+                    <p class="mb-4 text-darkMuted text-sm leading-relaxed">MDBMS-HTML is a front-end for a Manufacturing
+                        DBMS - interactive and fully responsive.</p>
+                    <div class="flex flex-wrap gap-2 mb-5">
+                        <span class="badge text-orange-400 border-orange-500/30 bg-orange-500/10">HTML</span>
+                        <span class="badge text-indigo-400 border-indigo-500/30 bg-indigo-500/10">CSS</span>
+                        <span class="badge text-amber-400 border-amber-500/30 bg-amber-500/10">JavaScript</span>
+                    </div>
+                    <a href="https://github.com/mnxtr/mdbms-html" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center text-primary hover:text-accent transition-colors text-sm font-medium group">
+                        View Project 
+                        <svg class="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
             </div>
+
+            <!-- Project 4: CRM System -->
+            <div class="project-card bg-darkSurface/60 backdrop-blur-xl text-darkText rounded-2xl overflow-hidden reveal"
+                data-category="backend web">
+                <div class="relative overflow-hidden group">
+                    <picture>
+                        <source srcset="img/optimized/crm.webp" type="image/webp">
+                        <img src="img/optimized/crm.jpg" alt="Customer Relationship Management System"
+                            class="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-700"
+                            loading="lazy" decoding="async" width="800" height="400">
+                    </picture>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/50 to-transparent opacity-80">
+                    </div>
+                    <div class="absolute top-4 right-4">
+                        <span
+                            class="px-3 py-1.5 bg-emerald-500/90 text-white text-xs rounded-full font-medium backdrop-blur-sm">Backend</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold mb-2 text-white">Customer Relationship Management</h3>
+                    <p class="mb-4 text-darkMuted text-sm leading-relaxed">A CRM system to streamline how organizations
+                        interact with their customers. Built with FastAPI.</p>
+                    <div class="flex flex-wrap gap-2 mb-5">
+                        <span class="badge text-indigo-400 border-indigo-500/30 bg-indigo-500/10">Python</span>
+                        <span class="badge text-emerald-400 border-emerald-500/30 bg-emerald-500/10">FastAPI</span>
+                        <span class="badge text-violet-400 border-violet-500/30 bg-violet-500/10">PostgreSQL</span>
+                    </div>
+                    <a href="https://github.com/mnxtr/Customer-Relationship-Management-System" target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center text-primary hover:text-accent transition-colors text-sm font-medium group">
+                        View Project 
+                        <svg class="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </main>
 
@@ -50,5 +271,5 @@
 
     <script src="js/components.js"></script>
 </body>
-</html>
 
+</html>

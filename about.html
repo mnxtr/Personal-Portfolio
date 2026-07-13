@@ -2,51 +2,314 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Learn more about Mohammad Mansib Nawaz, a backend engineer with expertise in secure API development and network security.">
-    <meta name="keywords" content="backend engineer, API development, network security, cybersecurity, FastAPI, Mohammad Mansib Nawaz">
-    <meta name="author" content="Mohammad Mansib Nawaz">
-    <title>About Me - Mohammad Mansib Nawaz | Backend Engineer & Security Specialist</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Mohammad Mansib Newaz - Full Stack Developer & AI/ML Engineer with 4+ years experience in FastAPI, secure API development, machine learning, and backend systems. Backend security specialist with expertise in penetration testing and network security.">
+    <meta name="keywords" content="full stack developer, AI/ML engineer, FastAPI, backend developer, secure API development, machine learning, penetration testing, network security, Mohammad Mansib Newaz">
+    <meta name="author" content="Mohammad Mansib Newaz" />
+    <meta name="theme-color" content="#080B14" />
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://mnxtr.github.io/about.html" />
+    <meta property="og:title" content="Mohammad Mansib Newaz - Full Stack Developer & AI/ML Engineer" />
+    <meta property="og:description"
+        content="Full Stack Developer & AI/ML Engineer with 4+ years experience in FastAPI, ML deployment, secure API development, and backend systems." />
+    <meta property="og:site_name" content="Mohammad Mansib Newaz" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@Mnxtrr" />
+    <meta name="twitter:creator" content="@Mnxtrr" />
+    <meta name="twitter:title" content="Mohammad Mansib Newaz - Full Stack Developer & AI/ML Engineer" />
+    <meta name="twitter:description"
+        content="Full Stack Developer & AI/ML Engineer. 4+ years in FastAPI, ML deployment, secure APIs, and backend systems." />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mnxtr.github.io/about.html" />
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mohammad Mansib Newaz",
+      "url": "https://mnxtr.github.io",
+      "jobTitle": ["Full Stack Developer", "AI/ML Engineer", "Backend Security Specialist"],
+      "knowsAbout": ["FastAPI", "Python", "Machine Learning", "API Security", "Backend Development", "Cloud Computing", "DevOps", "Database Management", "Penetration Testing", "Network Security"],
+      "sameAs": [
+        "https://github.com/mnxtr",
+        "https://linkedin.com/in/mansibnewaz",
+        "https://twitter.com/Mnxtrr"
+      ],
+      "nationality": "Bangladeshi",
+      "description": "Full Stack Developer & AI/ML Engineer with 4+ years of experience building secure, scalable systems using FastAPI, Python, and modern cloud practices."
+    }
+    </script>
+    
+    <title>About Mohammad Mansib Newaz - Full Stack Developer & AI/ML Engineer</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <script src="js/config.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Three.js Import Map for ES Modules -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.162.0/build/three.module.js"
+            }
+        }
+    </script>
     <script>
         tailwind.config = window.tailwindConfig;
     </script>
+    <style>
+        * {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .light .bg-darkBg {
+            background-color: #fff;
+        }
+
+        .light .text-darkText {
+            color: #1E293B;
+        }
+
+        .light .text-white {
+            color: #1e293b;
+        }
+
+        .light .text-gray-400,
+        .light .text-darkMuted {
+            color: #64748b;
+        }
+
+        .light .text-gray-300 {
+            color: #475569;
+        }
+
+        .light .bg-gray-800 {
+            background-color: #E2E8F0;
+        }
+
+        .light .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            border-color: rgba(99, 102, 241, 0.15);
+        }
+    </style>
 </head>
 
-<body class="bg-gradient-to-b from-darkBg via-gray-900 to-blue-900 text-darkText min-h-screen flex flex-col animate-fade-in">
+<body class="has-3d bg-gradient-to-br from-darkBg via-slate-900 to-indigo-950 text-darkText min-h-screen flex flex-col">
+    <!-- 3D Hero Canvas (Three.js) -->
+    <div id="hero-canvas" aria-hidden="true"></div>
+    
+    <!-- Ambient Background (CSS fallback) -->
+    <div class="ambient-bg" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
 
     <!-- Navigation -->
     <div id="nav-placeholder"></div>
 
-    <!-- About Section -->
-    <main class="flex-grow flex flex-col items-center justify-center text-center p-6">
-        <div class="max-w-3xl bg-darkBg bg-opacity-70 p-8 rounded-2xl shadow-lg">
-            <h1 class="text-3xl font-bold text-primary mb-4">About Me</h1>
-            <p class="lead">
-                With over four years of experience, I have built and optimized scalable backend systems, integrating
-                advanced security measures to protect data and ensure system integrity. My expertise lies in designing
-                RESTful and GraphQL APIs, implementing authentication protocols, and enhancing system efficiency.
-            </p>
-            <p class="lead">
-                I am passionate about problem-solving and innovation, constantly exploring new technologies and
-                methodologies to stay ahead in the field. My work involves collaboration with cross-functional teams,
-                leveraging my skills in cloud computing, DevOps practices, and database management to deliver robust and
-                secure applications.
-            </p>
-            <p class="lead mb-4">
-                In addition to backend development, I have hands-on experience in cybersecurity, including vulnerability
-                assessments, penetration testing, and network security analysis. I thrive in challenging environments,
-                where I can apply my technical expertise to build solutions that drive efficiency and security.
-            </p>
+    <main class="relative z-10 flex-grow container mx-auto py-16 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12 reveal">
+                <h1 class="text-4xl md:text-5xl font-bold gradient-text mb-3">About Me</h1>
+                <p class="text-darkMuted text-lg">Backend engineer, security specialist &amp; AI researcher</p>
+            </div>
 
-            <div class="mt-6">
-                <a href="contact.html"
-                    class="bg-primary text-white px-6 py-2 rounded-full shadow-lg hover:bg-accent transition duration-300">
-                    Contact Me
-                </a>
+            <div class="glass-card p-8 md:p-10 mb-12 reveal reveal-delay-1">
+                <div class="space-y-5 text-darkMuted leading-relaxed">
+                    <p><strong class="text-white">Full Stack Developer & AI/ML Engineer</strong> with 4+ years of hands-on experience building secure, scalable systems. I specialize in designing and deploying machine learning models at scale, developing secure APIs, and architecting robust backend systems that handle real-world complexity.</p>
+                    <p>My journey in tech combines <strong class="text-white">backend engineering excellence</strong> with <strong class="text-white">AI/ML expertise</strong>. I've built production systems serving thousands of concurrent users, implemented ML models in FastAPI frameworks, and architected secure microservices for high-traffic applications. Whether it's optimizing database queries, deploying ML models, or securing APIs against vulnerabilities, I bring both technical depth and practical problem-solving.</p>
+                    <p><strong class="text-white">Security is foundational</strong> to everything I build. I conduct penetration testing, perform vulnerability assessments, implement OAuth2/JWT authentication, and ensure data protection across all layers. I understand the OWASP Top 10, common attack vectors, and how to design systems that are both performant and secure.</p>
+                    <p>Beyond backend systems, I'm passionate about <strong class="text-white">AI/ML engineering</strong>—from data preparation and model training to production deployment and continuous monitoring. I've worked with TensorFlow, PyTorch, and scikit-learn, and I understand the challenges of bringing models from research to production.</p>
+                    <p>I'm also a strong believer in <strong class="text-white">documentation and knowledge sharing</strong>. I write technical blog posts about FastAPI best practices, ML deployment strategies, and backend optimization techniques. Clear documentation and technical communication are as important as clean code.</p>
+                </div>
+                <div class="mt-10 flex gap-4">
+                    <a href="contact.html"
+                        class="btn-glow inline-block bg-gradient-to-r from-primary via-accent to-secondary text-white px-8 py-3.5 rounded-full font-semibold hover:scale-105 transition-all duration-300">
+                        Get In Touch
+                    </a>
+                    <a href="blog/"
+                        class="btn-outline inline-block text-primary border border-primary/60 px-8 py-3.5 rounded-full font-semibold hover:bg-primary/10 hover:scale-105 transition-all duration-300">
+                        Read My Blog
+                    </a>
+                </div>
+            </div>
+
+            <h2 class="text-2xl md:text-3xl font-bold gradient-text text-center mb-10 reveal">Technical Skills</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- AI/ML -->
+                <div class="glass-card p-6 reveal reveal-delay-1">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-pink-500/20 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">AI/ML Engineering</h3>
+                    </div>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between mb-2"><span class="text-darkMuted text-sm">TensorFlow / PyTorch</span><span class="text-pink-400 text-sm font-medium">88%</span></div>
+                            <div class="h-2.5 bg-darkSurface rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-pink-500 to-rose-400 rounded-full progress-bar" style="width:88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2"><span class="text-darkMuted text-sm">ML Model Deployment</span><span class="text-pink-400 text-sm font-medium">90%</span></div>
+                            <div class="h-2.5 bg-darkSurface rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-pink-500 to-rose-400 rounded-full progress-bar" style="width:90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2"><span class="text-darkMuted text-sm">Scikit-learn / Pandas</span><span class="text-pink-400 text-sm font-medium">92%</span></div>
+                            <div class="h-2.5 bg-darkSurface rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-pink-500 to-rose-400 rounded-full progress-bar" style="width:92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="glass-card p-6 reveal reveal-delay-1">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Backend Development</h3>
+                    </div>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between mb-2"><span class="text-darkMuted text-sm">Python / FastAPI</span><span class="text-primary text-sm font-medium">95%</span></div>
+                            <div class="h-2.5 bg-darkSurface rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-primary to-accent rounded-full progress-bar" style="width:95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2"><span class="text-darkMuted text-sm">Node.js / Express</span><span class="text-primary text-sm font-medium">85%</span></div>
+                            <div class="h-2.5 bg-darkSurface rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-primary to-accent rounded-full progress-bar" style="width:85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2"><span class="text-darkMuted text-sm">RESTful / GraphQL APIs</span><span class="text-primary text-sm font-medium">90%</span></div>
+                            <div class="h-2.5 bg-darkSurface rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-primary to-accent rounded-full progress-bar" style="width:90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security -->
+                <div class="glass-card p-6 reveal reveal-delay-2">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Security</h3>
+                    </div>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between mb-2"><span class="text-darkMuted text-sm">Penetration Testing</span><span class="text-emerald-400 text-sm font-medium">88%</span></div>
+                            <div class="h-2.5 bg-darkSurface rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full progress-bar" style="width:88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2"><span class="text-darkMuted text-sm">Network Security</span><span class="text-emerald-400 text-sm font-medium">85%</span></div>
+                            <div class="h-2.5 bg-darkSurface rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full progress-bar" style="width:85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2"><span class="text-darkMuted text-sm">API Security / OAuth2</span><span class="text-emerald-400 text-sm font-medium">92%</span></div>
+                            <div class="h-2.5 bg-darkSurface rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full progress-bar" style="width:92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div class="glass-card p-6 reveal reveal-delay-1">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-violet-500/20 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Databases</h3>
+                    </div>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between mb-2"><span class="text-darkMuted text-sm">PostgreSQL</span><span class="text-violet-400 text-sm font-medium">90%</span></div>
+                            <div class="h-2.5 bg-darkSurface rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-violet-500 to-pink-400 rounded-full progress-bar" style="width:90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2"><span class="text-darkMuted text-sm">MongoDB</span><span class="text-violet-400 text-sm font-medium">85%</span></div>
+                            <div class="h-2.5 bg-darkSurface rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-violet-500 to-pink-400 rounded-full progress-bar" style="width:85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2"><span class="text-darkMuted text-sm">MySQL</span><span class="text-violet-400 text-sm font-medium">82%</span></div>
+                            <div class="h-2.5 bg-darkSurface rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-violet-500 to-pink-400 rounded-full progress-bar" style="width:82%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DevOps -->
+                <div class="glass-card p-6 reveal reveal-delay-2">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">DevOps &amp; Tools</h3>
+                    </div>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between mb-2"><span class="text-darkMuted text-sm">Docker</span><span class="text-orange-400 text-sm font-medium">88%</span></div>
+                            <div class="h-2.5 bg-darkSurface rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-orange-500 to-amber-400 rounded-full progress-bar" style="width:88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2"><span class="text-darkMuted text-sm">Git / GitHub</span><span class="text-orange-400 text-sm font-medium">95%</span></div>
+                            <div class="h-2.5 bg-darkSurface rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-orange-500 to-amber-400 rounded-full progress-bar" style="width:95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2"><span class="text-darkMuted text-sm">Linux / CI/CD</span><span class="text-orange-400 text-sm font-medium">85%</span></div>
+                            <div class="h-2.5 bg-darkSurface rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-orange-500 to-amber-400 rounded-full progress-bar" style="width:85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>

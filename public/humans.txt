@@ -1,0 +1,29 @@
+/* TEAM */
+Developer: Mohammad Mansib Newaz
+Role: Full Stack Developer & AI/ML Engineer
+Location: Bangladesh / Remote
+Contact: mohammad.newaz1@northsouth.edu
+LinkedIn: https://linkedin.com/in/mansibnewaz
+GitHub: https://github.com/mnxtr
+Twitter: https://twitter.com/Mnxtrr
+
+/* SITE */
+Last update: 2026/03/12
+Standards: HTML5, CSS3, JavaScript ES6+
+Components: Tailwind CSS, Vite
+Software: VS Code, Git
+SEO: Optimized for search engines and social media
+Accessibility: WCAG 2.1 AA compliant
+
+/* THANKS */
+Fonts: Space Grotesk, System Fonts
+Icons: Heroicons
+Inspiration: Modern web design trends and developer community
+
+/* TECH STACK */
+Frontend: HTML5, CSS3, JavaScript, Tailwind CSS
+Backend: Python, FastAPI, Node.js
+AI/ML: TensorFlow, PyTorch, scikit-learn
+Database: PostgreSQL, MongoDB, MySQL
+DevOps: Docker, Git, Linux, CI/CD
+Security: OAuth2, JWT, API Security Best Practices
